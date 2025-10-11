@@ -3,6 +3,7 @@ import NavBar from './navBar'
 import HomeHero from './HomeHero'
 import StatsSection from './components/StatsSection'
 import ProjectsPage from './ProjectsPage'
+import TeamPage from './TeamPage'
 import Footer from './footer'
 import './App.css'
 
@@ -34,9 +35,9 @@ function App() {
     <div className="app">
       <NavBar activePage={activePage} onNavigate={handleNavigate} />
       <main className="app__content">
-        {activePage === 'projects' ? (
-          <ProjectsPage />
-        ) : (
+        {activePage === 'projects' && <ProjectsPage />}
+        {activePage === 'team' && <TeamPage />}
+        {activePage === 'home' && (
           <>
             <HomeHero />
             <StatsSection />

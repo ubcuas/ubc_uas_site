@@ -1,0 +1,120 @@
+.team-page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  min-height: calc(100vh - var(--nav-height));
+  padding: 3rem 2rem 2.5rem;
+  background-color: #07090f;
+  box-sizing: border-box;
+}
+
+.team-page__title-banner {
+  width: min(820px, 85vw);
+  aspect-ratio: 11 / 2.2;
+  background-image: url('../figma_ss/our team/MEET OUR TEAM.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.team-page__art {
+  position: relative;
+  width: min(1120px, 92vw);
+  aspect-ratio: 16 / 9;
+  max-height: calc(100vh - var(--nav-height) - 12rem);
+}
+
+.team-page__layer {
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+}
+
+.team-page__layer--back {
+  background-image: url('../figma_ss/our team/Back.png');
+  background-position: left 10% center;
+  background-size: min(14vw, 150px) auto;
+  transform: translate(-36%, -6%);
+}
+
+.team-page__layer--accent {
+  background-image: url('../figma_ss/our team/image 30.png');
+  background-size: min(78vw, 980px) auto;
+  background-position: center 60%;
+}
+
+.team-page__layer--forward {
+  background-image: url('../figma_ss/our team/Forward.png');
+  background-position: right 10% center;
+  background-size: min(14vw, 150px) auto;
+  mix-blend-mode: screen;
+  opacity: 0.78;
+  transform: translate(36%, -6%);
+}
+
+@media (max-width: 900px) {
+  .team-page {
+    padding: 2.5rem 1.5rem 2rem;
+    gap: 2rem;
+  }
+
+  .team-page__title-banner {
+    width: min(700px, 90vw);
+  }
+
+  .team-page__art {
+    width: min(960px, 92vw);
+    max-height: calc(100vh - var(--nav-height) - 9rem);
+  }
+
+  .team-page__layer--back {
+    background-size: min(20vw, 160px) auto;
+    transform: translate(-28%, -4%);
+  }
+
+  .team-page__layer--forward {
+    background-size: min(20vw, 160px) auto;
+    transform: translate(28%, -4%);
+  }
+
+  .team-page__layer--accent {
+    background-size: min(92vw, 1020px) auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .team-page {
+    padding: 2rem 1.25rem 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .team-page__title-banner {
+    width: min(520px, 92vw);
+  }
+
+  .team-page__art {
+    width: min(540px, 94vw);
+    aspect-ratio: 4 / 5;
+    max-height: none;
+  }
+
+  .team-page__layer--back {
+    background-size: min(26vw, 130px) auto;
+    transform: translate(-24%, -2%);
+  }
+
+  .team-page__layer--forward {
+    background-size: min(26vw, 130px) auto;
+    transform: translate(24%, -2%);
+  }
+
+  .team-page__layer--accent {
+    background-size: min(116vw, 940px) auto;
+    background-position: center 62%;
+  }
+}

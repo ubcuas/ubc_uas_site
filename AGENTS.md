@@ -1,23 +1,19 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-The Vite React app lives in `src/`, where `main.jsx` mounts the UI and `App.jsx` defines the root layout. Feature folders should keep components, hooks, and styles together; shareable UI belongs in `src/components/` or `src/assets/`. Store static files that ship untouched (favicons, manifest, robots) in `public/`. Global configuration sits in `vite.config.js` and lint rules in `eslint.config.js`. Add documentation or diagrams to `README.md` or `figma_ss/` when relevant.
+Keep application code inside `src/`, where `main.jsx` boots the UI and `App.jsx` defines shared layout. Organize features in folders that bundle components, hooks, and styles; place reusable UI in `src/components/` and global styles in `src/App.css`. Static assets that ship unchanged live in `public/`, and reference material such as diagrams belongs in `figma_ss/`. Configuration stays close to the root: adjust Vite in `vite.config.js`, linting in `eslint.config.js`, and document quirks in `README.md`.
 
 ## Build, Test, and Development Commands
-- `npm install` installs dependencies defined in `package.json`.
-- `npm run dev` launches the hot-reload dev server at http://localhost:5173.
-- `npm run build` produces the optimized bundle in `dist/` for deployment checks.
-- `npm run preview` serves the built assets locally to verify routing and assets.
-- `npm run lint` or `npm run lint -- --fix` applies ESLint formatting and catches style issues.
+Run `npm install` after cloning to sync dependencies. Use `npm run dev` for the hot-reload server at http://localhost:5173, and `npm run build` to validate production output in `dist/`. `npm run preview` serves the build locally for smoke tests. Keep lint clean with `npm run lint`, or `npm run lint -- --fix` when applying formatter-approved changes.
 
 ## Coding Style & Naming Conventions
-Write modern function components with React hooks, keeping files in PascalCase (`NavBar.jsx`). Use two-space indentation, single quotes, and trailing commas where valid. Keep interfaces tight: export only consumed members, co-locate CSS modules or plain styles with their components, and centralize shared globals in `App.css`. Favour descriptive prop names and introduce memoization only when profiling shows a bottleneck.
+Author modern function components, preferring hooks and local state over classes. Follow two-space indentation, single quotes, and trailing commas where valid. Name components in PascalCase (`MissionHero.jsx`) and hooks in camelCase (`useTelemetry`). Co-locate CSS modules or plain styles with their components, and export only what the feature consumes to avoid accidental coupling.
 
 ## Testing Guidelines
-Testing libraries are not bundled yet; install Vitest and React Testing Library before adding automated coverage. Name specs `ComponentName.test.jsx` and place them alongside the component or under `src/__tests__/` for shared utilities. Validate rendering, interactions, and accessibility. Once a test suite exists, expose it through an `npm test` script and treat it as a required pre-PR check.
+Testing libraries are not bundled yet; install Vitest and React Testing Library before adding specs. Name tests `ComponentName.test.jsx` and store them beside the component or under `src/__tests__/` for shared utilities. Target render integrity, critical interactions, and accessibility seams. Once tests exist, expose them via an `npm test` script and treat the suite as mandatory pre-merge verification.
 
 ## Commit & Pull Request Guidelines
-Write concise, imperative commit messages (≤72 characters) like `Add mission hero layout`. Group related changes and note follow-up actions in the body. PRs should describe the change, link relevant issues, list manual QA steps (include screenshots for UI updates), and confirm `npm run lint` plus any tests complete successfully.
+Write imperative commit messages under 72 characters, e.g., `Add mission hero layout`, grouping related edits together. PRs should summarize the change, link any issues or tickets, list manual QA steps (screenshots for UI tweaks), and confirm `npm run lint` and any tests completed. Note downstream impacts or follow-ups in the PR description so reviewers can plan ahead.
 
 ## Security & Configuration Tips
-Never commit secrets; load them via `.env.local` and document required keys in `README.md`. Keep third-party additions minimal and reviewed. Add new secret files to `.gitignore`, and record dependency or tooling updates in the PR notes for traceability.
+Never commit secrets; load them through `.env.local` and update `.gitignore` for new secret classes. Document required environment keys in `README.md` so new contributors can bootstrap quickly. Review third-party additions for licensing and size implications, and record dependency upgrades in the PR notes for traceability.

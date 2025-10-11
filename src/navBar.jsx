@@ -20,9 +20,23 @@ const NavBar = ({ activePage = 'home', onNavigate }) => {
     onNavigate('projects')
   }
 
+  const handleTeamClick = (event) => {
+    if (!onNavigate) {
+      return
+    }
+
+    event.preventDefault()
+    onNavigate('team')
+  }
+
   const projectsClasses = ['nav-bar__link', 'nav-bar__link-button']
   if (activePage === 'projects') {
     projectsClasses.push('nav-bar__link--active')
+  }
+
+  const teamClasses = ['nav-bar__link', 'nav-bar__link-button']
+  if (activePage === 'team') {
+    teamClasses.push('nav-bar__link--active')
   }
 
   return (
@@ -44,13 +58,14 @@ const NavBar = ({ activePage = 'home', onNavigate }) => {
         >
           Projects
         </button>
-        <a
-          className="nav-bar__link"
-          href="#team"
-          onClick={(event) => handleHomeClick(event, 'team')}
+        <button
+          type="button"
+          className={teamClasses.join(' ')}
+          onClick={handleTeamClick}
+          aria-current={activePage === 'team' ? 'page' : undefined}
         >
           Our Team
-        </a>
+        </button>
         <a
           className="nav-bar__cta"
           href="#get-involved"
