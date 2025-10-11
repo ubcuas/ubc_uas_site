@@ -1,0 +1,96 @@
+.home-hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: max(32rem, calc(100vh - var(--nav-height)));
+  padding: 4rem 1.5rem 6rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(5, 5, 5, 0.55) 70%, rgba(5, 5, 5, 0.85) 100%), url('./assets/home-hero-bg.png') center/cover no-repeat;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.home-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(5, 5, 5, 0.1) 0%, rgba(5, 5, 5, 0.45) 60%, rgba(5, 5, 5, 0.65) 100%);
+  pointer-events: none;
+}
+
+.home-hero__glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 35% 25%, rgba(255, 255, 255, 0.35), transparent 55%);
+  mix-blend-mode: screen;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.home-hero__inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.75rem;
+  z-index: 1;
+}
+
+.home-hero__tagline {
+  margin: 0;
+  font-size: clamp(1.1rem, 3vw, 1.75rem);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  font-weight: 500;
+  opacity: 0.95;
+}
+
+.home-hero__title {
+  margin: 0;
+  font-size: clamp(3.75rem, 12vw, 6.5rem);
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.home-hero__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.home-hero__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 2.5rem;
+  border: 2px solid #ffffff;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: inherit;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.home-hero__cta:hover {
+  background-color: #ffffff;
+  color: #050505;
+}
+
+.home-hero__cta--secondary {
+  background: transparent;
+}
+
+@media (max-width: 600px) {
+  .home-hero {
+    padding-bottom: 4rem;
+  }
+
+  .home-hero__cta {
+    width: 100%;
+    max-width: 14rem;
+  }
+}

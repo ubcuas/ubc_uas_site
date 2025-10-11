@@ -1,0 +1,94 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2.5rem 3rem;
+  background: #050505;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.footer__logo {
+  width: 4.5rem;
+  height: auto;
+  display: block;
+}
+
+.footer__wordmark {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.footer__name {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.footer__tagline {
+  font-size: 0.75rem;
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+.footer__social {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border: 1.8px solid #ffffff;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: inherit;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.footer__social-link:hover {
+  background: #ffffff;
+  color: #050505;
+}
+
+.footer__visually-hidden {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 1.5rem;
+  }
+
+  .footer__social {
+    gap: 0.75rem;
+  }
+
+  .footer__social-link {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+}
