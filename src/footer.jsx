@@ -1,6 +1,9 @@
 import uasLogo from './assets/uas-logo.png'
 import './footer.css'
-
+import github from '../src/assets/github-white.svg'
+import instagram from '../src/assets/instagram-white.svg'
+import facebook from '../src/assets/facebook-white.svg'
+import linkedin from '../src/assets/linkedin-white.svg'
 const Footer = () => {
   return (
     <footer className="footer" aria-labelledby="footer-heading">
@@ -21,8 +24,7 @@ const Footer = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <span aria-hidden="true">in</span>
-          <span className="footer__visually-hidden">LinkedIn</span>
+          <img src={linkedin} alt="Linkedin"/>
         </a>
         <a
           className="footer__social-link footer__social-link--instagram"
@@ -30,8 +32,7 @@ const Footer = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <span aria-hidden="true">IG</span>
-          <span className="footer__visually-hidden">Instagram</span>
+          <img src={instagram} alt="Instagram"/>
         </a>
         <a
           className="footer__social-link footer__social-link--facebook"
@@ -39,8 +40,7 @@ const Footer = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <span aria-hidden="true">f</span>
-          <span className="footer__visually-hidden">Facebook</span>
+          <img src={facebook} alt="Facebook"/>
         </a>
         <a
           className="footer__social-link footer__social-link--github"
@@ -48,8 +48,7 @@ const Footer = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <span aria-hidden="true">gh</span>
-          <span className="footer__visually-hidden">GitHub</span>
+          <img src={github} alt="Github"/>
         </a>
       </nav>
     </footer>

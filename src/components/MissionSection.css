@@ -4,7 +4,6 @@
   justify-content: center;
   align-items: flex-start;
   min-height: max(36rem, calc(100vh - var(--nav-height)));
-  padding: clamp(4rem, 9vw, 7rem) clamp(1.5rem, 7vw, 5.5rem);
   overflow: hidden;
   color: #ffffff;
 }
@@ -32,27 +31,33 @@
 .mission__content {
   position: relative;
   display: grid;
-  gap: clamp(1.75rem, 5vw, 4.25rem);
+  gap: 1.5vh;
   justify-items: center;
   text-align: center;
-  width: min(960px, 100%);
+  width: 60vw;
   z-index: 1;
-  margin-top: clamp(0.5rem, 4vw, 3rem);
+  margin-top: 5vh;
 }
-
-.mission__title,
 .mission__statement {
-  width: 100%;
-  height: auto;
-  display: block;
-  max-width: clamp(18rem, 60vw, 34rem);
+  margin: 0;
+  font-size: clamp(15px,1.5vw,200px);
+  line-height: 1;
+  font-weight: bolder;
+  letter-spacing: 0.06em;
+  color: #004F79;
 }
 
 .mission__title {
-  max-width: clamp(20rem, 70vw, 44rem);
+  margin: 0;
+  font-size: clamp(40px,5vw,200px);;
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: bolder;
+  letter-spacing: 0.06em;
+  color: #004F79;
 }
 
-@media (max-width: 900px) {
+/* @media (max-width: 900px) {
   .mission__content {
     justify-items: center;
   }
@@ -71,4 +76,4 @@
   .mission {
     padding: clamp(3rem, 12vw, 4.5rem) clamp(1rem, 8vw, 2rem);
   }
-}
+} */

@@ -2,28 +2,12 @@
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: flex-start;
   min-height: max(34rem, calc(100vh - var(--nav-height)));
-  padding: clamp(4rem, 9vw, 6.5rem) clamp(1.5rem, 6vw, 4rem) clamp(3rem, 7vw, 4.5rem);
+  padding: 1vmax 1vmax 1vmax;
   background: var(--stats-background-image) center/cover no-repeat;
   color: #ffffff;
   overflow: hidden;
-}
-
-.stats__overlay {
-  position: absolute;
-  inset: 0;
-  background: none;
-  pointer-events: none;
-}
-
-.stats__inner {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2.5rem;
-  z-index: 1;
 }
 
 .stats__grid {
@@ -31,7 +15,7 @@
   justify-content: center;
   align-items: flex-end;
   flex-wrap: wrap;
-  gap: 4rem;
+  gap: 3vw;
 
   width: max-content;
   margin-left: auto;
@@ -43,17 +27,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
   padding: 0;
   text-transform: lowercase;
-  outline: 1px solid #2DA0DC;
+  /* outline: 1px solid #2DA0DC; */
 }
 
 .stats__value {
-  font-size: 3;
+  font-size: 10vw;
   font-weight: 700;
-  color: #1d7fbf;
-  text-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+  color: #2DA0DC;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  font-style:italic;
+  font-weight: bolder;
 }
 
 .stats__label {
@@ -63,7 +48,7 @@
   padding: 0rem 2rem;
   border-radius: 999px;
   background: #2DA0DC;
-  font-size: 2vmax;
+  font-size: 3vw;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
   font-weight: 600;
   text-align: center;
@@ -72,11 +57,11 @@
 }
 
 .stats__item--featured .stats__value {
-  font-size: clamp(7rem, 9vw, 14rem);
+  font-size: 15vw;
 }
 
 .stats__item--featured .stats__label {
-  font-size: 3vmax;
+  font-size: 4vw;
   padding: 0rem 4rem;
 }
 
@@ -89,25 +74,5 @@
   font-weight: 600;
   font-style: italic;
   text-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-}
-
-
-@media (max-width: 640px) {
-  .stats {
-    align-items: center;
-    padding-top: clamp(4rem, 12vw, 5.5rem);
-    padding-bottom: clamp(2.5rem, 10vw, 3.5rem);
-  }
-
-  .stats__grid {
-    gap: 1.5rem;
-  }
-
-  .stats__label {
-    padding: 0.45rem 1.5rem;
-  }
-
-  .stats__caption {
-    align-self: center;
-  }
+  color: black;
 }
