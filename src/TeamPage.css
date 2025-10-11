@@ -4,15 +4,20 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2.5rem;
   min-height: calc(100vh - var(--nav-height));
-  padding: 3rem 2rem 2.5rem;
+  padding: clamp(2rem, 6vw, 3.5rem) clamp(1.25rem, 5vw, 3.5rem);
+  gap: clamp(1.5rem, 5vw, 3rem);
   background-color: #07090f;
   box-sizing: border-box;
+  --team-banner-width: clamp(20rem, 60vw, 52rem);
+  --team-art-width: clamp(24rem, 72vw, 70rem);
+  --team-art-height: clamp(19rem, 55vh, 40rem);
+  --team-side-width: clamp(5rem, 14vw, 12rem);
+  --team-side-offset: clamp(7rem, 18vw, 24rem);
 }
 
 .team-page__title-banner {
-  width: min(820px, 85vw);
+  width: var(--team-banner-width);
   aspect-ratio: 11 / 2.2;
   background-image: url('../figma_ss/our team/MEET OUR TEAM.png');
   background-repeat: no-repeat;
@@ -22,9 +27,9 @@
 
 .team-page__art {
   position: relative;
-  width: min(1120px, 92vw);
+  width: var(--team-art-width);
+  max-height: var(--team-art-height);
   aspect-ratio: 16 / 9;
-  max-height: calc(100vh - var(--nav-height) - 12rem);
 }
 
 .team-page__layer {
@@ -37,84 +42,61 @@
 
 .team-page__layer--back {
   background-image: url('../figma_ss/our team/Back.png');
-  background-position: left 10% center;
-  background-size: min(14vw, 150px) auto;
-  transform: translate(-36%, -6%);
+  background-size: var(--team-side-width) auto;
+  background-position: left center;
+  transform: translate(calc(-1 * var(--team-side-offset)), -4%);
 }
 
 .team-page__layer--accent {
   background-image: url('../figma_ss/our team/image 30.png');
-  background-size: min(78vw, 980px) auto;
+  background-size: clamp(32rem, 78vw, 82rem) auto;
   background-position: center 60%;
 }
 
 .team-page__layer--forward {
   background-image: url('../figma_ss/our team/Forward.png');
-  background-position: right 10% center;
-  background-size: min(14vw, 150px) auto;
+  background-size: var(--team-side-width) auto;
+  background-position: right center;
   mix-blend-mode: screen;
   opacity: 0.78;
-  transform: translate(36%, -6%);
+  transform: translate(var(--team-side-offset), -4%);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 820px) {
   .team-page {
-    padding: 2.5rem 1.5rem 2rem;
-    gap: 2rem;
-  }
-
-  .team-page__title-banner {
-    width: min(700px, 90vw);
+    --team-banner-width: clamp(16rem, 66vw, 40rem);
+    --team-art-width: clamp(20rem, 78vw, 56rem);
+    --team-art-height: clamp(18rem, 58vh, 34rem);
+    --team-side-width: clamp(4.25rem, 16vw, 10rem);
+    --team-side-offset: clamp(5rem, 20vw, 18rem);
   }
 
   .team-page__art {
-    width: min(960px, 92vw);
-    max-height: calc(100vh - var(--nav-height) - 9rem);
-  }
-
-  .team-page__layer--back {
-    background-size: min(20vw, 160px) auto;
-    transform: translate(-28%, -4%);
-  }
-
-  .team-page__layer--forward {
-    background-size: min(20vw, 160px) auto;
-    transform: translate(28%, -4%);
-  }
-
-  .team-page__layer--accent {
-    background-size: min(92vw, 1020px) auto;
+    max-height: none;
   }
 }
 
 @media (max-width: 600px) {
   .team-page {
-    padding: 2rem 1.25rem 1.5rem;
-    gap: 1.5rem;
-  }
-
-  .team-page__title-banner {
-    width: min(520px, 92vw);
+    --team-banner-width: clamp(14rem, 72vw, 32rem);
+    --team-art-width: clamp(16rem, 85vw, 34rem);
+    --team-art-height: clamp(18rem, 60vh, 28rem);
+    --team-side-width: clamp(3.75rem, 24vw, 7.5rem);
+    --team-side-offset: clamp(3.5rem, 24vw, 12rem);
   }
 
   .team-page__art {
-    width: min(540px, 94vw);
     aspect-ratio: 4 / 5;
-    max-height: none;
-  }
-
-  .team-page__layer--back {
-    background-size: min(26vw, 130px) auto;
-    transform: translate(-24%, -2%);
-  }
-
-  .team-page__layer--forward {
-    background-size: min(26vw, 130px) auto;
-    transform: translate(24%, -2%);
   }
 
   .team-page__layer--accent {
-    background-size: min(116vw, 940px) auto;
-    background-position: center 62%;
+    background-position: center 64%;
+  }
+}
+
+@media (max-width: 420px) {
+  .team-page {
+    --team-side-width: clamp(3rem, 28vw, 6rem);
+    --team-side-offset: clamp(2.5rem, 26vw, 9rem);
   }
 }
