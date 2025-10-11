@@ -1,3 +1,4 @@
+
 .home-hero {
   position: relative;
   display: flex;
@@ -13,6 +14,16 @@
 .home-hero__overlay {
   position: absolute;
   inset: 0;
+  background: none;
+  pointer-events: none;
+}
+
+.home-hero__glow {
+  position: absolute;
+  inset: 0;
+  background: none;
+  mix-blend-mode: screen;
+  opacity: 0;
   pointer-events: none;
 }
 
@@ -33,6 +44,7 @@
   /* text-transform: uppercase; */
   font-weight: 500;
   opacity: 0.95;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
 }
 
 .home-hero__title {
@@ -42,6 +54,7 @@
   text-transform: uppercase;
   font-weight: 800;
   letter-spacing: 0.06em;
+  text-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
 }
 
 .home-hero__actions {

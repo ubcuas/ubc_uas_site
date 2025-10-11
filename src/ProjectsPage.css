@@ -14,7 +14,7 @@
 .projects-page__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(5, 5, 5, 0.25) 0%, rgba(5, 5, 5, 0.65) 60%, rgba(5, 5, 5, 0.85) 100%);
+  background: transparent;
 }
 
 .projects-page__content {
@@ -33,6 +33,7 @@
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  text-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
 }
 
 .projects-page__subtitle {
@@ -42,6 +43,7 @@
   text-transform: uppercase;
   font-weight: 500;
   opacity: 0.9;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
 @media (max-width: 600px) {
