@@ -41,6 +41,20 @@
   transition: color 0.2s ease;
 }
 
+.nav-bar__link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.nav-bar__link-button:focus-visible {
+  outline: 2px solid #7fceff;
+  outline-offset: 2px;
+}
+
 .nav-bar__link:hover {
   color: #7fceff;
 }

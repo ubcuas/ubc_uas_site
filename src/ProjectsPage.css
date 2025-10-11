@@ -1,0 +1,55 @@
+.projects-page {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - var(--nav-height));
+  padding: 4rem 1.5rem 6rem;
+  background: url('../figma_ss/projects/image_17.png') center/cover no-repeat;
+  color: #ffffff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.projects-page__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(5, 5, 5, 0.25) 0%, rgba(5, 5, 5, 0.65) 60%, rgba(5, 5, 5, 0.85) 100%);
+}
+
+.projects-page__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  max-width: 48rem;
+  z-index: 1;
+}
+
+.projects-page__title {
+  margin: 0;
+  font-size: clamp(3rem, 10vw, 5.5rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.projects-page__subtitle {
+  margin: 0;
+  font-size: clamp(1.125rem, 3vw, 1.75rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+@media (max-width: 600px) {
+  .projects-page {
+    padding-bottom: 4rem;
+  }
+
+  .projects-page__content {
+    gap: 1rem;
+  }
+}

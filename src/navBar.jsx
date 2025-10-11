@@ -1,20 +1,61 @@
 import uasLogo from './assets/uas-logo.png'
 import './navBar.css'
 
-const NavBar = () => {
+const NavBar = ({ activePage = 'home', onNavigate }) => {
+  const handleHomeClick = (event, targetId) => {
+    if (!onNavigate) {
+      return
+    }
+
+    event.preventDefault()
+    onNavigate('home', targetId)
+  }
+
+  const handleProjectsClick = (event) => {
+    if (!onNavigate) {
+      return
+    }
+
+    event.preventDefault()
+    onNavigate('projects')
+  }
+
+  const projectsClasses = ['nav-bar__link', 'nav-bar__link-button']
+  if (activePage === 'projects') {
+    projectsClasses.push('nav-bar__link--active')
+  }
+
   return (
     <header className="nav-bar">
-      <a className="nav-bar__logo" href="#top" aria-label="UBC UAS home">
+      <a
+        className="nav-bar__logo"
+        href="#top"
+        aria-label="UBC UAS home"
+        onClick={(event) => handleHomeClick(event, 'top')}
+      >
         <img src={uasLogo} alt="UBC UAS logo" />
       </a>
       <nav className="nav-bar__links" aria-label="Primary">
-        <a className="nav-bar__link nav-bar__link--active" href="#projects">
+        <button
+          type="button"
+          className={projectsClasses.join(' ')}
+          onClick={handleProjectsClick}
+          aria-current={activePage === 'projects' ? 'page' : undefined}
+        >
           Projects
-        </a>
-        <a className="nav-bar__link" href="#team">
+        </button>
+        <a
+          className="nav-bar__link"
+          href="#team"
+          onClick={(event) => handleHomeClick(event, 'team')}
+        >
           Our Team
         </a>
-        <a className="nav-bar__cta" href="#get-involved">
+        <a
+          className="nav-bar__cta"
+          href="#get-involved"
+          onClick={(event) => handleHomeClick(event, 'get-involved')}
+        >
           Get Involved
         </a>
       </nav>
