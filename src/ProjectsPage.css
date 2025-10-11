@@ -13,7 +13,8 @@
 
 .projects-page__overlay {
   position: absolute;
-  inset: 0; 
+  inset: 0;
+  background: transparent;
 }
 
 .projects-page__content {
@@ -32,90 +33,17 @@
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  text-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
 }
 
-.projects-page__text {
+.projects-page__subtitle {
   margin: 0;
-  font-size: clamp(1rem, 3vw, 0.1rem);
+  font-size: clamp(1.125rem, 3vw, 1.75rem);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   font-weight: 500;
   opacity: 0.9;
-}
-
-.dateHolder {
-  text-align: center;
-  margin: 40px 20px 20px;
-  width: 100%;
-}
-
-.dateTitle {
-  margin: 0 auto;
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 700;
-  color: #ffffff;
-}
-
-.projects-scroll-section {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 20px;
-}
-
-.scroll-arrow {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid white;
-  color: white;
-  font-size: 3rem;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  flex-shrink: 0;
-}
-
-.scroll-arrow:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: scale(1.1);
-}
-
-.PrevProjs-container {
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
-  flex: 1;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  max-width: 1100px;
-}
-
-.PrevProjs-container::-webkit-scrollbar {
-  display: none;
-}
-
-.PrevProjs-wrapper {
-  display: flex;
-  gap: 20px;
-  padding: 10px;
-}
-
-.PrevProjSquare {
-  width: 340px;
-  height: 339px;
-  border: 1px solid white;
-  padding: 30px;
-  border-radius: 20px;
-  flex-shrink: 0;
-}
-
-.PrevProjs {
-  padding: 20px;
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  text-align: center;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
 @media (max-width: 600px) {
@@ -125,9 +53,5 @@
 
   .projects-page__content {
     gap: 1rem;
-  }
-
-  .dateTitle {
-    width: 100%;
   }
 }

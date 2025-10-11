@@ -1,3 +1,4 @@
+import backgroundImage from '../../figma_ss/first page/Page 2.png'
 import './StatsSection.css'
 
 const stats = [
@@ -8,9 +9,11 @@ const stats = [
 
 const StatsSection = () => {
   return (
-    <section className="stats" id="stats">
-      <div className="stats__overlay" />
-      <div className="stats__inner">
+    <section
+      className="stats"
+      id="stats"
+      style={{ '--stats-background-image': `url(${backgroundImage})` }}
+    >
         <div className="stats__grid">
           {stats.map((stat) => (
             <article
@@ -22,8 +25,7 @@ const StatsSection = () => {
             </article>
           ))}
         </div>
-        <p className="stats__caption">Statistics since 2021</p>
-      </div>
+      <p className="stats__caption">Statistics since 2021</p>
     </section>
   )
 }
