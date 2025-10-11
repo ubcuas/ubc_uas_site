@@ -14,7 +14,6 @@ const StatsSection = () => {
       id="stats"
       style={{ '--stats-background-image': `url(${backgroundImage})` }}
     >
-      <div className="stats__overlay" />
         <div className="stats__grid">
           {stats.map((stat) => (
             <article
