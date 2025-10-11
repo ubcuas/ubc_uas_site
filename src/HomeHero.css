@@ -5,7 +5,7 @@
   align-items: center;
   min-height: max(32rem, calc(100vh - var(--nav-height)));
   padding: 4rem 1.5rem 6rem;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(5, 5, 5, 0.55) 70%, rgba(5, 5, 5, 0.85) 100%), url('./assets/home-hero-bg.png') center/cover no-repeat;
+  background: url('./assets/home-hero-bg.png') center/cover no-repeat;
   color: #ffffff;
   overflow: hidden;
 }
@@ -13,16 +13,6 @@
 .home-hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(5, 5, 5, 0.1) 0%, rgba(5, 5, 5, 0.45) 60%, rgba(5, 5, 5, 0.65) 100%);
-  pointer-events: none;
-}
-
-.home-hero__glow {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 35% 25%, rgba(255, 255, 255, 0.35), transparent 55%);
-  mix-blend-mode: screen;
-  opacity: 0.6;
   pointer-events: none;
 }
 
@@ -38,16 +28,16 @@
 
 .home-hero__tagline {
   margin: 0;
-  font-size: clamp(1.1rem, 3vw, 1.75rem);
+  font-size: 2.5vmax;
   letter-spacing: 0.32em;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   font-weight: 500;
   opacity: 0.95;
 }
 
 .home-hero__title {
   margin: 0;
-  font-size: clamp(3.75rem, 12vw, 6.5rem);
+  font-size: 13vmax;
   line-height: 1;
   text-transform: uppercase;
   font-weight: 800;
@@ -76,8 +66,9 @@
 }
 
 .home-hero__cta:hover {
-  background-color: #ffffff;
-  color: #050505;
+  background-color: #2DA0DC;
+  border-color: #2DA0DC;
+  color: #ffffff;
 }
 
 .home-hero__cta--secondary {
