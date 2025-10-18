@@ -1,5 +1,4 @@
 import missionTitleImg from '../../figma_ss/first page/third screen/OUR MISSIOn.png'
-import missionTextImg from '../../figma_ss/first page/third screen/We are a multidisciplinary UBC design team that specializes in building autonomous drones and their support systems. We aim to push innovation and inspire the next generation of professionals..png'
 import missionPhotoImg from '../../figma_ss/first page/third screen/image 19.png'
 import './MissionSection.css'
 
@@ -22,12 +21,11 @@ const MissionSection = () => {
           id="mission-title"
           loading="lazy"
         />
-        <img
-          src={missionTextImg}
-          alt="We are a multidisciplinary UBC design team that specializes in building autonomous drones and their support systems. We aim to push innovation and inspire the next generation of professionals."
-          className="mission__statement"
-          loading="lazy"
-        />
+        <p className="mission__statement">
+          We are a multidisciplinary UBC design team that specializes in building
+          autonomous drones and their support systems. We aim to push innovation
+          and inspire the next generation of professionals.
+        </p>
       </div>
     </section>
   )

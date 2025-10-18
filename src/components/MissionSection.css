@@ -48,16 +48,21 @@
   margin-top: clamp(0.5rem, 4vw, 3rem);
 }
 
-.mission__title,
-.mission__statement {
+.mission__title {
   width: 100%;
   height: auto;
   display: block;
-  max-width: clamp(18rem, 60vw, 34rem);
+  max-width: clamp(20rem, 70vw, 44rem);
 }
 
-.mission__title {
-  max-width: clamp(20rem, 70vw, 44rem);
+.mission__statement {
+  max-width: clamp(20rem, 64vw, 38rem);
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-size: clamp(1.05rem, 2.4vw, 1.6rem);
+  line-height: 1.45;
+  font-weight: 400;
+  letter-spacing: 0.02em;
 }
 
 @media (max-width: 900px) {
@@ -65,13 +70,13 @@
     justify-items: center;
   }
 
-  .mission__title,
-  .mission__statement {
-    max-width: clamp(18rem, 78vw, 36rem);
-  }
-
   .mission__title {
     justify-self: center;
+  }
+
+  .mission__statement {
+    max-width: clamp(20rem, 86vw, 34rem);
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
   }
 }
 
