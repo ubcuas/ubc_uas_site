@@ -7,6 +7,7 @@ import ProjectsPage from './ProjectsPage'
 import TeamPage from './TeamPage'
 import RecruitmentPage from './RecruitmentPage'
 import SponsorshipPage from './SponsorshipPage'
+import WhoWeAreSection from './components/WhoWeAreSection'
 import Footer from './footer'
 import './App.css'
 
@@ -15,6 +16,7 @@ const HomePage = () => (
     <HomeHero />
     <StatsSection />
     <MissionSection />
+    <WhoWeAreSection />
   </>
 )
 
