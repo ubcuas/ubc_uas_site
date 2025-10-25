@@ -1,4 +1,4 @@
-:root {
+:root { 
     --bg-0: #07090f;
     --bg-1: #0b0d13;
     --text: hsl(210 14% 92%);
@@ -103,85 +103,82 @@
   }
   
   .member-card img {
+    display: block;              /* NEW */
     width: 60%;
     aspect-ratio: 4 / 5;
     object-fit: cover;
     border-radius: 15px;
     border: 4px solid var(--frame);
     box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;              /* NEW */
   }
   
   /* name + LinkedIn icon row */
   .name-row {
-    display: flex;
-    align-items: flex-end;
-    gap: 0.35rem;
+    display: flex;               /* CHANGED from inline-flex */
+    justify-content: center;
+    align-items: center;
+    gap: 0.45rem;        /* space between name and icon */
     margin-top: 0.55rem;
+    margin-left: auto;           /* NEW (via auto margins to center the 60% row) */
+    margin-right: auto;          /* NEW */
+    width: 60%;                  /* NEW: match image width */
   }
   
+  /* Roboto 300, size up to 32px, 100% line-height, no letter spacing */
   .member-card .name {
     margin: 0;
-    color: #fff;
-    font-family: "Roboto", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+    text-align: center;
+    font-family: "Roboto", system-ui, -apple-system, Segoe UI,;
     font-weight: 300;
-    font-size: clamp(18px, 1.6vw, 22px);
-    line-height: 1;
-    letter-spacing: .4px;
+    font-size: clamp(20px, 2.2vw, 32px); /* caps at the Figma 32px */
+    line-height: 1;                      /* 100% */
+    letter-spacing: 0;                   /* 0% */
+    color: #fff;
   }
   
-  .member-card .role {
-    font-size: clamp(0.9rem, 1.1vw, 1rem);
-    color: hsl(210 10% 78%);
-    margin-top: 0.15rem;
-  }
-  
-  /* LinkedIn button; supports inline SVG OR empty <a> with bg fallback */
+  /* Put the icon back to the PNG bg and pin it to the right */
   .linkedin-btn {
-    margin-left: auto;
-    width: 25px;
-    height: 25px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;   /* inline SVG uses currentColor */
-    opacity: 0.95;
-    transform: translateY(1px);
-    border: none;
-    background: transparent;
-    padding: 0;
-    cursor: pointer;
-    text-decoration: none;
-  }
-  .linkedin-btn:hover { opacity: 1; }
-  .linkedin-btn:focus-visible { outline: 2px solid var(--frame); outline-offset: 2px; }
-  .linkedin-btn svg { width: 20px; height: 20px; display: block; }
-  /* fallback if you're still using an empty anchor without SVG */
-  .linkedin-btn:empty {
-    background: url('src/assets/icons/linkedIn.png') center/contain no-repeat;
-  }
+  width: clamp(24px, 2.4vw, 30px);   /* slightly bigger than before */
+  height: clamp(24px, 2.4vw, 30px);
+  display: inline-block;
+  vertical-align: middle;
+  background: url('src/assets/icons/linkedIn.png') center/contain no-repeat;
+  border: 0;
+  opacity: 0.95;
+  transform: none;
+  position: static;                 /* important: not absolute */
+}
+.linkedin-btn:hover { opacity: 1; }
+.linkedin-btn:focus-visible { outline: 2px solid var(--frame); outline-offset: 2px; }
   
   /* ---------- Group photo ---------- */
   .group-photo--framed {
+    width: 100%;
+    margin: 0 auto;             /* center the figure itself */
     display: grid;
-    justify-items: center;
+    justify-items: center;       /* center children */
     gap: 0.5rem;
   }
   
   .group-photo--framed img {
-    width: min(var(--content-max), var(--content-vw));
+    display: block;
+    width: 100%;                 /* fill the section's content width (inside padding) */
+    max-width: 85%;
+    height: auto;
     border-radius: 14px;
     border: 2px solid var(--frame);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
   }
   
   .group-photo__caption {
+    width: 100%;
+    text-align: center;
+    max-width: none;             /* match the image width */
     font-size: 0.8rem;
     color: var(--caption);
-    text-align: center;
-    max-width: min(var(--content-max), calc(var(--content-vw) - 4%));
     line-height: 1.35;
   }
-  
   /* ---------- Carousel (wider + fixed aspect) ---------- */
   .carousel {
     position: relative;
