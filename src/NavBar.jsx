@@ -5,7 +5,10 @@ import './NavBar.css'
 
 const NavBar = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false)
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false)
   const dropdownRef = useRef(null)
+  const mobileMenuRef = useRef(null)
+  const mobileToggleRef = useRef(null)
   const location = useLocation()
 
   const navigationItems = [
@@ -46,11 +49,53 @@ const NavBar = () => {
   }, [isDropdownOpen])
 
   useEffect(() => {
+    if (!isMobileMenuOpen) {
+      return
+    }
+
+    const handleClickOutside = (event) => {
+      const menuEl = mobileMenuRef.current
+      const toggleEl = mobileToggleRef.current
+      const isInsideMenu = menuEl && menuEl.contains(event.target)
+      const isToggle = toggleEl && toggleEl.contains(event.target)
+
+      if (!isInsideMenu && !isToggle) {
+        setMobileMenuOpen(false)
+      }
+    }
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setMobileMenuOpen(false)
+      }
+    }
+
+    document.addEventListener('pointerdown', handleClickOutside)
+    document.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      document.removeEventListener('pointerdown', handleClickOutside)
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [isMobileMenuOpen])
+
+  useEffect(() => {
     setDropdownOpen(false)
+    setMobileMenuOpen(false)
   }, [location.pathname])
+
+  useEffect(() => {
+    if (!isMobileMenuOpen) {
+      setDropdownOpen(false)
+    }
+  }, [isMobileMenuOpen])
 
   const handleJoinToggle = () => {
     setDropdownOpen((open) => !open)
+  }
+
+  const handleMobileMenuToggle = () => {
+    setMobileMenuOpen((open) => !open)
   }
 
   return (
@@ -59,63 +104,83 @@ const NavBar = () => {
         <Link to="/" className="navbar__logo" aria-label="UBC UAS home">
           <img src={uasLogo} alt="UBC UAS logo" />
         </Link>
-        <p className="navbar__tagline">Unmanned Aerial Systems at UBC</p>
       </div>
-      <div className="navbar__links" role="navigation">
-        {navigationItems.map(({ label, to }) => (
-          <NavLink
-            key={to}
-            to={to}
-            end={to === '/'}
-            className={({ isActive }) =>
-              [
-                'navbar__button',
-                isActive ? 'navbar__button--active' : 'navbar__button--basic',
-              ]
-                .filter(Boolean)
-                .join(' ')
-            }
+      <button
+        type="button"
+        className="navbar__menu-toggle"
+        onClick={handleMobileMenuToggle}
+        aria-haspopup="true"
+        aria-expanded={isMobileMenuOpen}
+        aria-controls="navbar-menu"
+        ref={mobileToggleRef}
+      >
+        Menu
+      </button>
+      <div
+        className={`navbar__menu ${isMobileMenuOpen ? 'navbar__menu--open' : ''}`}
+        id="navbar-menu"
+        ref={mobileMenuRef}
+      >
+        <div className="navbar__links" role="navigation">
+          {navigationItems.map(({ label, to }) => (
+            <NavLink
+              key={to}
+              to={to}
+              end={to === '/'}
+              className={({ isActive }) =>
+                [
+                  'navbar__button',
+                  isActive ? 'navbar__button--active' : 'navbar__button--basic',
+                ]
+                  .filter(Boolean)
+                  .join(' ')
+              }
+            >
+              {label}
+            </NavLink>
+          ))}
+        </div>
+        <div className="navbar__join" ref={dropdownRef}>
+          <button
+            type="button"
+            className={[
+              'navbar__button',
+              'navbar__button--has-arrow',
+              isDropdownOpen
+                ? 'navbar__button--dropdown-open'
+                : 'navbar__button--basic',
+            ].join(' ')}
+            onClick={handleJoinToggle}
+            aria-haspopup="true"
+            aria-expanded={isDropdownOpen}
+            aria-controls="navbar-join-dropdown"
           >
-            {label}
-          </NavLink>
-        ))}
-      </div>
-      <div className="navbar__join" ref={dropdownRef}>
-        <button
-          type="button"
-          className={[
-            'navbar__button',
-            'navbar__button--has-arrow',
-            isDropdownOpen ? 'navbar__button--dropdown-open' : 'navbar__button--basic',
-          ].join(' ')}
-          onClick={handleJoinToggle}
-          aria-haspopup="true"
-          aria-expanded={isDropdownOpen}
-          aria-controls="navbar-join-dropdown"
-        >
-          Join Us
-        </button>
-        {isDropdownOpen && (
-          <div className="navbar__dropdown" id="navbar-join-dropdown" role="menu">
-            {dropdownItems.map(({ label, to }) => (
-              <NavLink
-                key={to}
-                to={to}
-                className={({ isActive }) =>
-                  [
-                    'navbar__button',
-                    isActive ? 'navbar__button--active' : 'navbar__button--basic',
-                  ]
-                    .filter(Boolean)
-                    .join(' ')
-                }
-                role="menuitem"
-              >
-                {label}
-              </NavLink>
-            ))}
-          </div>
-        )}
+            Join Us
+          </button>
+          {isDropdownOpen && (
+            <div className="navbar__dropdown" id="navbar-join-dropdown" role="menu">
+              {dropdownItems.map(({ label, to }) => (
+                <NavLink
+                  key={to}
+                  to={to}
+                  className={({ isActive }) =>
+                    [
+                      'navbar__button',
+                      isActive
+                        ? 'navbar__button--active'
+                        : 'navbar__button--basic',
+                    ]
+                      .filter(Boolean)
+                      .join(' ')
+                  }
+                  role="menuitem"
+                >
+                  {label}
+                </NavLink>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </nav>
   )

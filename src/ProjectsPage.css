@@ -1,11 +1,20 @@
 .projects-page {
+  --projects-image-ratio: 0.436;
+
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: calc(100vh - var(--nav-height));
+  min-height: max(
+    calc(100vh - var(--nav-height, 0px)),
+    calc(100vw * var(--projects-image-ratio))
+  );
   padding: 4rem 1.5rem 6rem;
-  background: url('../figma_ss/projects/image 17.png') center/cover no-repeat;
+  background-color: #050814;
+  background-image: url('../figma_ss/projects/image 17.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
   color: #ffffff;
   text-align: center;
   overflow: hidden;

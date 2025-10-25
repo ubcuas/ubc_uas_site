@@ -2,10 +2,15 @@
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  min-height: max(34rem, calc(100vh - var(--nav-height)));
-  padding: 1vmax 1vmax 1vmax;
-  background: var(--stats-background-image) center/cover no-repeat;
+  align-items: flex-end;
+  min-height: max(34rem, calc(100vh - var(--nav-height, 0px)));
+  height: max(34rem, calc(100vh - var(--nav-height, 0px)));
+  padding: clamp(4rem, 9vw, 6.5rem) clamp(1.5rem, 6vw, 4rem) clamp(3rem, 7vw, 4.5rem);
+  background-color: #050814;
+  background-image: var(--stats-background-image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   color: #ffffff;
   overflow: hidden;
 }
