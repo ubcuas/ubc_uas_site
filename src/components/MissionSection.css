@@ -1,6 +1,5 @@
 .mission {
   --mission-image-ratio: 0.603;
-
   position: relative;
   display: flex;
   justify-content: center;
@@ -12,13 +11,10 @@
   );
   overflow: hidden;
   color: #ffffff;
-}
-
-.mission__background {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background-color: #02060c;
+  background-image: url('../../figma_ss/first page/third screen/image 19.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 .mission__background::before {
@@ -90,4 +86,4 @@
   .mission {
     padding: clamp(3rem, 12vw, 4.5rem) clamp(1rem, 8vw, 2rem);
   }
-} */
+} 
