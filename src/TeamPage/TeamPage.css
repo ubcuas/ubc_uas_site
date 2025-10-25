@@ -115,15 +115,15 @@
   
   /* name + LinkedIn icon row */
   .name-row {
-    display: flex;               /* CHANGED from inline-flex */
+    display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 0.45rem;        /* space between name and icon */
-    margin-top: 0.55rem;
-    margin-left: auto;           /* NEW (via auto margins to center the 60% row) */
-    margin-right: auto;          /* NEW */
-    width: 60%;                  /* NEW: match image width */
+    align-items: baseline;   /* <- baseline fixes the slight vertical mismatch */
+    gap: 0.45rem;
+    margin: 0.55rem auto 0;
+    width: 60%;
   }
+  
+
   
   /* Roboto 300, size up to 32px, 100% line-height, no letter spacing */
   .member-card .name {
@@ -137,20 +137,20 @@
     color: #fff;
   }
   
-  /* Put the icon back to the PNG bg and pin it to the right */
-  .linkedin-btn {
-  width: clamp(24px, 2.4vw, 30px);   /* slightly bigger than before */
-  height: clamp(24px, 2.4vw, 30px);
-  display: inline-block;
-  vertical-align: middle;
-  background: url('src/assets/icons/linkedIn.png') center/contain no-repeat;
-  border: 0;
-  opacity: 0.95;
-  transform: none;
-  position: static;                 /* important: not absolute */
-}
-.linkedin-btn:hover { opacity: 1; }
-.linkedin-btn:focus-visible { outline: 2px solid var(--frame); outline-offset: 2px; }
+  /* Bigger LinkedIn icon, still baseline-aligned with the name */
+.linkedin-btn {
+    width: 34px;                 /* bump this to 36–40px if you want even bigger */
+    height: 34px;
+    display: inline-block;
+    background: url('src/assets/icons/linkedIn.png') center/100% 100% no-repeat;
+    opacity: 0.95;
+    position: relative;
+    top: 0.5em;                 /* tiny nudge so it sits on the text baseline */
+    vertical-align: baseline;
+  }
+  .linkedin-btn:hover { opacity: 1; }
+  .linkedin-btn:focus-visible { outline: 0cqb solid var(--frame); outline-offset: 2px; }
+  
   
   /* ---------- Group photo ---------- */
   .group-photo--framed {
