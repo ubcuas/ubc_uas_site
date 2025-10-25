@@ -121,6 +121,7 @@
     gap: 0.45rem;
     margin: 0.55rem auto 0;
     width: 60%;
+    
   }
   
 
@@ -139,13 +140,13 @@
   
   /* Bigger LinkedIn icon, still baseline-aligned with the name */
 .linkedin-btn {
-    width: 34px;                 /* bump this to 36–40px if you want even bigger */
-    height: 34px;
+    width: 40px;                 /* bump this to 36–40px if you want even bigger */
+    height: 40px;
     display: inline-block;
     background: url('src/assets/icons/linkedIn.png') center/100% 100% no-repeat;
     opacity: 0.95;
     position: relative;
-    top: 0.5em;                 /* tiny nudge so it sits on the text baseline */
+    top: 0.55em;                 /* tiny nudge so it sits on the text baseline */
     vertical-align: baseline;
   }
   .linkedin-btn:hover { opacity: 1; }
@@ -257,6 +258,31 @@
     cursor: pointer;
   }
   .carousel__dot.is-active { opacity: 1; background: #fff; }
+  
+  team-heading-wrap {
+    width: 100%;
+    max-width: min(var(--content-max), var(--content-vw));
+    margin: clamp(1rem, 3vw, 2rem) auto 0;
+    text-align: center;
+  }
+  
+  .team-heading {
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 800;
+    /* size/spacing modeled after Home hero, scaled down for a section */
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    letter-spacing: clamp(0.04em, 0.02em + 0.05vw, 0.08em);
+    line-height: clamp(0.92, 0.86 + 0.1vw, 1.05);
+    color: #fff;
+    text-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+    margin-top:20px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+ 
+  
   
   @media (max-width: 760px) {
     .carousel__arrow--left  { left: 4px; }

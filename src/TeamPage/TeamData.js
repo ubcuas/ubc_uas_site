@@ -22,7 +22,7 @@ export const teamData = [
     {
       title: "Aircraft Team",
       subtitle: "Co-Leads",
-      theme: "charcoal",
+      theme: "teal",
       members: [
         {
           name: "Sean Lee",
@@ -41,7 +41,7 @@ export const teamData = [
     {
       title: "Payload Team",
       subtitle: "Co-Leads",
-      theme: "teal",
+      theme: "charcoal",
       members: [
         {
           name: "Jaden Chan",
@@ -60,7 +60,7 @@ export const teamData = [
     {
       title: "Electrical Team",
       subtitle: "Co-Leads",
-      theme: "charcoal",
+      theme: "teal",
       members: [
         {
           name: "Wayne Sudanartha",
@@ -79,7 +79,7 @@ export const teamData = [
     {
       title: "Software Team",
       subtitle: "Co-Leads",
-      theme: "teal",
+      theme: "charcoal",
       members: [
         {
           name: "Mercury Mcindoe",
