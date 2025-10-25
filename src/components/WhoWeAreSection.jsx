@@ -1,4 +1,4 @@
-import backgroundImage from '../../figma_ss/first page/fourth screen/fourth background.png'
+import backgroundImage from '../assets/home/who-we-are/background.png'
 import './WhoWeAreSection.css'
 
 const WhoWeAreSection = () => {
