@@ -15,6 +15,22 @@
   overflow: hidden;
 }
 
+.stats__overlay {
+  position: absolute;
+  inset: 0;
+  background: none;
+  pointer-events: none;
+}
+
+.stats__inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  z-index: 1;
+}
+
 .stats__grid {
   display: flex;
   justify-content: center;
@@ -40,10 +56,8 @@
 .stats__value {
   font-size: 10vw;
   font-weight: 700;
-  color: #2DA0DC;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
-  font-style:italic;
-  font-weight: bolder;
+  color: #1d7fbf;
+  text-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
 }
 
 .stats__label {
@@ -79,5 +93,25 @@
   font-weight: 600;
   font-style: italic;
   text-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-  color: black;
+}
+
+
+@media (max-width: 640px) {
+  .stats {
+    align-items: center;
+    padding-top: clamp(4rem, 12vw, 5.5rem);
+    padding-bottom: clamp(2.5rem, 10vw, 3.5rem);
+  }
+
+  .stats__grid {
+    gap: 1.5rem;
+  }
+
+  .stats__label {
+    padding: 0.45rem 1.5rem;
+  }
+
+  .stats__caption {
+    align-self: center;
+  }
 }
