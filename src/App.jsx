@@ -8,6 +8,7 @@ import TeamPage from './TeamPage/TeamPage'
 import RecruitmentPage from './RecruitmentPage'
 import SponsorshipPage from './SponsorshipPage'
 import WhoWeAreSection from './components/WhoWeAreSection'
+import LastScreenSection from './components/LastScreenSection'
 import Footer from './footer'
 import './App.css'
 
@@ -17,6 +18,7 @@ const HomePage = () => (
     <StatsSection />
     <MissionSection />
     <WhoWeAreSection />
+    <LastScreenSection />
   </>
 )
 
