@@ -10,44 +10,47 @@ const LastScreenSection = () => {
   return (
     <section className="last-screen" id="sponsors" aria-labelledby="last-screen-title">
       <div className="last-screen__canvas">
-        <p className="last-screen__banner last-screen__banner--what">WHAT WE DO</p>
-        <div className="last-screen__cluster last-screen__cluster--what">
+        <div className="last-screen__group last-screen__group--what">
+          <p className="last-screen__banner">WHAT WE DO</p>
           <img
             src={swirlWhat}
             alt=""
             aria-hidden="true"
-            className="last-screen__accent last-screen__accent--what"
+            className="last-screen__accent"
+            loading="lazy"
           />
           <p className="last-screen__label">What do we do?</p>
         </div>
 
-        <img
-          src={textureRibbon}
-          alt=""
-          className="last-screen__feature last-screen__feature--texture"
-          aria-hidden="true"
-          loading="lazy"
-        />
+        <div className="last-screen__group last-screen__group--imagery">
+          <img
+            src={planeImage}
+            alt="UBC UAS fixed-wing drone banking in flight"
+            className="last-screen__feature last-screen__feature--plane"
+            loading="lazy"
+          />
+          <img
+            src={textureRibbon}
+            alt=""
+            className="last-screen__feature last-screen__feature--texture"
+            aria-hidden="true"
+            loading="lazy"
+          />
+        </div>
 
-        <img
-          src={planeImage}
-          alt="UBC UAS fixed-wing drone banking in flight"
-          className="last-screen__feature last-screen__feature--plane"
-          loading="lazy"
-        />
-
-        <p className="last-screen__banner last-screen__banner--how">HOW WE DO IT</p>
-        <div className="last-screen__cluster last-screen__cluster--how">
+        <div className="last-screen__group last-screen__group--how">
+          <p className="last-screen__banner">HOW WE DO IT</p>
           <img
             src={swirlHow}
             alt=""
             aria-hidden="true"
-            className="last-screen__accent last-screen__accent--how"
+            className="last-screen__accent"
+            loading="lazy"
           />
           <p className="last-screen__label">How we do it?</p>
         </div>
 
-        <div className="last-screen__cluster last-screen__cluster--sponsors">
+        <div className="last-screen__group last-screen__group--sponsors">
           <p className="last-screen__copy--sponsor">
             Of course, none of this could be done without our sponsors.
           </p>
@@ -55,14 +58,13 @@ const LastScreenSection = () => {
           <Link className="last-screen__cta" to="/sponsorship">
             Become a Sponsor
           </Link>
+          <img
+            src={sponsorBand}
+            alt="Primary sponsor logos"
+            className="last-screen__sponsor-band"
+            loading="lazy"
+          />
         </div>
-
-        <img
-          src={sponsorBand}
-          alt="Primary sponsor logos"
-          className="last-screen__sponsor-band"
-          loading="lazy"
-        />
       </div>
     </section>
   )
