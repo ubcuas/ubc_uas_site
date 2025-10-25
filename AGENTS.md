@@ -1,7 +1,7 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-All application code lives in `src/`, with `main.jsx` mounting the app and `App.jsx` supplying shared layout scaffolding. Group each feature inside its own folder so components, hooks, and styles travel together; shared primitives belong in `src/components/`. Keep global styling in `src/App.css`, long-lived assets in `public/`, design references in `figma_ss/`, and publishable bundles in `dist/`. Update cross-cutting configuration through `vite.config.js` and `eslint.config.js`, and track domain context inside `README.md`.
+All application code lives in `src/`, with `main.jsx` mounting the app and `App.jsx` supplying shared layout scaffolding. Group each feature inside its own folder so components, hooks, and styles travel together; shared primitives belong in `src/components/`. Keep global styling in `src/App.css`, long-lived assets in `public/`, and ship-ready imagery in `src/assets/` (organized by feature, e.g., `home/`, `pages/`). `figma_ss/` now only stores reference exports. Publishable bundles land in `dist/`. Update cross-cutting configuration through `vite.config.js` and `eslint.config.js`, and track domain context inside `README.md`.
 
 ## Build, Test, and Development Commands
 - `npm install`: Sync dependencies after cloning or pulling.

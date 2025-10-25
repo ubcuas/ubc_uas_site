@@ -26,7 +26,7 @@
 .info-page--recruitment {
   --info-page-image-ratio: 0.436;
   background-color: #050814;
-  background-image: url('../figma_ss/projects/image 17.png');
+  background-image: url('./assets/pages/projects/hero-background.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -34,11 +34,7 @@
 
 .info-page--sponsorship {
   --info-page-image-ratio: 0.746;
-  background-color: #050814;
-  background-image: url('../figma_ss/our team/image 30.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+  background: url('./assets/pages/sponsorship/hero-background.png') center / cover no-repeat;
 }
 
 .info-page__content {
@@ -49,6 +45,7 @@
   max-width: 40rem;
   z-index: 1;
 }
+
 
 .info-page__eyebrow {
   margin: 0;
@@ -94,6 +91,37 @@
 .info-page__cta:focus-visible {
   transform: translateY(-1px);
   filter: brightness(1.05);
+}
+
+.sponsorship-details {
+  background-color: #040a14;
+  padding: clamp(3.5rem, 8vw, 6rem) clamp(1.5rem, 8vw, 5rem) clamp(4rem, 10vw, 7rem);
+  color: rgba(236, 242, 255, 0.95);
+}
+
+.sponsorship-details__container {
+  max-width: 60rem;
+  margin: 0 auto;
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  text-align: left;
+}
+
+.sponsorship-details__title {
+  margin: 0;
+  font-size: clamp(2.4rem, 1.6rem + 2.6vw, 3.6rem);
+  text-transform: uppercase;
+  letter-spacing: clamp(0.18em, 0.1em + 0.24vw, 0.32em);
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.sponsorship-details__body {
+  margin: 0;
+  font-size: clamp(1rem, 0.95rem + 0.55vw, 1.35rem);
+  line-height: 1.75;
+  letter-spacing: 0.03em;
+  color: rgba(224, 236, 255, 0.88);
 }
 
 @media (max-width: 600px) {

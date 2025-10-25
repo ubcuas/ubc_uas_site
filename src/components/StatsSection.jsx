@@ -1,4 +1,4 @@
-import backgroundImage from '../../figma_ss/first page/Page 2.png'
+import backgroundImage from '../assets/home/stats/page-2.png'
 import './StatsSection.css'
 
 const stats = [

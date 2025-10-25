@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
-import swirlWhat from '../../figma_ss/first page/Last screen/Frame 57.png'
-import swirlHow from '../../figma_ss/first page/Last screen/Frame 58.png'
-import textureRibbon from '../../figma_ss/first page/Last screen/Group 22.png'
-import planeImage from '../../figma_ss/first page/Last screen/image 19.png'
-import sponsorBand from '../../figma_ss/first page/Last screen/Group 47.png'
+import swirlWhat from '../assets/home/last-screen/frame-57.png'
+import swirlHow from '../assets/home/last-screen/frame-58.png'
+import textureRibbon from '../assets/home/last-screen/texture-ribbon.png'
+import planeImage from '../assets/home/last-screen/plane.png'
+import sponsorBand from '../assets/home/last-screen/sponsor-band.png'
 import './LastScreenSection.css'
 
 const LastScreenSection = () => {
