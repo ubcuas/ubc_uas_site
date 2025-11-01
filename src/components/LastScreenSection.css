@@ -4,7 +4,7 @@
   --last-screen-label: clamp(1.2rem, 0.85rem + 1.6vw, 2.2rem);
 
   position: relative;
-  padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 6vw, 4.5rem);
+  padding: clamp(3rem, 6vw, 5rem) 0;
   background-color: #050b14;
   overflow: hidden;
   color: var(--last-screen-foreground);
@@ -19,17 +19,22 @@
   mix-blend-mode: screen;
   opacity: 0.75;
   pointer-events: none;
-  z-index: 0;
+}
+
+.last-screen__qblock {
+  align-self: center;
+  display: flex;
+  flex-direction: row;
 }
 
 .last-screen__canvas {
   position: relative;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   align-items: stretch;
   gap: clamp(2rem, 5vw, 4rem);
-  max-width: min(1280px, 100%);
   margin: 0 auto;
   z-index: 1;
 }
@@ -48,23 +53,23 @@
 }
 
 .last-screen__group--what {
-  align-items: flex-start;
-  text-align: left;
+  align-items: flex-end;
+  text-align: center;
 }
 
 .last-screen__group--how {
-  align-items: flex-end;
-  text-align: right;
+  align-items: flex-start;
+  text-align: center;
 }
 
 .last-screen__group--imagery {
-  flex: 1 1 clamp(280px, 30vw, 420px);
   align-items: center;
-  text-align: center;
+  width: 40vw;
 }
 
 .last-screen__group--sponsors {
   flex: 1 1 100%;
+  align-self: center;
   align-items: center;
   text-align: center;
   gap: clamp(1.25rem, 2.8vw, 2.25rem);
@@ -151,10 +156,25 @@
   box-shadow: 0 22px 44px rgba(45, 160, 220, 0.45);
 }
 
-.last-screen__sponsor-band {
-  align-self: flex-start;
-  width: clamp(18rem, 28vw, 30rem);
-  filter: drop-shadow(0 16px 36px rgba(5, 11, 20, 0.4));
+.last-screen__sponsor-message {
+  align-items: center; 
+  text-align: center;  
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 1rem;
+
+}
+
+.last-screen__sponsor-carosel {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  max-width: 100%;
+}
+.last-screen__sponsor-text {
+  display: block;
 }
 
 @media (max-width: 960px) {
