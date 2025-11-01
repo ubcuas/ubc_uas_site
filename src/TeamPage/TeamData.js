@@ -1,5 +1,6 @@
 export const teamData = [
     {
+      title: "Admin Team",
       theme: "charcoal",
       members: [
         {
@@ -16,7 +17,7 @@ export const teamData = [
         },
       ],
       groupImg: "src/assets/teamPhotos/admin.jpg",
-      caption: "",
+      caption: "Admin Team: Vittal Ayer, Vasily Balabin, Aden Chan, Jaden Chan, Jonathan Chin, Ethan Frketich, Diego Islas, Ram Jayakumar, Leon Jiang, Manorama Joshi, Sean Lee, Olivia Lew, Amy Li, Yash Mali, Mercury McIndoe, Logan Neufield, Matthew Pirayesh, Rylan Stutters, Wayne Sudanartha, Ryan Wang, Cohen Weston, Nicholas Yap, Jason Yuan",
     },
   
     {
@@ -36,7 +37,7 @@ export const teamData = [
         },
       ],
       groupImg: "src/assets/teamPhotos/aircraft.jpg",
-      caption: "Pictured: …",
+      caption: "Aircraft Team: Vasily Balabin, Rowan Campbell, Grace Dauer, Marek Gryszka, Hyunmyung Lee, Kevin Ma, Arman Mukhi, Matthew Pirayesh, Anshul Raj, Ryan Wang, Nicholas Yap",
     },
     {
       title: "Payload Team",
@@ -55,7 +56,7 @@ export const teamData = [
         },
       ],
       groupImg: "src/assets/teamPhotos/payload.jpg",
-      caption: "Pictured: …",
+      caption: "Payload Team: Jaden Chan, Jonathan Chin, Yik Chun Choi, Dwight Dela Torre, Ryan Fan, Daniel Jin, Manorama Joshi, Inaya Merchant, Logan Neufield, Annie Sun, Jason Yuan",
     },
     {
       title: "Electrical Team",
@@ -74,7 +75,7 @@ export const teamData = [
         },
       ],
       groupImg: "src/assets/teamPhotos/electrical.jpg",
-      caption: "Pictured: …",
+      caption: "Electrical Team: Ethan Frketich, Kelly He, Ian Lee, Olivia Lew, Amy Li, Wayne Sudanartha, Cohen Weston",
     },
     {
       title: "Software Team",
@@ -93,7 +94,7 @@ export const teamData = [
         },
       ],
       groupImg: "src/assets/teamPhotos/software.jpg",
-      caption: "Pictured: …",
+      caption: "Software Team: Vittal Ayer, Chaitanya Choudhary, Wilfred Chow, Jingyang Cui, Michael Dickinson, Justin Hoang, Diego Islas, Ram Jayakumar, Anant Khanna, JunHyun Kim, Louis Lin, Anthony Lu, Yash Mali, Mercury McIndoe, Aniket Nemade, Minori Poedjokerto, Sankalp Prashanth, Harun Sameer, Athalia Setiawan, Sayyam Singla, Jason Staker, Yash Vasdev, Elsa Zheng",
     },
   ];
   

@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+
 :root { 
     --bg-0: #07090f;
     --bg-1: #0b0d13;
@@ -6,7 +9,7 @@
     --brand: #4fc3f7;
     --radius: 16px;
     --frame: #e8edf3;
-    --caption: hsl(215 10% 70%);
+    --caption: hsl(216, 24%, 79%);
     --band-charcoal: #22262c;
     --band-teal: #0f2b33;
   
@@ -42,30 +45,30 @@
     color: #fff;
     margin-bottom: 0.3rem;
     margin-top: 0.2rem;
-    font-size: clamp(1.8rem, 2vw, 2.1rem);
+    font-size: clamp(2.5rem, 2vw, 2.1rem);
     font-weight: 700;
+    font-family: "Montserrat", Arial, sans-serif;  /* ← this line */
+
+
   }
   
   .team-section__subtitle {
+    font-family: "Montserrat", Arial, sans-serif;  /* ← this line */
     margin: 0 0 1.25rem;
     font-size: clamp(1rem, 1.2vw, 1.15rem);
     font-weight: 700;
     color: #dbe7ee;
     opacity: 0.9;
+
   }
+
+
   
   /* section variants */
   .team-section--charcoal { background-color: var(--band-charcoal); box-shadow: none; transform: none; }
   .team-section--teal     { background-color: var(--band-teal);     box-shadow: none; transform: none; }
   
-  /* merge visually when two charcoal sections touch */
-  .team-section--charcoal + .team-section--charcoal {
-    margin-top: -1rem;
-    padding-top: 0;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-  }
-  
+ 
   /* ---------- Grid (centered; cards scale with columns) ---------- */
   .team-members {
     display: grid;
@@ -88,7 +91,7 @@
   .member-heading {
     color: #fff;
     font-weight: 700;
-    font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+    font-size: clamp(2.0rem, 2vw, 1.8rem);
     margin-bottom: 0.6rem;
   }
   
@@ -128,7 +131,7 @@
   
   /* Roboto 300, size up to 32px, 100% line-height, no letter spacing */
   .member-card .name {
-    margin: 0;
+    margin: 2px;
     text-align: center;
     font-family: "Roboto", system-ui, -apple-system, Segoe UI,;
     font-weight: 300;
@@ -176,9 +179,11 @@
     width: 100%;
     text-align: center;
     max-width: none;             /* match the image width */
-    font-size: 0.8rem;
+    font-size: 1.3rem;
     color: var(--caption);
     line-height: 1.35;
+    font-family: "Montserrat";  /* ← this line */
+
   }
   /* ---------- Carousel (wider + fixed aspect) ---------- */
   .carousel {
