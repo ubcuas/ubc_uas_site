@@ -1,0 +1,286 @@
+/* RecruitmentPage.css
+   Styles for the "Fall Recruitment Cycle" section that sits
+   BELOW the main Recruitment hero.
+*/
+
+/* Wrapper section under the hero */
+.recruitment-details {
+    background: #050814;              /* match site background */
+    padding: 4.5rem 0 5.5rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Main card */
+  .recruitment-panel {
+    width: 100%;
+    max-width: 1080px;
+    padding: 2.5rem 3.25rem 3rem;
+    border-radius: 1.8rem;
+  
+    background: rgba(6, 10, 22, 0.97);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.6);
+  
+    color: #f5f7ff;
+    text-align: center;
+  }
+  
+  /* Header / CTA */
+  
+  .recruitment-panel__header {
+    margin-bottom: 2rem;
+  }
+  
+  .recruitment-panel__eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 0.7rem;
+    color: #7fb5ff;
+    margin-bottom: 0.4rem;
+  }
+  
+  .recruitment-panel__title {
+    font-size: 1.45rem;
+    font-weight: 700;
+    margin-bottom: 0.45rem;
+  }
+  
+  .recruitment-panel__body {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #ccd3e5;
+    max-width: 32rem;
+    margin: 0 auto 1.2rem;
+  }
+  
+  .recruitment-panel__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 1.8rem;
+    border-radius: 999px;
+    font-size: 0.86rem;
+    font-weight: 600;
+  
+    background: #2f89ff;
+    color: #ffffff;
+    text-decoration: none;
+    transition: background 0.15s ease, transform 0.15s ease,
+      box-shadow 0.15s ease;
+  }
+  
+  .recruitment-panel__cta:hover {
+    background: #3d98ff;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Section headings inside the card (Timeline / Team Info) */
+  
+  .recruitment-section {
+    margin-top: 2rem;
+  }
+  
+  .recruitment-section__heading {
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    margin-bottom: 1.5rem;
+    color: #aeb7cc;
+  }
+  
+  /* === CURVED BLUE TIMELINE === */
+  
+  .recruitment-timeline {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .recruitment-timeline__canvas {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* SVG that draws our curve */
+  .recruitment-timeline__path {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* decorative only */
+  }
+  
+  .recruitment-timeline__path-line {
+    fill: none;
+    stroke: #39a9ff;
+    stroke-width: 2;
+    stroke-dasharray: 6 10;
+    stroke-linecap: round;
+  }
+  
+  .recruitment-timeline__dot {
+    fill: #050814;
+    stroke: #39a9ff;
+    stroke-width: 2;
+  }
+  
+  .recruitment-timeline__flag {
+    fill: #39a9ff;
+  }
+  
+  /* text/events over the curve */
+  
+  .recruitment-timeline__list {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 360px; /* should match SVG height */
+    font-size: 0.88rem;
+    color: #f5f7ff;
+  }
+  
+  .recruitment-timeline__item {
+    position: absolute;
+    max-width: 220px;
+  }
+  
+  .recruitment-timeline__item--1 {
+    top: 8px;
+    left: 28px;
+    text-align: left;
+  }
+  
+  /* Applications Open – above/right of (270,70) */
+  .recruitment-timeline__item--2 {
+    top: 40px;
+    right: 40px;
+    text-align: right;
+  }
+  
+  /* In-Person Info Session – left of (420,110) */
+  .recruitment-timeline__item--3 {
+    top: 85px;
+    left: 90px;
+    text-align: left;
+  }
+  
+  /* Online Info Session – right of (500,165) */
+  .recruitment-timeline__item--4 {
+    top: 135px;
+    right: 90px;
+    text-align: right;
+  }
+  
+  /* Applications Close – left of (420,220) */
+  .recruitment-timeline__item--5 {
+    top: 192px;
+    left: 120px;
+    text-align: left;
+  }
+  
+  /* Results Released – right of (280,260) */
+  .recruitment-timeline__item--6 {
+    top: 232px;
+    right: 80px;
+    text-align: right;
+  }
+  
+  /* First Meeting – left of flag ~ (55,325) */
+  .recruitment-timeline__item--7 {
+    top: 297px;
+    left: 70px;
+    text-align: left;
+  }
+  
+  .recruitment-timeline__label {
+    font-weight: 600;
+  }
+  
+  .recruitment-timeline__meta {
+    font-size: 0.78rem;
+    color: #b7c0d3;
+  }
+  
+  /* === TEAM INFORMATION === */
+  
+  .recruitment-teams__intro {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: #c7cfe0;
+    max-width: 34rem;
+    margin: 0.25rem auto 1.5rem;
+  }
+  
+  .recruitment-teams__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.9rem;
+  }
+  
+  .recruitment-team {
+    border-radius: 0.9rem;
+    padding: 0.95rem 1.05rem;
+    background: rgba(9, 13, 26, 0.96);
+  }
+  
+  .recruitment-team__name {
+    font-size: 0.86rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+  }
+  
+  .recruitment-team__body {
+    font-size: 0.78rem;
+    line-height: 1.4;
+    color: #c5cde0;
+  }
+  
+  /* === RESPONSIVE === */
+  
+  @media (max-width: 1024px) {
+    .recruitment-panel {
+      border-radius: 1.4rem;
+      padding: 2.25rem 2rem 2.75rem;
+    }
+  
+    .recruitment-teams__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .recruitment-details {
+      padding: 3.5rem 0 4.5rem;
+    }
+  
+    .recruitment-panel {
+      max-width: 100%;
+      border-radius: 0;
+    }
+  
+    /* On mobile, simplify to vertical list (no curve) */
+    .recruitment-timeline__path {
+      display: none;
+    }
+  
+    .recruitment-timeline__list {
+      height: auto;
+    }
+  
+    .recruitment-timeline__item {
+      position: static;
+      max-width: none;
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+  
+    .recruitment-teams__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
