@@ -1,8 +1,30 @@
 
 .home-hero {
-  --home-hero-title-size: clamp(3.5rem, 9vw, 8.5rem);
-  --home-hero-tagline-size: clamp(0.95rem, 2.5vw, 1.8rem);
-  --home-hero-title-spacing: clamp(0.04em, 0.02em + 0.05vw, 0.08em);
+  --home-hero-fluid-step: clamp(
+    0rem,
+    calc((clamp(320px, 100vw, 1200px) - 320px) * 0.003),
+    3rem
+  );
+  --home-hero-bg-offset: clamp(-3rem, calc(var(--home-hero-fluid-step) * -0.55), 0rem);
+  --home-hero-content-offset: clamp(
+    -2.25rem,
+    calc(var(--home-hero-fluid-step) * -0.45),
+    0rem
+  );
+  --home-hero-bg-size: clamp(
+    420px,
+    calc(clamp(320px, 100vw, 1200px) * 0.95),
+    1200px
+  );
+  --home-hero-bg-bleed: 0px;
+  --home-hero-title-size: clamp(2.75rem, calc(3.5rem + var(--home-hero-fluid-step)), 8.5rem);
+  --home-hero-tagline-size: clamp(0.85rem, calc(0.95rem + var(--home-hero-fluid-step) * 0.18), 1.8rem);
+  --home-hero-title-spacing: clamp(0.03em, calc(0.04em + var(--home-hero-fluid-step) * 0.01), 0.08em);
+  --home-hero-letter-spacing: clamp(0.14em, calc(0.14em + var(--home-hero-fluid-step) * 0.008), 0.28em);
+  --home-hero-content-gap: clamp(1.25rem, calc(1.25rem + var(--home-hero-fluid-step) * 0.25), 2.4rem);
+  --home-hero-cta-padding-y: clamp(0.65rem, calc(0.65rem + var(--home-hero-fluid-step) * 0.08), 1rem);
+  --home-hero-cta-padding-x: clamp(1.5rem, calc(1.75rem + var(--home-hero-fluid-step) * 0.35), 3rem);
+  --home-hero-cta-font: clamp(0.9rem, calc(0.95rem + var(--home-hero-fluid-step) * 0.05), 1.12rem);
   --home-hero-image-ratio: 0.65;
 
   position: relative;
@@ -10,17 +32,18 @@
   justify-content: center;
   align-items: center;
   min-height: max(
-    30rem,
+    calc(24rem + var(--home-hero-fluid-step)),
     calc(100vh - var(--nav-height, 0px)),
     calc(100vw * var(--home-hero-image-ratio))
   );
-  padding: clamp(3rem, 6vw, 4.5rem) clamp(1.25rem, 4vw, 2.5rem)
-    clamp(4rem, 8vw, 6rem);
+  padding: clamp(2.5rem, calc(3rem + var(--home-hero-fluid-step) * 0.4), 5.5rem)
+    clamp(1rem, calc(1.5rem + var(--home-hero-fluid-step) * 0.4), 3rem)
+    clamp(3rem, calc(3.5rem + var(--home-hero-fluid-step) * 0.5), 6rem);
   background-color: #040a14;
   background-image: url('./assets/home-hero-bg.png');
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+  background-position: center calc(45% + var(--home-hero-bg-offset));
+  background-size: var(--home-hero-bg-size) auto;
   color: #ffffff;
   overflow: hidden;
 }
@@ -47,14 +70,15 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 1.75rem;
+  gap: var(--home-hero-content-gap);
+  transform: translateY(var(--home-hero-content-offset));
   z-index: 1;
 }
 
 .home-hero__tagline {
   margin: 0;
   font-size: var(--home-hero-tagline-size);
-  letter-spacing: clamp(0.18em, 0.12em + 0.18vw, 0.28em);
+  letter-spacing: var(--home-hero-letter-spacing);
   font-weight: 500;
   opacity: 0.95;
   text-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
@@ -72,7 +96,7 @@
 
 .home-hero__actions {
   display: flex;
-  gap: 1rem;
+  gap: clamp(0.75rem, calc(0.75rem + var(--home-hero-fluid-step) * 0.1), 1.5rem);
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -81,10 +105,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 2.5rem;
+  padding: var(--home-hero-cta-padding-y) var(--home-hero-cta-padding-x);
   border: 2px solid #ffffff;
   border-radius: 999px;
-  font-size: 1rem;
+  font-size: var(--home-hero-cta-font);
   font-weight: 600;
   letter-spacing: 0.08em;
   color: inherit;
@@ -106,11 +130,65 @@
 
 @media (max-width: 600px) {
   .home-hero {
-    padding-bottom: 4rem;
+    min-height: auto;
+    height: auto;
+    padding-bottom: clamp(3rem, calc(3.5rem + var(--home-hero-fluid-step) * 0.3), 5rem);
+    padding-top: clamp(2rem, 8vw, 3rem);
+    background-size: cover;
+    background-position: center;
+    --home-hero-content-offset: 0px;
+  }
+
+  .home-hero__title {
+    font-size: calc(var(--home-hero-title-size) * 0.62);
+    letter-spacing: calc(var(--home-hero-title-spacing) * 0.78);
+  }
+
+  .home-hero__tagline {
+    font-size: calc(var(--home-hero-tagline-size) * 0.7);
+    letter-spacing: calc(var(--home-hero-letter-spacing) * 0.82);
+  }
+
+  .home-hero__actions {
+    gap: clamp(0.5rem, calc(0.5rem + var(--home-hero-fluid-step) * 0.04), 1rem);
   }
 
   .home-hero__cta {
     width: 100%;
     max-width: 14rem;
+    font-size: calc(var(--home-hero-cta-font) * 0.72);
+    padding: calc(var(--home-hero-cta-padding-y) * 0.8)
+      calc(var(--home-hero-cta-padding-x) * 0.74);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .home-hero {
+    --home-hero-bg-bleed: clamp(0px, (100vh - 0.9 * 100vw) * 0.45, 260px);
+    background-size: calc(var(--home-hero-bg-size) + var(--home-hero-bg-bleed)) auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .home-hero {
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .home-hero__title {
+    font-size: calc(var(--home-hero-title-size) * 2);
+  }
+
+  .home-hero__tagline {
+    font-size: calc(var(--home-hero-tagline-size) * 2);
+    letter-spacing: calc(var(--home-hero-letter-spacing) * 1.25);
+  }
+
+  .home-hero__cta {
+    font-size: calc(var(--home-hero-cta-font) * 2);
+    padding: calc(var(--home-hero-cta-padding-y) * 1.4)
+      calc(var(--home-hero-cta-padding-x) * 1.4);
   }
 }

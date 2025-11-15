@@ -1,5 +1,10 @@
 :root {
   --nav-height: 96px;
+  --page-viewport-scale: clamp(
+    0.6,
+    calc(clamp(320px, 100vw, 1200px) / 600),
+    2
+  );
   font-family: 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -25,6 +30,12 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background: #050505;
+}
+
+@media (max-width: 600px) {
+  :root {
+    --page-viewport-scale: 0.5;
+  }
 }
 
 * {

@@ -1,16 +1,38 @@
 .stats {
+  --stats-fluid-step: clamp(
+    0rem,
+    calc((clamp(320px, 100vw, 1200px) - 320px) * 0.003),
+    3rem
+  );
+  --stats-bg-offset: clamp(-2.5rem, calc(var(--stats-fluid-step) * -0.45), 0rem);
+  --stats-content-offset: clamp(-1.5rem, calc(var(--stats-fluid-step) * -0.35), 0rem);
+  --stats-bg-size-base: clamp(
+    420px,
+    calc(clamp(320px, 100vw, 1200px) * 0.95),
+    1200px
+  );
+  --stats-bg-bleed: 0px;
+  --stats-padding-block: clamp(3rem, calc(3.25rem + var(--stats-fluid-step) * 0.45), 6.5rem);
+  --stats-padding-inline: clamp(1rem, calc(1.5rem + var(--stats-fluid-step) * 0.45), 4rem);
+  --stats-grid-gap: clamp(1rem, calc(1.5rem + var(--stats-fluid-step) * 0.35), 4rem);
+  --stats-value-size: clamp(2.5rem, calc(3.75rem + var(--stats-fluid-step) * 1.2), 8rem);
+  --stats-label-size: clamp(0.9rem, calc(1.1rem + var(--stats-fluid-step) * 0.3), 2rem);
+  --stats-caption-size: clamp(0.8rem, calc(0.9rem + var(--stats-fluid-step) * 0.14), 1.4rem);
+  --stats-type-scale: var(--page-viewport-scale);
+
   position: relative;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   min-height: max(34rem, calc(100vh - var(--nav-height, 0px)));
   height: max(34rem, calc(100vh - var(--nav-height, 0px)));
-  padding: clamp(4rem, 9vw, 6.5rem) clamp(1.5rem, 6vw, 4rem) clamp(3rem, 7vw, 4.5rem);
+  padding: var(--stats-padding-block) var(--stats-padding-inline)
+    clamp(2.5rem, calc(3rem + var(--stats-fluid-step) * 0.18), 4.5rem);
   background-color: #050814;
   background-image: var(--stats-background-image);
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-position: center calc(45% + var(--stats-bg-offset));
+  background-size: calc(var(--stats-bg-size-base) + var(--stats-bg-bleed)) auto;
   color: #ffffff;
   overflow: hidden;
 }
@@ -36,11 +58,11 @@
   justify-content: center;
   align-items: flex-end;
   flex-wrap: wrap;
-  gap: 3vw;
-
-  width: max-content;
+  gap: var(--stats-grid-gap);
+  width: min(90vw, 960px);
   margin-left: auto;
   margin-right: auto;
+  transform: translateY(var(--stats-content-offset));
 }
 
 
@@ -54,7 +76,7 @@
 }
 
 .stats__value {
-  font-size: 10vw;
+  font-size: calc(var(--stats-value-size) * var(--stats-type-scale));
   font-weight: 700;
   color: #1d7fbf;
   text-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
@@ -64,10 +86,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0rem 2rem;
+  padding: 0.4rem clamp(1.25rem, calc(1.5rem + var(--stats-fluid-step) * 0.35), 3.25rem);
   border-radius: 999px;
   background: #2DA0DC;
-  font-size: 3vw;
+  font-size: calc(var(--stats-label-size) * var(--stats-type-scale));
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
   font-weight: 600;
   text-align: center;
@@ -76,20 +98,20 @@
 }
 
 .stats__item--featured .stats__value {
-  font-size: 15vw;
+  font-size: calc(var(--stats-value-size) * 1.35);
 }
 
 .stats__item--featured .stats__label {
-  font-size: 4vw;
-  padding: 0rem 4rem;
+  font-size: calc(var(--stats-label-size) * 1.25);
+  padding-inline: clamp(1.75rem, calc(2rem + var(--stats-fluid-step) * 0.6), 4.5rem);
 }
 
 .stats__caption {
   margin: 0;
   position: absolute;
-  bottom: 25px;
-  right: 15px;
-  font-size: clamp(0.9rem, 2.6vw, 1.5rem);
+  bottom: clamp(1.25rem, calc(1.5rem + var(--stats-fluid-step) * 0.18), 2.7rem);
+  right: clamp(0.85rem, calc(1rem + var(--stats-fluid-step) * 0.4), 3rem);
+  font-size: calc(var(--stats-caption-size) * var(--stats-type-scale));
   font-weight: 600;
   font-style: italic;
   text-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
@@ -99,19 +121,52 @@
 @media (max-width: 640px) {
   .stats {
     align-items: center;
-    padding-top: clamp(4rem, 12vw, 5.5rem);
-    padding-bottom: clamp(2.5rem, 10vw, 3.5rem);
+    padding-top: clamp(2.5rem, 8vw, 4rem);
+    padding-bottom: clamp(2rem, 7vw, 3rem);
+    --stats-content-offset: 0px;
+    --stats-bg-offset: -0.5rem;
+    --stats-type-scale: calc(var(--page-viewport-scale) * 0.65);
+    min-height: auto;
+    height: auto;
+    background-size: cover;
+    background-position: center;
   }
 
   .stats__grid {
-    gap: 1.5rem;
+    gap: clamp(0.65rem, calc(0.85rem + var(--stats-fluid-step) * 0.12), 1.2rem);
   }
 
   .stats__label {
-    padding: 0.45rem 1.5rem;
+    padding-inline: clamp(1rem, calc(1.25rem + var(--stats-fluid-step) * 0.25), 1.75rem);
+    letter-spacing: 0.06em;
   }
 
   .stats__caption {
     align-self: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .stats {
+    --stats-bg-bleed: clamp(0px, (100vh - 0.85 * 100vw) * 0.4, 240px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .stats {
+    background-size: cover;
+    background-position: center;
+    --stats-type-scale: calc(var(--page-viewport-scale) * 1.35);
+  }
+}
+
+@media (max-width: 1024px) {
+  .stats {
+    min-height: clamp(22rem, 60vh, 34rem);
+    height: auto;
+    padding-top: clamp(3rem, 8vw, 4.5rem);
+    padding-bottom: clamp(2.25rem, 7vw, 3.5rem);
+    background-size: cover;
+    background-position: center;
   }
 }
