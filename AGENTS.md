@@ -1,23 +1,32 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-All runtime code lives in `src/`, with `main.jsx` mounting the React tree and `App.jsx` handling global layout and providers. Feature folders inside `src/` should package components, hooks, and styles together; cross-cutting primitives belong in `src/components/`. Store persistent styles in `src/App.css`, production-ready imagery under `src/assets/<feature>/`, and public static files (favicons, manifest, robots) in `public/`. Generated bundles land in `dist/`, while `figma_ss/` is reference-only and should never ship. Document domain decisions or environment expectations in `README.md` to keep onboarding current.
+- Runtime React code lives in `src/`. `main.jsx` mounts the tree and `App.jsx` wires providers/layout. Feature folders inside `src/` should co-locate their components, hooks, and CSS modules. Shared primitives (buttons, layout helpers) belong under `src/components/`.
+- Persistent global styles live in `src/App.css`; feature media assets belong in `src/assets/<feature>/`; public-only artifacts (favicons, manifest, robots) reside in `public/`.
+- Build output is emitted to `dist/`. Design references in `figma_ss/` never ship. Add onboarding or environment notes to `README.md` as they evolve.
 
 ## Build, Test, and Development Commands
-- `npm install`: install or refresh dependencies after syncing the repo.
-- `npm run dev`: start the Vite dev server on http://localhost:5173 with hot reload.
-- `npm run build`: emit an optimized production bundle into `dist/`.
-- `npm run preview`: serve the build output locally for smoke testing.
-- `npm run lint` / `npm run lint -- --fix`: surface and optionally auto-fix ESLint issues.
+- `npm install`: sync dependencies after pulling.
+- `npm run dev`: launch the Vite dev server on http://localhost:5173 with hot reload.
+- `npm run build`: create a production bundle in `dist/` (used by CI/CD).
+- `npm run preview`: serve the latest build for smoke testing in a production-like server.
+- `npm run lint` / `npm run lint -- --fix`: surface ESLint issues and auto-fix when safe.
 
 ## Coding Style & Naming Conventions
-Use modern React function components with hooks, two-space indentation, single quotes, and trailing commas when valid. Components use PascalCase (`MissionHero.jsx`), hooks camelCase (`useTelemetry`), configs lowerCamelCase. Co-locate CSS (module or plain) with the owning component and export only what the feature consumes. Prefer descriptive prop names and keep config tweaks centralized in `vite.config.js` and `eslint.config.js`.
+- React function components, hooks, and configs use modern ES modules, two-space indentation, single quotes, and trailing commas.
+- Components in PascalCase (`MissionHero.jsx`), hooks camelCase (`useTelemetry`), configs lowerCamelCase. Keep props descriptive and colocate styling with the owning feature.
+- Linting is powered by `eslint.config.js` with React Refresh and React Compiler support—run lint before every commit.
 
 ## Testing Guidelines
-Testing libraries are not bundled yet; add `vitest`, `@testing-library/react`, and `@testing-library/jest-dom` before creating specs. Name test files `ComponentName.test.jsx` and either colocate them or use `src/__tests__/` for shared utilities. Focus on render integrity, interactive flows, and accessibility seams. Expose the suite via an `npm test` script and run it before opening a pull request.
+- Testing libs (Vitest + React Testing Library) are not installed yet. Add them before introducing specs.
+- Name tests `ComponentName.test.jsx` and colocate with the component or place under `src/__tests__/` when shared.
+- Target render integrity, interactions, and accessibility seams; run the suite via an `npm test` script once added.
 
 ## Commit & Pull Request Guidelines
-Write imperative commit subjects under 72 characters (e.g., `Add mission hero layout`). Pull requests should summarize scope, link related issues, capture manual QA (screenshots for UI changes), and confirm `npm run lint` plus any added tests. Highlight new dependencies, config changes, or follow-up tasks so downstream teams can plan.
+- Write imperative commit subjects under 72 chars (e.g., `Add mission hero layout`).
+- Pull requests should summarize scope, link issues, include UI screenshots when visuals change, and confirm `npm run lint` plus any tests.
+- Call out new dependencies, config tweaks, or required follow-up work so downstream teams can prepare.
 
 ## Security & Configuration Tips
-Keep secrets in `.env.local`; `.env*` files are ignored by default. Document required keys in `README.md` and never hard-code credentials. Review third-party packages for licensing and bundle impact, and note any security-sensitive adjustments when tweaking `vite.config.js` or build tooling.
+- Keep secrets in `.env.local`; never commit credentials. Document required environment keys in `README.md`.
+- Review third-party packages for license/compliance impact. Note any security-sensitive Vite or ESLint changes in PR descriptions.
