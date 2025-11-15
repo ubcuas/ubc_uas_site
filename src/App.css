@@ -19,3 +19,15 @@
 .app__content > *:first-child {
   flex: 1;
 }
+
+@media (max-width: 600px) {
+  .app__content > * {
+    margin: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .app__content > :not(:first-child) {
+    font-size: 1.08em;
+  }
+}
