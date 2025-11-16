@@ -1,9 +1,12 @@
-// RecruitmentPage.tsx
-import './InfoPage.css'
 import './RecruitmentPage.css'
 
-const RECRUITMENT_OPEN = true // toggle when cycle is live
+// TODO: replace these paths with your actual asset paths
+import TimelinePin from './assets/icons/pin.png'
+import TimelineFlag from './assets/icons/flag.png'
 
+
+const RECRUITMENT_OPEN = true // toggle when cycle is live
+//   src\assets\recruitment_pin.png
 const RecruitmentPage = () => {
   return (
     <main>
@@ -35,14 +38,13 @@ const RecruitmentPage = () => {
           aria-label="Current recruitment cycle information"
         >
           <div className="recruitment-panel">
+            {/* Figma-style RECRUITMENT + copy + Apply button */}
             <header className="recruitment-panel__header">
-              <p className="recruitment-panel__eyebrow">Now Recruiting</p>
-              <h2 className="recruitment-panel__title">
-                Fall Recruitment Cycle
-              </h2>
+              <h2 className="recruitment-panel__title-main">RECRUITMENT</h2>
               <p className="recruitment-panel__body">
-                We&rsquo;re recruiting for Aircraft, Payload, Electrical, and
-                Software. Scroll to see the full timeline and team descriptions.
+                We are currently recruiting roles in all of our sub-teams
+                including aircraft, payload, electrical, and software. Scroll
+                for more information on our team.
               </p>
               <a
                 className="recruitment-panel__cta"
@@ -61,7 +63,7 @@ const RecruitmentPage = () => {
             >
               <h3
                 id="recruitment-timeline-title"
-                className="recruitment-section__heading"
+                className="recruitment-section__heading recruitment-section__heading--timeline"
               >
                 Recruitment Timeline
               </h3>
@@ -77,43 +79,102 @@ const RecruitmentPage = () => {
                   <path
                     className="recruitment-timeline__path-line"
                     d="
-                    M 80 35
-                    Q 170 10 270 70
-                    T 420 110
-                    T 500 165
-                    T 420 220
-                    T 280 260
-                    T 55 325
+                      M 80 35
+                      Q 170 10 270 70
+                      T 420 110
+                      T 500 165
+                      T 420 220
+                      T 280 260
+                      T 55 325
                     "
                   />
-                  {/* Dots roughly aligned with events */}
-                  n <circle cx="80"  cy="35"  r="5" className="recruitment-timeline__dot" />
-                    <circle cx="270" cy="70"  r="5" className="recruitment-timeline__dot" />
-                    <circle cx="420" cy="110" r="5" className="recruitment-timeline__dot" />
-                    <circle cx="500" cy="165" r="5" className="recruitment-timeline__dot" />
-                    <circle cx="420" cy="220" r="5" className="recruitment-timeline__dot" />
-                    <circle cx="280" cy="260" r="5" className="recruitment-timeline__dot" />
-                    <rect  x="55"  y="325" width="10" height="10" rx="2"
-                        className="recruitment-timeline__flag" />
+
+                  {/* 
+                    ICONS ON THE LINE
+                    We intentionally skip an icon at the very start so the
+                    FIRST icon you see on the line is Applications Open,
+                    matching the Figma.
+                  */}
+
+                  {/* Applications Open */}
+                  <image
+                    href={TimelinePin}
+                    x={270 - 9}
+                    y={70 - 9}
+                    width="18"
+                    height="18"
+                    className="recruitment-timeline__icon"
+                  />
+
+                  {/* In-Person Info Session */}
+                  <image
+                    href={TimelinePin}
+                    x={420 - 9}
+                    y={110 - 9}
+                    width="18"
+                    height="18"
+                    className="recruitment-timeline__icon"
+                  />
+
+                  {/* Online Info Session */}
+                  <image
+                    href={TimelinePin}
+                    x={500 - 9}
+                    y={165 - 9}
+                    width="18"
+                    height="18"
+                    className="recruitment-timeline__icon"
+                  />
+
+                  {/* Applications Close */}
+                  <image
+                    href={TimelinePin}
+                    x={420 - 9}
+                    y={220 - 9}
+                    width="18"
+                    height="18"
+                    className="recruitment-timeline__icon"
+                  />
+
+                  {/* Results Released */}
+                  <image
+                    href={TimelinePin}
+                    x={280 - 9}
+                    y={260 - 9}
+                    width="18"
+                    height="18"
+                    className="recruitment-timeline__icon"
+                  />
+
+                  {/* First Meeting (flag icon) */}
+                  <image
+                    href={TimelineFlag}
+                    x={55 - 10}
+                    y={325 - 10}
+                    width="20"
+                    height="20"
+                    className="recruitment-timeline__flag-icon"
+                  />
                 </svg>
 
                 {/* Events positioned near the path */}
                 <ol className="recruitment-timeline__list">
-                  <li className="recruitment-timeline__item recruitment-timeline__item--1">
+                  {/* Imagine Day – floats near the top-left, not the first icon */}
+                  <li className="recruitment-timeline__item recruitment-timeline__item--imagine">
                     <p className="recruitment-timeline__label">Imagine Day</p>
                     <p className="recruitment-timeline__meta">
                       September 2 · 13:00–17:00
                     </p>
                   </li>
 
-                  <li className="recruitment-timeline__item recruitment-timeline__item--2">
+                  <li className="recruitment-timeline__item recruitment-timeline__item--apps-open">
                     <p className="recruitment-timeline__label">
                       Applications Open
                     </p>
                     <p className="recruitment-timeline__meta">August 22</p>
                   </li>
 
-                  <li className="recruitment-timeline__item recruitment-timeline__item--3">
+                  <li className="recruitment-timeline__item recruitment-timeline__item--in-person">
                     <p className="recruitment-timeline__label">
                       In-Person Info Session
                     </p>
@@ -122,7 +183,7 @@ const RecruitmentPage = () => {
                     </p>
                   </li>
 
-                  <li className="recruitment-timeline__item recruitment-timeline__item--4">
+                  <li className="recruitment-timeline__item recruitment-timeline__item--online">
                     <p className="recruitment-timeline__label">
                       Online Info Session
                     </p>
@@ -131,7 +192,7 @@ const RecruitmentPage = () => {
                     </p>
                   </li>
 
-                  <li className="recruitment-timeline__item recruitment-timeline__item--5">
+                  <li className="recruitment-timeline__item recruitment-timeline__item--close">
                     <p className="recruitment-timeline__label">
                       Applications Close
                     </p>
@@ -140,7 +201,7 @@ const RecruitmentPage = () => {
                     </p>
                   </li>
 
-                  <li className="recruitment-timeline__item recruitment-timeline__item--6">
+                  <li className="recruitment-timeline__item recruitment-timeline__item--results">
                     <p className="recruitment-timeline__label">
                       Results Released
                     </p>
@@ -149,7 +210,7 @@ const RecruitmentPage = () => {
                     </p>
                   </li>
 
-                  <li className="recruitment-timeline__item recruitment-timeline__item--7">
+                  <li className="recruitment-timeline__item recruitment-timeline__item--meeting">
                     <p className="recruitment-timeline__label">
                       First Meeting
                     </p>
