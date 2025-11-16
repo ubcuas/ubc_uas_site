@@ -1,37 +1,80 @@
 import React, { useRef } from 'react';
 import './ProjectsPage.css';
 import heropic from './assets/pages/projects/hero-background.png';
-import img2 from './assets/pages/projects/image.png';
+import Hydrone from './assets/carousel/Hydrone.png';
+import Ataksak from './assets/carousel/ataksak.webp';
+import Beetle from './assets/carousel/beetle.webp';
+import DesertHawk from './assets/carousel/DesertHawk.webp';
+import Condor from './assets/carousel/condor.webp';
+import DragonFly from './assets/carousel/dragonfly.webp';
+import HummingBird from './assets/carousel/hummingbird.webp';
+import Albatross from './assets/carousel/Albatross.webp';
+import GCATS from './assets/carousel/GCATS.jpg';
+import GCOM from './assets/carousel/GCOM.webp';
+import Raven from './assets/carousel/Raven.webp';
+import Sparrow from './assets/carousel/Sparrow.webp';
+import FlameWheel from './assets/carousel/FlameWheel.webp';
 
-// --- Mock Data ---
+import Thunderbird from './assets/carousel/Thunderbird.webp';
+
 const heroImage = heropic;
-const cardImage1 = img2;
-const cardImage2 = img2;
-const cardImage3 = img2;
-const cardImage4 = img2;
+const cardImage1 = Hydrone;
+const cardImage2 = HummingBird;
+const cardImage3 = Albatross;
+const cardImage4 = DragonFly;
+const cardImage5 = Beetle;
+const cardImage6 = Ataksak;
+const cardImage7 = Condor;
+const cardImage8 = Ataksak;
+const cardImage9 = Ataksak;
+const cardImage10 = Ataksak;
+const cardImage11 = Hydrone;
+const cardImage12 = GCATS;
+const cardImage13 = GCOM;
+const cardImage14 = DesertHawk;
+const cardImage15 = Raven;
+const cardImage16 = Thunderbird;
+const cardImage17 = Sparrow;
+const cardImage18 = FlameWheel;
 
 const aircraftProjects = [
-  { id: 1, title: 'ALBATROSS', subtitle: 'VTOL / 3rd at AEAC', year: '2023/24', img: cardImage1, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.' },
-  { id: 2, title: 'HUMMINGBIRD', subtitle: 'QUAD', year: '2023/24', img: cardImage2, description: 'The Hummingbird Project was the team\'s response to the need for a more precise and quickly configurable aircraft many years ago. The Wasp series of Unmanned Systems allows us to quickly change the payload and layout of the aircraft and fly different style missions within minutes of one another.' },
-  { id: 3, title: 'HYDRONE', subtitle: 'QUAD / 2nd at AEAC', year: '2024/25', img: cardImage3, description: 'Pellentesque habitant morbi tristique senectus et netus et malesuada.' }
+  { id: 1, title: 'HYDRONE', subtitle: 'QUAD / 2nd at AEAC', year: '2024/25', img: cardImage1, description: 'Hydrone was the team’s flagship aircraft for the 2025 season. With modularity in mind, Hydrone was designed to be versatile – allowing for quick and easy payload changes as well as easy disassembly. Hydrone had a great peformance last season during competition, leading to a 2nd place finish in AEAC 2025 and the highest scoring Canadian team for SUAS 2025!' },
+  { id: 2, title: 'HUMMINGBIRD', subtitle: 'QUAD', year: '2023/24', img: cardImage2, description: 'The Hummingbird Project was the team\'s response to the need for a more precise and quickly configurable aircraft many years ago. The Wasp series of Unmanned Systems allows us to quickly change the payload and layout of the aircraft and fly different style missions within minutes of one another. As the years have progressed, Hummingbird has retained its strong performance and so it continues to be used as a test drone for software and camera systems.' },
+  { id: 3, title: 'ALBATROSS', subtitle: 'VTOL / 3rd at AEAC', year: '2023/24', img: cardImage3, description: 'Albatross was the team’s premier aircraft for the 2023-2024 season. Built based on Dragonfly, Albatross is a VTOL aircraft that is designed to be super modular, allowing for quick and easy payload changes as well as easy disassembly. The team is currently working on Albatross to improve its flight performance and capabilities. Albatross competed in the 2024 AEAC and SUAS competitions. It was able to place 3rd overall at AEAC!' },
+  { id: 4, title: 'Dragonfly', subtitle: 'VTOL', year: '2022/23', img: cardImage2, description: 'The team’s second VTOL project to date, Dragonfly was built to be a modular drone that allowed for easy upgrades and payload swapping. The team used the knowledge gained from this aircraft to build Albatross after its development concluded in the summer of 2023.' },
+  { id: 5, title: 'Beetle', subtitle: 'VTOL', year: '2024/25', img: cardImage4, description: 'Beetle was UAS’s first attempt at a vertical take-off and landing (VTOL) drone. It was designed with a large main compartment to drop a small rover from with a winch. We learned a lot from this project and it was a great stepping stone to our next VTOL project, Dragonfly.' },
+  { id: 6, title: 'Ataksak', subtitle: 'QUAD / 2n', year: '2019/20', img: cardImage5, description: 'The Ataksak Project was the team’s response to the 2020 AUVSI challenge. Ataksak was built to have a flight range of up to 8 miles and a payload capacity of 3kg. The tall airframe allows payloads to safely sit within the aircraft; making it ideal to carry expensive payloads for missions such as delivering packages and mapping/ searching areas. Ataksak was also used for many years beyond its competition.' },
+  { id: 7, title: 'Condor', subtitle: 'QUAD / 2n', year: '2018/19', img: cardImage6, description: 'As a direct response to the 2019 AUVSI SUAS challenge, Condor was built to complete a long distance payload drop with high accuracy. Speed, high payload capacity, and endurance allowed Condor to successfully complete the given mission with excellent precision. It was continued to be used for many years beyond the competition. Top speed – 120 km/h, MTOW – 12kg, Wing Span – 1500mm, Max elec Power – 7600W' }
+
 ];
 
 const payloadProjects = [
-  { id: 4, title: 'ALBATROSS', subtitle: 'VTOL / 3rd at AEAC', year: '2023/24', img: cardImage1, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.' },
-  { id: 5, title: 'HUMMINGBIRD', subtitle: 'QUAD', year: '2023/24', img: cardImage2, description: 'The Hummingbird Project was the team\'s response to the need for a more precise and quickly configurable aircraft many years ago. The Wasp series of Unmanned Systems allows us to quickly change the payload and layout of the aircraft and fly different style missions within minutes of one another.' },
-  { id: 6, title: 'HYDRONE', subtitle: 'QUAD / 2nd at AEAC', year: '2024/25', img: cardImage3, description: 'Pellentesque habitant morbi tristique senectus et netus et malesuada.' }
+  { id: 8, title: 'ALBATROSS', subtitle: 'VTOL / 3rd at AEAC', year: '2023/24', img: cardImage7, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.' },
+  { id: 9, title: 'HUMMINGBIRD', subtitle: 'QUAD', year: '2023/24', img: cardImage2, description: 'The Hummingbird Project was the team\'s response to the need for a more precise and quickly configurable aircraft many years ago. The Wasp series of Unmanned Systems allows us to quickly change the payload and layout of the aircraft and fly different style missions within minutes of one another.' },
+  { id: 10, title: 'HYDRONE', subtitle: 'QUAD / 2nd at AEAC', year: '2024/25', img: cardImage8, description: 'Pellentesque habitant morbi tristique senectus et netus et malesuada.' }
 ];
 
 const softwareProjects = [
-  { id: 7, title: 'ODLC', subtitle: 'Machine Learning', year: '2023/24', img: cardImage4, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.' },
-  { id: 8, title: 'HUMMINGBIRD', subtitle: 'QUAD', year: '2023/24', img: cardImage2, description: 'The Hummingbird Project was the team\'s response to the need for a more precise and quickly configurable aircraft many years ago. The Wasp series of Unmanned Systems allows us to quickly change the payload and layout of the aircraft and fly different style missions within minutes of one another.' },
-  { id: 9, title: 'HYDRONE', subtitle: 'QUAD / 2nd at AEAC', year: '2024/25', img: cardImage3, description: 'Pellentesque habitant morbi tristique senectus et netus et malesuada.' }
+  { id: 11, title: 'ODLC', subtitle: 'Machine Learning', year: '2023/24', img: cardImage9, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.' },
+  { id: 12, title: 'HUMMINGBIRD', subtitle: 'QUAD', year: '2023/24', img: cardImage10, description: 'The Hummingbird Project was the team\'s response to the need for a more precise and quickly configurable aircraft many years ago. The Wasp series of Unmanned Systems allows us to quickly change the payload and layout of the aircraft and fly different style missions within minutes of one another.' },
+  { id: 13, title: 'HYDRONE', subtitle: 'QUAD / 2nd at AEAC', year: '2024/25', img: cardImage11, description: 'Pellentesque habitant morbi tristique senectus et netus et malesuada.' }
+];
+
+const groundControl = [
+  { id: 14, title: 'GCATS', subtitle: 'Data Transfer', year: '2023/24', img: cardImage12, description: 'The GCATS (Ground Control Antenna Tracking Station) family of projects are custom-developed, long-range data transfer solutions capable of automatically relaying images and videos from drones flying at long ranges back to the ground control station. Their job is to autonomously track our aircraft in flight and point a directional antenna in that exact direction. This allows the team to use higher gain antennas as opposed to less optimal omnidirectional options. Additionally, the ability to modify the height of the antenna tracker counters the Fresnel effect’s impact on our operations.' },
+  { id: 15, title: 'GCOM', subtitle: 'Ground Command', year: '2023/24', img: cardImage13, description: 'Over the past years UBC UAS has been working on the next generation ground command software (GCOM). A single suit that acts as a data consolidation platform, it gathers information about the UAS from multiple sources (e.g. Mavlink) and provides the following functionality: - Antenna tracker control - Drone communication and control - Collision avoidance - Reliable Image download - Image object detection - Image geotagging - Analytics on processed images - Autonomously report generation. In addition to the above functionalities, GCOM was designed with reliability and modularity in mind. This allows UBC UAS to achieve higher reliability standards since each module can be independently tested against all possible inputs. Additionally, GCOM operates using a fully reliable communication protocol developed to transmit variable length data between any two devices (UAS Message) that utilize serial, TCP, or UDP communications.' }
 ];
 
 const legacyProjects = [
-  { id: 10, title: 'ODLC', subtitle: 'Machine Learning', year: '2023/24', img: cardImage4, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.' },
-  { id: 11, title: 'HUMMINGBIRD', subtitle: 'QUAD', year: '2023/24', img: cardImage2, description: 'The Hummingbird Project was the team\'s response to the need for a more precise and quickly configurable aircraft many years ago. The Wasp series of Unmanned Systems allows us to quickly change the payload and layout of the aircraft and fly different style missions within minutes of one another.' },
-  { id: 12, title: 'HYDRONE', subtitle: 'QUAD / 2nd at AEAC', year: '2024/25', img: cardImage3, description: 'Pellentesque habitant morbi tristique senectus et netus et malesuada.' }
+  { id: 19, title: 'Advanced Technology Demonstrator: Desert Hawk', subtitle: 'VTOL / 3rd at AEAC', year: '2017/18', img: cardImage14, description: 'Demanding real-world applications like Law Enforcement or Search And Rescue require high performance, multi-mission drones. The Advanced Technology Demonstrator was designed to be both a testbed of new drone technologies and the mission aircraft for the 2018 AUVSI SUAS competition. The Desert Hawk incorporated unique technologies and capabilities such as vortex generators and obstacle avoidance; it was also one of the first projects to include Augmented Reality prototyping to visualize subsystem integration. The project inspired growth and innovation for proceeding UBC UAS projects.' },
+  { id: 20, title: 'Raven', subtitle: 'VTOL / 3rd at AEAC', year: '2018/19', img: cardImage15, description: 'Project Raven was born out of a need for a stable, high-endurance multi-rotor platform. It was originally designed for an Australian Medical express competition to serve as an aerial relay station, halfway between the active aircraft and the ground station. Raven was retired in February of 2019 after serving as a versatile aircraft ideal for low altitude mapping of large areas as well as carrying and delivering heavy payloads. The modular payload attachments and option for multiple batteries further expanded its mission envelope.' },
+
+  { id: 21, title: 'Thunderbird', subtitle: 'Fixed-Wing and Recon', year: '2017/18', img: cardImage16, description: 'Project Thunderbird was UBC UAS’s fixed wing and aerial reconnaissance project. The Thunderbird series of Unmanned Aircraft Systems provided the team with a reliable in air system with a high payload capacity, long endurance missions, and large scale survey capabilities. The fixed-wings were based on the Cyclops C airframe which were generously sponsored by AsiaTech Drones. They were capable of carrying several kilograms worth of payload and gave us the ability to use high resolution DSLR cameras, stereo-vision imaging systems, and pack in more batteries to extend flight times.' },
+
+  { id: 22, title: 'Sparrow', subtitle: 'VTOL / 3rd at AEAC', year: '2017/18', img: cardImage17, description: 'Project Sparrow was created in an effort to react to recent changes in the UAS industry as well as the Unmanned Systems Canada Student Competition of its time. Due to a new influx of quick launch drones, as well as the recent time limit constraints of the competition, the team created the Sparrow Unmanned Aircraft System. With this aircraft we were able to hand launch from a moment’s notice and be in the air within seconds. The aircraft was equipped with the same surveying equipment as the larger Thunderbird aircraft, however is extremely compact and lightweight in comparison. With this aircraft the team was able to take large area surveys at a high altitude and return to base quickly, efficiently, and smoothly.' },
+
+  { id: 23, title: 'Flame Wheel', subtitle: 'VTOL / 3rd at AEAC', year: '2017/18', img: cardImage18, description: 'As a donation from UBC Studios, the Flame Wheel serves as a filming platform for promotional material as well as a pilot training aircraft. It’s always ready to go and never fails to deliver.' }
+
 ];
 
 /**
@@ -95,9 +138,6 @@ const ProjectRow = ({ title, projects }) => {
   );
 };
 
-/**
- * The main Projects page component
- */
 const Projects = () => {
   return (
     <main className="projects-page">
@@ -115,13 +155,13 @@ const Projects = () => {
         </div>
       </section>
 
-      {/* --- Main Content Section --- */}
       <div className="projects-content-wrapper">
         <section className="project-section">
           <h2 className="section-timeline">2019 - 2025</h2>
           <ProjectRow title="AIRCRAFT" projects={aircraftProjects} />
           <ProjectRow title="PAYLOAD" projects={payloadProjects} />
           <ProjectRow title="SOFTWARE" projects={softwareProjects} />
+          <ProjectRow title="GROUND CONTROL" projects={groundControl} />
         </section>
 
         <section className="project-section">

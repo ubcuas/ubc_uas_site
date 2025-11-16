@@ -170,3 +170,23 @@
     background-position: center;
   }
 }
+
+@media (min-width: 1024px) {
+  .stats__value {
+    font-size: clamp(4.25rem, 5vw, 8.75rem);
+  }
+
+  .stats__item--featured .stats__value {
+    font-size: clamp(5.25rem, 6vw, 10.5rem);
+  }
+
+  .stats__label {
+    font-size: clamp(1.15rem, 1.6vw, 2.1rem);
+    padding-inline: clamp(1.75rem, 3vw, 4rem);
+  }
+
+  .stats__item img {
+    width: clamp(4.5rem, 7vw, 9rem);
+    height: auto;
+  }
+}

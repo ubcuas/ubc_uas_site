@@ -21,7 +21,7 @@
 /* --- Hero Section --- */
 .projects-hero {
   position: relative;
-  height: 600px;
+  height: 800px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -151,7 +151,7 @@
   scroll-behavior: smooth;
   scrollbar-width: thin;
   scrollbar-color: #333 transparent;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 /* Hide scrollbar for cleaner look */
