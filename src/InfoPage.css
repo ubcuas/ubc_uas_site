@@ -1,5 +1,10 @@
 .info-page {
   --info-page-image-ratio: 0.5;
+  --info-page-fluid-step: clamp(
+    0rem,
+    calc((clamp(320px, 100vw, 1440px) - 320px) * 0.0035),
+    4rem
+  );
 
   position: relative;
   display: flex;
@@ -43,7 +48,7 @@
   flex-direction: column;
   gap: clamp(1.25rem, 3vw, 2rem);
   max-width: 40rem;
-  z-index: 1;
+  z-index: 2;
 }
 
 
@@ -91,12 +96,15 @@
 .info-page__cta:focus-visible {
   transform: translateY(-1px);
   filter: brightness(1.05);
+  color: #ffffff;
 }
 
 .sponsorship-details {
   background-color: #040a14;
   padding: clamp(3.5rem, 8vw, 6rem) clamp(1.5rem, 8vw, 5rem) clamp(4rem, 10vw, 7rem);
   color: rgba(236, 242, 255, 0.95);
+  position: relative;
+  overflow: hidden;
 }
 
 .sponsorship-details__container {
@@ -105,6 +113,8 @@
   display: grid;
   gap: clamp(1.5rem, 3vw, 2.5rem);
   text-align: left;
+  position: relative;
+  z-index: 1;
 }
 
 .sponsorship-details__title {
@@ -155,6 +165,7 @@
   transform: translateY(-2px);
   box-shadow: 0 22px 44px rgba(45, 160, 220, 0.45);
   filter: brightness(1.05);
+  color: #ffffff;
 }
 
 .sponsorship-details__cta--secondary {
@@ -169,6 +180,7 @@
   background: rgba(224, 236, 255, 0.12);
   filter: none;
   box-shadow: 0 12px 28px rgba(45, 160, 220, 0.25);
+  color: #ffffff;
 }
 
 .sponsor-tiers {
@@ -197,6 +209,34 @@
 .sponsor-tiers__tier {
   display: grid;
   gap: clamp(1rem, 3vw, 1.75rem);
+}
+
+.sponsorship-details__drone {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .sponsorship-details__drone {
+    display: block;
+    position: absolute;
+    top: clamp(5.5rem, 4vw, 6.5rem);
+    left: 50%;
+    width: clamp(420px, 38vw, 640px);
+    height: clamp(240px, 22vw, 380px);
+    transform: translateX(-50%) rotate(-8deg);
+    background: url('./assets/home/last-screen/drone.png') center/contain no-repeat;
+    opacity: 0.38;
+    filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.55));
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .sponsorship-details__body,
+  .sponsorship-details__actions,
+  .sponsorship-details__cta {
+    position: relative;
+    z-index: 1;
+  }
 }
 
 .sponsor-tiers__tier-title {
@@ -234,6 +274,7 @@
   transform: translateY(-3px);
   filter: none;
   box-shadow: 0 22px 44px rgba(24, 110, 184, 0.25);
+  color: #ffffff;
 }
 
 .sponsor-tiers__image {

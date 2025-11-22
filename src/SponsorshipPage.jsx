@@ -37,6 +37,7 @@ const SponsorshipPage = () => {
           <h2 className="sponsorship-details__title" id="sponsorship-details-title">
             Why Sponsor Us?
           </h2>
+          <span className="sponsorship-details__drone" aria-hidden="true" />
           <p className="sponsorship-details__body">
             We reach thousands of Canadians through our active participation in national and
             international autonomous aircraft competitions. Additionally, we facilitate youth
@@ -72,6 +73,7 @@ const SponsorshipPage = () => {
               Donate to UBC UAS
             </a>
           </div>
+
         </div>
       </section>
 

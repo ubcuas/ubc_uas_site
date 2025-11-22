@@ -131,6 +131,7 @@
 .navbar__button:hover,
 .navbar__button:focus-visible {
   transform: translateY(-1px);
+  color: #ffffff;
 }
 
 .navbar__button:focus-visible {
@@ -160,6 +161,7 @@
 .navbar__button--active:hover,
 .navbar__button--active:focus-visible {
   box-shadow: 0 18px 36px rgba(80, 137, 255, 0.55);
+  color: #ffffff;
 }
 
 .navbar__button--has-arrow {
