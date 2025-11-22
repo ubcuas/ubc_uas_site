@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './ProjectsPage.css';
 import heropic from './assets/pages/projects/hero-background.png';
 import Hydrone from './assets/carousel/Hydrone.png';
@@ -108,17 +108,67 @@ const ProjectRow = ({ title, projects }) => {
     const card = container.querySelector('.project-card');
     if (!card) return;
 
-    const cardWidth = card.offsetWidth;
+    const cardWidth = card.getBoundingClientRect().width;
     const styles = window.getComputedStyle(container);
-    const gap = parseInt(styles.columnGap || styles.gap || 16);
-
+    const gapCandidates = [
+      parseFloat(styles.columnGap),
+      parseFloat(styles.gap),
+      parseFloat(styles.getPropertyValue('column-gap')),
+      parseFloat(styles.getPropertyValue('gap'))
+    ];
+    const gap = gapCandidates.find(value => Number.isFinite(value)) || 0;
     const scrollAmount = cardWidth + gap;
 
-    container.scrollTo({
-      left: container.scrollLeft + (direction === 'left' ? -scrollAmount : scrollAmount),
+    container.scrollBy({
+      left: direction === 'left' ? -scrollAmount : scrollAmount,
       behavior: 'smooth'
     });
   };
+
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return undefined;
+
+    let pointerId = null;
+    let startX = 0;
+    let startScroll = 0;
+
+    const onPointerDown = (event) => {
+      if (!event.isPrimary) return;
+      pointerId = event.pointerId;
+      startX = event.clientX;
+      startScroll = container.scrollLeft;
+      container.classList.add('is-dragging');
+      container.setPointerCapture?.(pointerId);
+    };
+
+    const onPointerMove = (event) => {
+      if (pointerId !== event.pointerId) return;
+      const deltaX = event.clientX - startX;
+      container.scrollLeft = startScroll - deltaX;
+    };
+
+    const onPointerRelease = (event) => {
+      if (pointerId !== event.pointerId) return;
+      container.classList.remove('is-dragging');
+      container.releasePointerCapture?.(pointerId);
+      pointerId = null;
+    };
+
+    container.addEventListener('pointerdown', onPointerDown);
+    container.addEventListener('pointermove', onPointerMove);
+    container.addEventListener('pointerup', onPointerRelease);
+    container.addEventListener('pointercancel', onPointerRelease);
+    container.addEventListener('pointerleave', onPointerRelease);
+
+    return () => {
+      container.removeEventListener('pointerdown', onPointerDown);
+      container.removeEventListener('pointermove', onPointerMove);
+      container.removeEventListener('pointerup', onPointerRelease);
+      container.removeEventListener('pointercancel', onPointerRelease);
+      container.removeEventListener('pointerleave', onPointerRelease);
+    };
+  }, []);
 
   return (
     <div className="project-row">

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 export default function ImageCarousel({ slides = [] }) {
   const [index, setIndex] = useState(0);
@@ -6,15 +6,15 @@ export default function ImageCarousel({ slides = [] }) {
 
   const hasSlides = slides.length > 0;
 
-  const go = (dir) => {
+  const go = useCallback((dir) => {
     if (!hasSlides) return;
     setIndex((i) => (i + dir + slides.length) % slides.length);
-  };
+  }, [hasSlides, slides.length]);
 
-  const goto = (i) => {
+  const goto = useCallback((i) => {
     if (!hasSlides) return;
     setIndex(((i % slides.length) + slides.length) % slides.length);
-  };
+  }, [hasSlides, slides.length]);
 
   // Keyboard arrows
   useEffect(() => {
@@ -30,30 +30,51 @@ export default function ImageCarousel({ slides = [] }) {
   // Swipe support
   useEffect(() => {
     const el = trackRef.current;
-    if (!el || !hasSlides) return;
+    if (!el || !hasSlides) return undefined;
 
+    let pointerId = null;
     let startX = 0;
-    let dx = 0;
+    let deltaX = 0;
 
-    const onTouchStart = (e) => (startX = e.touches[0].clientX);
-    const onTouchMove = (e) => (dx = e.touches[0].clientX - startX);
-    const onTouchEnd = () => {
-      if (dx > 50) go(-1);
-      else if (dx < -50) go(1);
-      dx = 0;
+    const onPointerDown = (event) => {
+      if (!event.isPrimary) return;
+      pointerId = event.pointerId;
+      startX = event.clientX;
+      deltaX = 0;
+      el.classList.add("is-dragging");
+      el.setPointerCapture?.(pointerId);
     };
 
-    el.addEventListener("touchstart", onTouchStart, { passive: true });
-    el.addEventListener("touchmove", onTouchMove, { passive: true });
-    el.addEventListener("touchend", onTouchEnd);
+    const onPointerMove = (event) => {
+      if (pointerId !== event.pointerId) return;
+      deltaX = event.clientX - startX;
+    };
+
+    const onPointerEnd = (event) => {
+      if (pointerId !== event.pointerId) return;
+      if (Math.abs(deltaX) > 40) {
+        go(deltaX > 0 ? -1 : 1);
+      }
+      el.classList.remove("is-dragging");
+      el.releasePointerCapture?.(pointerId);
+      pointerId = null;
+      deltaX = 0;
+    };
+
+    el.addEventListener("pointerdown", onPointerDown);
+    el.addEventListener("pointermove", onPointerMove);
+    el.addEventListener("pointerup", onPointerEnd);
+    el.addEventListener("pointercancel", onPointerEnd);
+    el.addEventListener("pointerleave", onPointerEnd);
 
     return () => {
-      el.removeEventListener("touchstart", onTouchStart);
-      el.removeEventListener("touchmove", onTouchMove);
-      el.removeEventListener("touchend", onTouchEnd);
+      el.removeEventListener("pointerdown", onPointerDown);
+      el.removeEventListener("pointermove", onPointerMove);
+      el.removeEventListener("pointerup", onPointerEnd);
+      el.removeEventListener("pointercancel", onPointerEnd);
+      el.removeEventListener("pointerleave", onPointerEnd);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [hasSlides, slides.length]);
+  }, [hasSlides, go]);
 
   return (
     <div className="carousel" role="region" aria-label="Team photos carousel">
@@ -62,7 +83,9 @@ export default function ImageCarousel({ slides = [] }) {
         aria-label="Previous slide"
         onClick={() => go(-1)}
         disabled={!hasSlides}
-      />
+      >
+        <span aria-hidden="true">&lt;</span>
+      </button>
       <div className="carousel__viewport">
         <div
           className="carousel__track"
@@ -83,7 +106,9 @@ export default function ImageCarousel({ slides = [] }) {
         aria-label="Next slide"
         onClick={() => go(1)}
         disabled={!hasSlides}
-      />
+      >
+        <span aria-hidden="true">&gt;</span>
+      </button>
 
       <div className="carousel__dots" role="tablist" aria-label="Slides">
         {slides.map((_, i) => (

@@ -223,6 +223,7 @@
 .last-screen__cta:hover {
   transform: translateY(-2px);
   box-shadow: 0 22px 44px rgba(45, 160, 220, 0.45);
+  color: #ffffff;
 }
 
 .last-screen__sponsor-message {
