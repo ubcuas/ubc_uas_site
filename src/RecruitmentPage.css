@@ -95,7 +95,6 @@
   
   /* === CURVED BLUE TIMELINE === */
   
-  
   .recruitment-timeline {
     display: flex;
     flex-direction: column;
@@ -151,7 +150,6 @@
   /* Positions tuned to match Figma and stay off the line
      (height is 360px in the SVG, hence these percentages) */
   .recruitment-timeline__item--imagine {
-    
     top: 15%;
     right: 58%;
     text-align: right;
@@ -209,6 +207,41 @@
     color: #b7c0d3;
   }
   
+  /* === TEAM INFORMATION === */
+  
+  .recruitment-teams__intro {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #c7cfe0;
+    max-width: 45rem;
+    margin: 0.25rem auto 2rem;
+    text-align: center;
+  }
+  
+  .recruitment-teams__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2×2 grid on desktop */
+    gap: 3rem 4rem;
+    justify-items: center;
+  }
+  
+  .recruitment-team {
+    max-width: 300px;
+    text-align: center;
+  }
+  
+  .recruitment-team__name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+  
+  .recruitment-team__body {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #c5cde0;
+  }
+  
   /* === MOBILE: fall back to vertical list === */
   
   @media (max-width: 768px) {
@@ -232,52 +265,8 @@
       text-align: left;
     }
   
-  
-  
-    .recruitment-teams__intro {
-        font-size: 1.2rem;
-        line-height: 1.5;
-        color: #c7cfe0;
-        max-width: 45rem;
-        margin: 0.25rem auto 2rem;
-        text-align: center;
-      }
-      
-      .recruitment-teams__grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr)); /* TWO columns */
-        gap: 3rem 4rem;
-        justify-items: center;
-      }
-      
-      .recruitment-team {
-        max-width: 300px;
-        text-align: center;
-      }
-      
-      .recruitment-team__name {
-        font-size: 1.25rem;
-        font-weight: 700;
-        margin-bottom: 0.4rem;
-      }
-      
-      .recruitment-team__body {
-        font-size: 1.1rem;
-        line-height: 1.5;
-        color: #c5cde0;
-      }
-      
-      /* === RESPONSIVE === */
-      
-      @media (max-width: 1024px) {
-        .recruitment-panel {
-          border-radius: 1.4rem;
-          padding: 2.25rem 2rem 2.75rem;
-        }
-      
-        .recruitment-teams__grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 2rem 2rem;
-        }
-      }
+    .recruitment-teams__grid {
+      grid-template-columns: 1fr;
     }
+  }
+  
