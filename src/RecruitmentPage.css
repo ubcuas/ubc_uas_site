@@ -90,7 +90,7 @@
     font-size: 1.1rem;
     letter-spacing: 0.18em;
     text-align: center;
-    margin-bottom: 1.9rem;
+    margin-bottom: 4rem;
   }
   
   /* === CURVED BLUE TIMELINE === */
@@ -110,7 +110,8 @@
   }
   
   /* SVG curve */
-  .recruitment-timeline__path {
+  /* SVG curve */
+.recruitment-timeline__path {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -118,6 +119,7 @@
     pointer-events: none;
   }
   
+  /* Base dashed style */
   .recruitment-timeline__path-line {
     fill: none;
     stroke: #2da0dc;          /* Figma blue */
@@ -125,6 +127,57 @@
     stroke-dasharray: 10 30;  /* Figma dashes: 10, 30 */
     stroke-linecap: round;
   }
+  
+  /* Animation layer – applies because of the extra class in JSX */
+/* Animated version: draw first, then conveyor belt */
+/* Base dashed style (unchanged) */
+/* Base dashed style */
+.recruitment-timeline__path-line {
+    fill: none;
+    stroke: #2da0dc;          /* Figma blue */
+    stroke-width: 2px;
+    stroke-dasharray: 10 30;  /* your dashed pattern */
+    stroke-linecap: round;
+  }
+  
+  /* Animation layer */
+  .recruitment-timeline__path-line--animated {
+    /* Big dash/offset to "hide" the line initially */
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation:
+      timeline-draw 2s ease-out forwards,          /* initial wipe */
+      timeline-dashify 0.01s linear 2s forwards,   /* snap to dashed */
+      timeline-scroll 3s linear 2s infinite;     /* conveyor belt */
+  }
+  
+  /* 1) Draw the line from start to end */
+  @keyframes timeline-draw {
+    from {
+      stroke-dashoffset: 1000;  /* fully hidden */
+    }
+    to {
+      stroke-dashoffset: 0;     /* fully drawn */
+    }
+  }
+  
+  /* 2) After it’s fully drawn, switch to your dashed pattern */
+  @keyframes timeline-dashify {
+    to {
+      stroke-dasharray: 10 30;
+    }
+  }
+  
+  /* 3) Then run the conveyor belt forever */
+  @keyframes timeline-scroll {
+    from {
+      stroke-dashoffset: 0;
+    }
+    to {
+      stroke-dashoffset: -40; /* same direction you liked */
+    }
+  }
+  
   
   .recruitment-timeline__icon,
   .recruitment-timeline__flag-icon {
@@ -147,8 +200,7 @@
     max-width: 260px;
   }
   
-  /* Positions tuned to match Figma and stay off the line
-     (height is 360px in the SVG, hence these percentages) */
+  /* Positions tuned to match Figma and stay off the line */
   .recruitment-timeline__item--imagine {
     top: 15%;
     right: 58%;
@@ -169,8 +221,8 @@
   
   .recruitment-timeline__item--online {
     top: 38%;
-    right: -07%;
-    text-align: middle;
+    right: -7%;
+    text-align: center; /* 'middle' isn't valid; use center */
   }
   
   .recruitment-timeline__item--close {

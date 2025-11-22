@@ -75,7 +75,7 @@ const RecruitmentPage = () => {
                   aria-hidden="true"
                 >
                   <path
-                    className="recruitment-timeline__path-line"
+                    className="recruitment-timeline__path-line recruitment-timeline__path-line--animated"
                     d="
                       M 80 35
                       Q 170 10 270 70
