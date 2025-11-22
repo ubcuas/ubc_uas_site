@@ -109,11 +109,11 @@
 
 @media (min-width: 1024px) {
   .who-we-are__title {
-    font-size: clamp(3.4rem, 4.1vw, 6.3rem);
+    font-size: clamp(3.2rem, 3.8vw, 5.8rem);
   }
 
   .who-we-are__description {
-    font-size: clamp(1.25rem, 1.6vw, 2.1rem);
+    font-size: clamp(1.15rem, 1.45vw, 1.9rem);
   }
 }
 
