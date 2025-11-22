@@ -102,14 +102,22 @@ const ProjectRow = ({ title, projects }) => {
   const scrollRef = useRef(null);
 
   const scroll = (direction) => {
-    if (scrollRef.current) {
-      const scrollAmount = 370; // card width + gap
-      const newScrollLeft = scrollRef.current.scrollLeft + (direction === 'left' ? -scrollAmount : scrollAmount);
-      scrollRef.current.scrollTo({
-        left: newScrollLeft,
-        behavior: 'smooth'
-      });
-    }
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const card = container.querySelector('.project-card');
+    if (!card) return;
+
+    const cardWidth = card.offsetWidth;
+    const styles = window.getComputedStyle(container);
+    const gap = parseInt(styles.columnGap || styles.gap || 16);
+
+    const scrollAmount = cardWidth + gap;
+
+    container.scrollTo({
+      left: container.scrollLeft + (direction === 'left' ? -scrollAmount : scrollAmount),
+      behavior: 'smooth'
+    });
   };
 
   return (

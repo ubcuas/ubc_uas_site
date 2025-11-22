@@ -19,7 +19,7 @@ const Footer = () => {
       </div>
       <p className="footer__legal-stuff">© 2025 UBC Uncrewed Aircraft Systems</p>
       <div className="footer__social-block">
-        <p className="footer__email">ubcuasemail@ubc.ca</p>
+        <p className="footer__email">info@ubcuas.com</p>
         <nav className="footer__social" aria-label="Social links">
           <a
             className="footer__social-link footer__social-link--linkedin"
