@@ -95,20 +95,22 @@
   
   /* === CURVED BLUE TIMELINE === */
   
+  
   .recruitment-timeline {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   
+  /* Match Figma-ish aspect ratio for the curve */
   .recruitment-timeline__canvas {
     position: relative;
-    width: 100%;
-    max-width: 800px;
+    width: min(100%, 800px);
     margin: 0 auto;
+    aspect-ratio: 600 / 360;
   }
   
-  /* SVG that draws our curve */
+  /* SVG curve */
   .recruitment-timeline__path {
     position: absolute;
     inset: 0;
@@ -119,26 +121,24 @@
   
   .recruitment-timeline__path-line {
     fill: none;
-    stroke: #39a9ff;
-    stroke-width: 2;
-    stroke-dasharray: 6 10;
+    stroke: #2da0dc;          /* Figma blue */
+    stroke-width: 2px;
+    stroke-dasharray: 10 30;  /* Figma dashes: 10, 30 */
     stroke-linecap: round;
   }
   
-  /* imported SVG icons */
   .recruitment-timeline__icon,
   .recruitment-timeline__flag-icon {
     pointer-events: none;
   }
   
-  /* text/events over the curve */
-  
+  /* Text / events overlay */
   .recruitment-timeline__list {
-    position: relative;
-    list-style: none;
+    position: absolute;
+    inset: 0;
     margin: 0;
     padding: 0;
-    height: 360px; /* should match SVG height */
+    list-style: none;
     font-size: 0.88rem;
     color: #f5f7ff;
   }
@@ -148,57 +148,58 @@
     max-width: 260px;
   }
   
-  /* positions tuned to roughly match the Figma */
-  
+  /* Positions tuned to match Figma and stay off the line
+     (height is 360px in the SVG, hence these percentages) */
   .recruitment-timeline__item--imagine {
-    top: 40px;
-    left: 40px;
-    text-align: left;
-  }
-  
-  .recruitment-timeline__item--apps-open {
-    top: 20px;
-    right: 40px;
+    
+    top: 15%;
+    right: 58%;
     text-align: right;
   }
   
+  .recruitment-timeline__item--apps-open {
+    top: -10%;
+    left: 7%;
+    text-align: left;
+  }
+  
   .recruitment-timeline__item--in-person {
-    top: 90px;
-    left: 90px;
+    top: 9%;
+    left: 55%;
     text-align: left;
   }
   
   .recruitment-timeline__item--online {
-    top: 135px;
-    right: 90px;
-    text-align: right;
+    top: 38%;
+    right: -07%;
+    text-align: middle;
   }
   
   .recruitment-timeline__item--close {
-    top: 190px;
-    left: 120px;
+    top: 62%;
+    right: 24%;
     text-align: left;
   }
   
   .recruitment-timeline__item--results {
-    top: 235px;
-    right: 80px;
-    text-align: right;
-  }
-  
-  .recruitment-timeline__item--meeting {
-    top: 295px;
-    left: 70px;
+    top: 68%;
+    right: 60%;
     text-align: left;
   }
   
-  /* Figma-like label styling */
+  .recruitment-timeline__item--meeting {
+    top: 92%;
+    left: 8%;
+    text-align: left;
+  }
+  
+  /* Typography */
   .recruitment-timeline__label {
     font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro",
       system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-weight: 600;
     font-size: 1rem;
-    line-height: 1;
+    line-height: 0.6;
     letter-spacing: 0.03em;
     color: #ffffff;
   }
@@ -208,72 +209,20 @@
     color: #b7c0d3;
   }
   
-  /* === TEAM INFORMATION === */
-  
-  .recruitment-teams__intro {
-    font-size: 1.2rem;
-    line-height: 1.5;
-    color: #c7cfe0;
-    max-width: 45rem;
-    margin: 0.25rem auto 2rem;
-    text-align: center;
-  }
-  
-  .recruitment-teams__grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr)); /* TWO columns */
-    gap: 3rem 4rem;
-    justify-items: center;
-  }
-  
-  .recruitment-team {
-    max-width: 300px;
-    text-align: center;
-  }
-  
-  .recruitment-team__name {
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 0.4rem;
-  }
-  
-  .recruitment-team__body {
-    font-size: 1.1rem;
-    line-height: 1.5;
-    color: #c5cde0;
-  }
-  
-  /* === RESPONSIVE === */
-  
-  @media (max-width: 1024px) {
-    .recruitment-panel {
-      border-radius: 1.4rem;
-      padding: 2.25rem 2rem 2.75rem;
-    }
-  
-    .recruitment-teams__grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 2rem 2rem;
-    }
-  }
+  /* === MOBILE: fall back to vertical list === */
   
   @media (max-width: 768px) {
-    .recruitment-details {
-      padding: 3.5rem 0 4.5rem;
+    .recruitment-timeline__canvas {
+      aspect-ratio: auto;
     }
   
-    .recruitment-panel {
-      max-width: 100%;
-      border-radius: 0;
-    }
-  
-    /* On mobile, simplify to vertical list (no curve) */
     .recruitment-timeline__path {
       display: none;
     }
   
     .recruitment-timeline__list {
-      height: auto;
+      position: static;
+      padding-top: 0.5rem;
     }
   
     .recruitment-timeline__item {
@@ -283,8 +232,52 @@
       text-align: left;
     }
   
-    .recruitment-teams__grid {
-      grid-template-columns: 1fr;
-    }
-  }
   
+  
+    .recruitment-teams__intro {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        color: #c7cfe0;
+        max-width: 45rem;
+        margin: 0.25rem auto 2rem;
+        text-align: center;
+      }
+      
+      .recruitment-teams__grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* TWO columns */
+        gap: 3rem 4rem;
+        justify-items: center;
+      }
+      
+      .recruitment-team {
+        max-width: 300px;
+        text-align: center;
+      }
+      
+      .recruitment-team__name {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 0.4rem;
+      }
+      
+      .recruitment-team__body {
+        font-size: 1.1rem;
+        line-height: 1.5;
+        color: #c5cde0;
+      }
+      
+      /* === RESPONSIVE === */
+      
+      @media (max-width: 1024px) {
+        .recruitment-panel {
+          border-radius: 1.4rem;
+          padding: 2.25rem 2rem 2.75rem;
+        }
+      
+        .recruitment-teams__grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 2rem 2rem;
+        }
+      }
+    }

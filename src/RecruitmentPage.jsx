@@ -1,12 +1,10 @@
-import './RecruitmentPage.css'
+import "./RecruitmentPage.css";
 
-// TODO: replace these paths with your actual asset paths
-import TimelinePin from './assets/icons/pin.png'
-import TimelineFlag from './assets/icons/flag.png'
+import TimelinePin from "./assets/icons/pin.png";
+import TimelineFlag from "./assets/icons/flag.png";
 
+const RECRUITMENT_OPEN = true; // toggle when cycle is live
 
-const RECRUITMENT_OPEN = true // toggle when cycle is live
-//   src\assets\recruitment_pin.png
 const RecruitmentPage = () => {
   return (
     <main>
@@ -73,7 +71,7 @@ const RecruitmentPage = () => {
                 <svg
                   className="recruitment-timeline__path"
                   viewBox="0 0 600 360"
-                  preserveAspectRatio="none"
+                  preserveAspectRatio="xMidYMid meet"
                   aria-hidden="true"
                 >
                   <path
@@ -89,64 +87,67 @@ const RecruitmentPage = () => {
                     "
                   />
 
-                  {/* 
-                    ICONS ON THE LINE
-                    We intentionally skip an icon at the very start so the
-                    FIRST icon you see on the line is Applications Open,
-                    matching the Figma.
-                  */}
-
-                  {/* Applications Open */}
+                  {/* Application Open  pin */}
                   <image
                     href={TimelinePin}
-                    x={270 - 9}
-                    y={70 - 9}
+                    x={62}
+                    y={20}
                     width="18"
                     height="18"
                     className="recruitment-timeline__icon"
                   />
 
-                  {/* In-Person Info Session */}
+                  {/* Imagine Day pin */}
                   <image
                     href={TimelinePin}
-                    x={420 - 9}
-                    y={110 - 9}
+                    x={250}
+                    y={50}
                     width="18"
                     height="18"
                     className="recruitment-timeline__icon"
                   />
 
-                  {/* Online Info Session */}
+                  {/* In-Person Info Session pin */}
                   <image
                     href={TimelinePin}
-                    x={500 - 9}
-                    y={165 - 9}
+                    x={322}
+                    y={85}
                     width="18"
                     height="18"
                     className="recruitment-timeline__icon"
                   />
 
-                  {/* Applications Close */}
+                  {/* Online Info Session pin */}
                   <image
                     href={TimelinePin}
-                    x={420 - 9}
-                    y={220 - 9}
+                    x={491}
+                    y={150}
                     width="18"
                     height="18"
                     className="recruitment-timeline__icon"
                   />
 
-                  {/* Results Released */}
+                  {/* Applications Close pin */}
                   <image
                     href={TimelinePin}
-                    x={280 - 9}
-                    y={260 - 9}
+                    x={390}
+                    y={200}
                     width="18"
                     height="18"
                     className="recruitment-timeline__icon"
                   />
 
-                  {/* First Meeting (flag icon) */}
+                  {/* Results Released pin */}
+                  <image
+                    href={TimelinePin}
+                    x={222}
+                    y={282}
+                    width="18"
+                    height="18"
+                    className="recruitment-timeline__icon"
+                  />
+
+                  {/* First Meeting flag */}
                   <image
                     href={TimelineFlag}
                     x={55 - 10}
@@ -159,7 +160,6 @@ const RecruitmentPage = () => {
 
                 {/* Events positioned near the path */}
                 <ol className="recruitment-timeline__list">
-                  {/* Imagine Day – floats near the top-left, not the first icon */}
                   <li className="recruitment-timeline__item recruitment-timeline__item--imagine">
                     <p className="recruitment-timeline__label">Imagine Day</p>
                     <p className="recruitment-timeline__meta">
@@ -271,9 +271,9 @@ const RecruitmentPage = () => {
                 <article className="recruitment-team">
                   <h4 className="recruitment-team__name">Software</h4>
                   <p className="recruitment-team__body">
-                    Handles mission software, including UTM tools, vision/M&amp;L
-                    pipelines, and ground-station interfaces that keep flights
-                    safe and autonomous.
+                    Handles mission software, including UTM tools,
+                    vision/M&amp;L pipelines, and ground-station interfaces that
+                    keep flights safe and autonomous.
                   </p>
                 </article>
               </div>
@@ -282,7 +282,7 @@ const RecruitmentPage = () => {
         </section>
       )}
     </main>
-  )
-}
+  );
+};
 
-export default RecruitmentPage
+export default RecruitmentPage;
