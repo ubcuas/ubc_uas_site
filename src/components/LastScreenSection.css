@@ -237,22 +237,80 @@
 }
 
 .last-screen__sponsor-carosel {
+  position: relative;
   display: flex;
   flex-direction: row;
+  height: 140px;
   width: min(100%, clamp(320px, 60vw, 520px));
   justify-content: center;
+  overflow: hidden;
 }
-.last-screen__sponsor-carosel img {
+/* .last-screen__sponsor-image {
   width: 100%;
   max-width: 100%;
   height: auto;
   object-fit: contain;
+} */
+.last-screen__sponsor-image {
+  position: absolute;
+  top: 0;
+  width: 10vw;
+  height: 100%;
+  object-fit: contain;      /* keeps logo proportional */
+  background: white;        /* white background */
+  padding: 12px;            /* space for uneven logo shapes */
+  border-radius: 12px;      /* smooth rounded corners */
+  box-sizing: border-box;   /* keeps padding inside the box */
+  transform: translateX(0);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-.last-screen__sponsor-text {
-  display: block;
-  font-size: calc(var(--last-screen-body) * var(--last-screen-type-scale));
-  letter-spacing: 0.08em;
+.image-stack-wrapper {
+  position: relative;     /* Anchors the absolute images inside */
+  width: 40vw;         /*            /* The fixed width you want */
 }
+
+.pos-left {
+  left: 0;
+  transform: scale(0.85);
+  opacity: 0.6;
+  z-index: 1;
+}
+
+/* CENTER SLOT: Pinned to center, large, on top */
+.pos-center {
+  left: 50%;
+  transform: translateX(-50%) scale(1.2); /* Centers it and Zooms in */
+  opacity: 1;
+  z-index: 10;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* RIGHT SLOT: Pinned to right, smaller */
+.pos-right {
+  right: 0;
+  transform: scale(0.85);
+  opacity: 0.6;
+  z-index: 1;
+}
+
+/* .wipe-in-right { transform: translateX(100%); animation: wipeInRight 0.5s forwards; }
+.wipe-in-left  { transform: translateX(-100%); animation: wipeInLeft 0.5s forwards; }
+.hidden { animation: fade 0.2s forwards; }
+
+@keyframes wipeInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes wipeInLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fade {
+  from {opacity: 1;}
+  to   {opacity: 0;}
+} */
 
 @media (max-width: 600px) {
   .last-screen {
