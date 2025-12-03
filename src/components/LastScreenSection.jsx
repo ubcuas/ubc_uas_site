@@ -36,11 +36,10 @@ const LastScreenSection = () => {
   const [count, setCount] = useState(1);
   const [countRight, setCountRight] = useState(2);
   const [animating, setAnimating] = useState(false);
-  const [direction, setDirection] = useState("right");
+
 const rightButton = () => {
   if (animating) 
     return false;
-  setDirection("right");
   const prev = count;
     
   setAnimating(true);
@@ -55,7 +54,6 @@ const rightButton = () => {
 const leftButton = () => {
   if (animating) 
     return false;
-  setDirection("left");
   const prev = count;
     
   setAnimating(true);

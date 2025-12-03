@@ -1,26 +1,12 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import NavBar from './NavBar'
-import HomeHero from './HomeHero'
-import StatsSection from './components/StatsSection'
-import MissionSection from './components/MissionSection'
+import HomePage from './HomePage/HomePage'
 import ProjectsPage from './ProjectsPage'
 import TeamPage from './TeamPage/TeamPage'
-import RecruitmentPage from './RecruitmentPage'
-import SponsorshipPage from './SponsorshipPage'
-import WhoWeAreSection from './components/WhoWeAreSection'
-import LastScreenSection from './components/LastScreenSection'
+import RecruitmentPage from './RecruitmentPage/RecruitmentPage'
+import SponsorshipPage from './SponsorshipPage/SponsorshipPage'
 import Footer from './footer'
 import './App.css'
-
-const HomePage = () => (
-  <>
-    <HomeHero />
-    <StatsSection />
-    <MissionSection />
-    <WhoWeAreSection />
-    <LastScreenSection />
-  </>
-)
 
 function App() {
   return (

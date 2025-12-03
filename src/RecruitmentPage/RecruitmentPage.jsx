@@ -1,7 +1,7 @@
 import "./RecruitmentPage.css";
 
-import TimelinePin from "./assets/icons/pin.png";
-import TimelineFlag from "./assets/icons/flag.png";
+import TimelinePin from "../assets/icons/pin.png";
+import TimelineFlag from "../assets/icons/flag.png";
 
 const RECRUITMENT_OPEN = true; // toggle when cycle is live
 

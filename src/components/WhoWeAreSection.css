@@ -1,148 +1,162 @@
 .who-we-are {
-  --who-we-are-fluid-step: clamp(
-    0rem,
-    calc((clamp(320px, 100vw, 1200px) - 320px) * 0.0035),
-    3rem
-  );
-  --who-we-are-bg-offset: clamp(-2rem, calc(var(--who-we-are-fluid-step) * -0.45), 0rem);
-  --who-we-are-content-offset: clamp(-1.25rem, calc(var(--who-we-are-fluid-step) * -0.3), 0rem);
-  --who-we-are-heading-size: clamp(
-    2.5rem,
-    calc(3.2rem + var(--who-we-are-fluid-step) * 1.1),
-    6.5rem
-  );
-  --who-we-are-body-size: clamp(
-    1.1rem,
-    calc(1.3rem + var(--who-we-are-fluid-step) * 0.45),
-    2.1rem
-  );
-  --who-we-are-max-width: min(108ch, calc(50vw + var(--who-we-are-fluid-step)));
-  --who-we-are-padding-block: clamp(3rem, calc(3.5rem + var(--who-we-are-fluid-step) * 0.35), 5.25rem);
-  --who-we-are-padding-inline: clamp(1.25rem, calc(1.5rem + var(--who-we-are-fluid-step) * 0.8), 5.5rem);
-  --who-we-are-image-ratio: 0.669;
-  --who-we-are-background-size: clamp(
-    420px,
-    calc(clamp(320px, 100vw, 1200px) * 0.95),
-    1200px
-  );
-  --who-we-are-background-bleed: 0px;
-  --who-we-are-type-scale: calc(var(--page-viewport-scale) * 1.25);
+    --who-we-are-fluid-step: clamp(0rem,
+            calc((clamp(320px, 100vw, 1200px) - 320px) * 0.0035),
+            3rem);
+    --who-we-are-bg-offset: clamp(-2rem, calc(var(--who-we-are-fluid-step) * -0.45), 0rem);
+    --who-we-are-content-offset: clamp(-1.25rem, calc(var(--who-we-are-fluid-step) * -0.3), 0rem);
+    --who-we-are-heading-size: clamp(2.5rem,
+            calc(3.2rem + var(--who-we-are-fluid-step) * 1.1),
+            6.5rem);
+    --who-we-are-body-size: clamp(1.1rem,
+            calc(1.3rem + var(--who-we-are-fluid-step) * 0.45),
+            2.1rem);
+    --who-we-are-max-width: min(108ch, calc(50vw + var(--who-we-are-fluid-step)));
+    --who-we-are-padding-block: clamp(3rem, calc(3.5rem + var(--who-we-are-fluid-step) * 0.35), 5.25rem);
+    --who-we-are-padding-inline: clamp(1.25rem, calc(1.5rem + var(--who-we-are-fluid-step) * 0.8), 5.5rem);
+    --who-we-are-image-ratio: 0.669;
+    --who-we-are-background-size: clamp(420px,
+            calc(clamp(320px, 100vw, 1200px) * 0.95),
+            1200px);
+    --who-we-are-background-bleed: 0px;
+    --who-we-are-type-scale: calc(var(--page-viewport-scale) * 1.25);
 
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  min-height: max(
-    32rem,
-    calc(100vh - var(--nav-height, 0px)),
-    calc(100vw * var(--who-we-are-image-ratio))
-  );
-  padding: var(--who-we-are-padding-block) var(--who-we-are-padding-inline);
-  background-color: #040a14;
-  background-image: var(--who-we-are-background);
-  background-repeat: no-repeat;
-  background-position: center calc(45% + var(--who-we-are-bg-offset));
-  background-size: calc(var(--who-we-are-background-size) + var(--who-we-are-background-bleed)) auto;
-  color: #000000;
-  overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: max(32rem,
+            calc(100vh - var(--nav-height, 0px)),
+            calc(100vw * var(--who-we-are-image-ratio)));
+    padding: var(--who-we-are-padding-block) var(--who-we-are-padding-inline);
+    background-color: #040a14;
+    background-image: var(--who-we-are-background);
+    background-repeat: no-repeat;
+    background-position: center calc(45% + var(--who-we-are-bg-offset));
+    background-size: calc(var(--who-we-are-background-size) + var(--who-we-are-background-bleed)) auto;
+
+    /* Reverted to old code */
+    color: #000000;
+
+    /* Experimental (User's manual edit) */
+    /* color: #0f0e0e; */
+
+    overflow: hidden;
+    isolation: isolate;
 }
 
+/* Experimental Overlay (User's manual edit) - Commented out */
+/*
+.who-we-are::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(221, 224, 229, 0.27);
+    z-index: -1;
+    pointer-events: none;
+}
+*/
+
 .who-we-are__content {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-self:flex-start;
-  gap: clamp(1rem, 3vw, 1.75rem);
-  max-width: var(--who-we-are-max-width);
-  z-index: 1;
-  transform: translateY(var(--who-we-are-content-offset));
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: flex-start;
+    gap: clamp(1rem, 3vw, 1.75rem);
+    max-width: var(--who-we-are-max-width);
+    z-index: 1;
+    transform: translateY(var(--who-we-are-content-offset));
 }
 
 .who-we-are__title {
-  margin: 0;
-  font-size: calc(var(--who-we-are-heading-size) * var(--who-we-are-type-scale));
-  font-weight: 800;
-  letter-spacing: clamp(0.08em, 0.02em + 0.18vw, 0.18em);
-  text-transform: uppercase;
-  line-height: clamp(1, 0.8 + 0.1vw, 1.12);
+    margin: 0;
+    font-size: calc(var(--who-we-are-heading-size) * var(--who-we-are-type-scale));
+    font-weight: 800;
+    letter-spacing: clamp(0.08em, 0.02em + 0.18vw, 0.18em);
+    text-transform: uppercase;
+    line-height: clamp(1, 0.8 + 0.1vw, 1.12);
 }
 
 .who-we-are__description {
-  margin: 0;
-  font-size: calc(var(--who-we-are-body-size) * var(--who-we-are-type-scale));
-  text-align: center;
-  font-weight: 500;
-  line-height: clamp(1.45, 1.3 + 0.2vw, 1.7);
-  letter-spacing: 0.04em;
-  color: rgba(0, 0, 0, 0.92);
+    margin: 0;
+    font-size: calc(var(--who-we-are-body-size) * var(--who-we-are-type-scale));
+    text-align: center;
+    font-weight: 500;
+    line-height: clamp(1.45, 1.3 + 0.2vw, 1.7);
+    letter-spacing: 0.04em;
+
+    /* Reverted to old code */
+    color: rgba(0, 0, 0, 0.92);
+
+    /* Experimental (User's manual edit) */
+    /* color: rgba(28, 25, 25, 0.92); */
 }
 
 @media (max-width: 720px) {
-  .who-we-are {
-    justify-content: center;
-    text-align: center;
-    min-height: clamp(22rem, 60vh, 32rem);
-    padding: clamp(2.25rem, 10vw, 3.5rem) clamp(1rem, 6vw, 2.25rem);
-    background-size: cover;
-    background-position: center;
-  }
+    .who-we-are {
+        justify-content: center;
+        text-align: center;
+        min-height: clamp(22rem, 60vh, 32rem);
+        padding: clamp(2.25rem, 10vw, 3.5rem) clamp(1rem, 6vw, 2.25rem);
+        background-size: cover;
+        background-position: center;
+    }
 
-  .who-we-are__content {
-    align-items: center;
-    transform: none;
-  }
+    .who-we-are__content {
+        align-items: center;
+        transform: none;
+    }
 }
 
 @media (max-width: 480px) {
-  .who-we-are {
-    --who-we-are-padding-inline: clamp(1.25rem, 8vw, 2rem);
-    --who-we-are-content-offset: 0px;
-    --who-we-are-bg-offset: -0.5rem;
-    --who-we-are-type-scale: calc(var(--page-viewport-scale) * 0.7);
-  }
+    .who-we-are {
+        --who-we-are-padding-inline: clamp(1.25rem, 8vw, 2rem);
+        --who-we-are-content-offset: 0px;
+        --who-we-are-bg-offset: -0.5rem;
+        --who-we-are-type-scale: calc(var(--page-viewport-scale) * 0.7);
+    }
 
-  .who-we-are__description {
-    letter-spacing: 0.02em;
-  }
+    .who-we-are__description {
+        letter-spacing: 0.02em;
+    }
 }
 
 @media (min-width: 1024px) {
-  .who-we-are__title {
-    font-size: clamp(3.2rem, 3.8vw, 5.8rem);
-  }
+    .who-we-are__title {
+        font-size: clamp(3.2rem, 3.8vw, 5.8rem);
+    }
 
-  .who-we-are__description {
-    font-size: clamp(1.15rem, 1.45vw, 1.9rem);
-  }
+    .who-we-are__description {
+        font-size: clamp(1.15rem, 1.45vw, 1.9rem);
+    }
 }
 
 @media (min-width: 900px) and (max-width: 1199px) {
-  .who-we-are {
-    --who-we-are-type-scale: calc(var(--page-viewport-scale) * 1.75);
-  }
+    .who-we-are {
+        --who-we-are-type-scale: calc(var(--page-viewport-scale) * 1.75);
+    }
 }
 
 @media (min-width: 1200px) {
-  .who-we-are {
-    background-size: cover;
-    background-position: center;
-    --who-we-are-type-scale: calc(var(--page-viewport-scale) * 2.5);
-  }
+    .who-we-are {
+        background-size: cover;
+        background-position: center;
+        --who-we-are-type-scale: calc(var(--page-viewport-scale) * 2.5);
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1199px) {
-  .who-we-are {
-    --who-we-are-background-bleed: clamp(0px, (100vh - 0.88 * 100vw) * 0.45, 240px);
-  }
+    .who-we-are {
+        --who-we-are-background-bleed: clamp(0px, (100vh - 0.88 * 100vw) * 0.45, 240px);
+    }
 }
 
 @media (min-width: 721px) and (max-width: 1024px) {
-  .who-we-are {
-    --who-we-are-content-offset: -0.5rem;
-    min-height: clamp(24rem, 65vh, 34rem);
-    padding: clamp(2.5rem, 9vw, 4rem) clamp(1rem, 6vw, 2.25rem);
-    background-size: cover;
-    background-position: center;
-  }
+    .who-we-are {
+        --who-we-are-content-offset: -0.5rem;
+        min-height: clamp(24rem, 65vh, 34rem);
+        padding: clamp(2.5rem, 9vw, 4rem) clamp(1rem, 6vw, 2.25rem);
+        background-size: cover;
+        background-position: center;
+    }
 }

@@ -1,5 +1,5 @@
 import "./TeamPage.css";
-import ImageCarousel from "../ImageCarousel";
+import ImageCarousel from "./ImageCarousel";
 import TeamSection from "./TeamSection";
 import { teamData } from "./TeamData";
 
