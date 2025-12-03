@@ -15,7 +15,7 @@ export default function TeamPage() {
     { src: "src/assets/carousel/teamCarousel/carousel4.jpg", },
     { src: "src/assets/carousel/teamCarousel/carousel5.jpg", },
     { src: "src/assets/carousel/teamCarousel/carousel6.jpg", },
-    { src: "src/assets/carousel/teamCarousel/carousel7.jpgg", },
+    { src: "src/assets/carousel/teamCarousel/carousel7.jpg", },
 
   ];
 
