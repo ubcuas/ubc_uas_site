@@ -37,35 +37,19 @@ const LastScreenSection = () => {
   const [countRight, setCountRight] = useState(2);
   const [animating, setAnimating] = useState(false);
 
-const rightButton = () => {
-  if (animating) 
-    return false;
-  const prev = count;
-    
-  setAnimating(true);
-  setTimeout(() => {
-    setCount((prev + 1) % sponsors.length);
-    setCountLeft(prev );
-    setCountRight((prev + 2) % sponsors.length);
-    setAnimating(false);
-  }, 400);
-};
+  const rightButton = () => {
+    if (animating) return;
+    setAnimating(true);
+    setCount((prev) => (prev + 1) % sponsors.length);
+    setTimeout(() => setAnimating(false), 400);
+  };
 
-const leftButton = () => {
-  if (animating) 
-    return false;
-  const prev = count;
-    
-  setAnimating(true);
-  
-  setTimeout(() => {
-    setCount((prev - 1 + sponsors.length) % sponsors.length);
-    setCountRight(prev);
-    setCountLeft((prev - 2 + sponsors.length) % sponsors.length);
-    setAnimating(false);
-  }, 400);
-
-};
+  const leftButton = () => {
+    if (animating) return;
+    setAnimating(true);
+    setCount((prev) => (prev - 1 + sponsors.length) % sponsors.length);
+    setTimeout(() => setAnimating(false), 400);
+  };
   return (
     <section className="last-screen" id="sponsors" aria-labelledby="last-screen-title">
       <div className="last-screen__shell">
@@ -119,28 +103,32 @@ const leftButton = () => {
           </Link>
           <div className="last-screen__sponsor-message">
             <div className="last-screen__sponsor-carosel">
-              <button onClick={leftButton}> yes </button>
+              <button className="last-screen__nav-button" onClick={leftButton}> &#10094; </button>
                 <div className="image-stack-wrapper">
-                <img
-                  key={`sponsor-${countLeft}-${Math.random()}`}
-                  src={sponsors[countLeft]}
-                  className={`last-screen__sponsor-image pos-left`}
-                  alt=""
-                />
-                <img
-                  key={`sponsor-${count}-${Math.random()}`}
-                  src={sponsors[count]}
-                  className={`last-screen__sponsor-image pos-middle`}
-                  alt=""
-                />
-                <img
-                  key={`sponsor-${countRight}-${Math.random()}`}
-                  src={sponsors[countRight]}
-                  className={`last-screen__sponsor-image pos-right`}
-                  alt=""
-                />
+                  {sponsors.map((src, index) => {
+                    let positionClass = 'pos-hidden';
+                    const len = sponsors.length;
+                    
+                    // Calculate position relative to current count
+                    if (index === count) {
+                      positionClass = 'pos-center';
+                    } else if (index === (count - 1 + len) % len) {
+                      positionClass = 'pos-left';
+                    } else if (index === (count + 1) % len) {
+                      positionClass = 'pos-right';
+                    }
+
+                    return (
+                      <img
+                        key={src}
+                        src={src}
+                        className={`last-screen__sponsor-image ${positionClass}`}
+                        alt="Sponsor"
+                      />
+                    );
+                  })}
                 </div>
-              <button onClick={rightButton}> no </button>
+              <button className="last-screen__nav-button" onClick={rightButton}> &#10095; </button>
             </div>
             <p className="last-screen__sponsor-text">
               We are grateful for every donor that keeps UBC UAS innovating.

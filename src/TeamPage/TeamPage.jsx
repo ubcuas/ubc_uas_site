@@ -8,12 +8,15 @@ export default function TeamPage() {
   // Separate images specifically for the header carousel
   const carouselImages = [
     {
-      src: "src/assets/carousel/carousel1.jpg",
-      alt: "Team banquet – table selfie",
+      src: "src/assets/carousel/teamCarousel/carousel1.jpg",
     },
-    { src: "src/assets/carousel/carousel2.jpg", alt: "Flight test day" },
-    { src: "src/assets/carousel/carousel3.jpg", alt: "Avionics workshop" },
-    { src: "src/assets/carousel/carousel4.jpg", alt: "4th Image" },
+    { src: "src/assets/carousel/teamCarousel/carousel2.jpg", }, 
+    { src: "src/assets/carousel/teamCarousel/carousel3.png", },
+    { src: "src/assets/carousel/teamCarousel/carousel4.jpg", },
+    { src: "src/assets/carousel/teamCarousel/carousel5.jpg", },
+    { src: "src/assets/carousel/teamCarousel/carousel6.jpg", },
+    { src: "src/assets/carousel/teamCarousel/carousel7.jpgg", },
+
   ];
 
   return (

@@ -84,7 +84,7 @@ export default function ImageCarousel({ slides = [] }) {
         onClick={() => go(-1)}
         disabled={!hasSlides}
       >
-        <span aria-hidden="true">&lt;</span>
+        <span aria-hidden="true">&#10094;</span>
       </button>
       <div className="carousel__viewport">
         <div
@@ -107,7 +107,7 @@ export default function ImageCarousel({ slides = [] }) {
         onClick={() => go(1)}
         disabled={!hasSlides}
       >
-        <span aria-hidden="true">&gt;</span>
+        <span aria-hidden="true">&#10095;</span>
       </button>
 
       <div className="carousel__dots" role="tablist" aria-label="Slides">
