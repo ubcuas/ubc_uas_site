@@ -17,7 +17,7 @@ const Footer = () => {
           <span className="footer__tagline">Uncrewed Aircraft Systems</span>
         </div>
       </div>
-      <p className="footer__legal-stuff">© 2025 UBC Uncrewed Aircraft Systems</p>
+      <p className="footer__legal-stuff">© 2026 UBC Uncrewed Aircraft Systems</p>
       <div className="footer__social-block">
         <p className="footer__email">info@ubcuas.com</p>
         <nav className="footer__social" aria-label="Social links">
