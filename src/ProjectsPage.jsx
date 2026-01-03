@@ -14,8 +14,11 @@ import GCOM from './assets/carousel/GCOM.webp';
 import Raven from './assets/carousel/Raven.webp';
 import Sparrow from './assets/carousel/Sparrow.webp';
 import FlameWheel from './assets/carousel/FlameWheel.webp';
-
 import Thunderbird from './assets/carousel/Thunderbird.webp';
+import MPS from './assets/carousel/MPS.png';
+import SUAS from './assets/carousel/SUAS.png';
+import CAMVIS from './assets/carousel/Camvis.png';
+
 
 const heroImage = heropic;
 const cardImage1 = Hydrone;
@@ -36,6 +39,9 @@ const cardImage15 = Raven;
 const cardImage16 = Thunderbird;
 const cardImage17 = Sparrow;
 const cardImage18 = FlameWheel;
+const cardImage19 = MPS;
+const cardImage21 = CAMVIS;
+const cardImage22 = SUAS;
 
 const aircraftProjects = [
   { id: 1, title: 'HYDRONE', subtitle: 'QUAD / 2nd at AEAC', year: '2024/25', img: cardImage1, description: 'Hydrone was the team’s flagship aircraft for the 2025 season. With modularity in mind, Hydrone was designed to be versatile – allowing for quick and easy payload changes as well as easy disassembly. Hydrone had a great peformance last season during competition, leading to a 2nd place finish in AEAC 2025 and the highest scoring Canadian team for SUAS 2025!' },
@@ -49,15 +55,15 @@ const aircraftProjects = [
 ];
 
 const payloadProjects = [
-  { id: 8, title: 'ALBATROSS', subtitle: 'VTOL / 3rd at AEAC', year: '2023/24', img: cardImage7, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.' },
+  { id: 8, title: 'ALBATROSS', subtitle: 'VTOL / 3rd at AEAC', year: '2023/24', img: cardImage7, description: 'Albatross was the team’s premier aircraft for the 2023-2024 season. Built based on Dragonfly, Albatross is a VTOL aircraft that is designed to be super modular, allowing for quick and easy payload changes as well as easy disassembly. The team is currently working on Albatross to improve its flight performance and capabilities. Albatross competed in the 2024 AEAC and SUAS competitions. It was able to place 3rd overall at AEAC!' },
   { id: 9, title: 'HUMMINGBIRD', subtitle: 'QUAD', year: '2023/24', img: cardImage2, description: 'The Hummingbird Project was the team\'s response to the need for a more precise and quickly configurable aircraft many years ago. The Wasp series of Unmanned Systems allows us to quickly change the payload and layout of the aircraft and fly different style missions within minutes of one another.' },
-  { id: 10, title: 'HYDRONE', subtitle: 'QUAD / 2nd at AEAC', year: '2024/25', img: cardImage8, description: 'Pellentesque habitant morbi tristique senectus et netus et malesuada.' }
+  { id: 10, title: 'HYDRONE', subtitle: 'QUAD / 2nd at AEAC', year: '2024/25', img: cardImage8, description: 'Hydrone was the team’s flagship aircraft for the 2025 season. With modularity in mind, Hydrone was designed to be versatile – allowing for quick and easy payload changes as well as easy disassembly. Hydrone had a great peformance last season during competition, leading to a 2nd place finish in AEAC 2025 and the highest scoring Canadian team for SUAS 2025!' }
 ];
 
 const softwareProjects = [
-  { id: 11, title: 'ODLC', subtitle: 'Machine Learning', year: '2023/24', img: cardImage9, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.' },
-  { id: 12, title: 'HUMMINGBIRD', subtitle: 'QUAD', year: '2023/24', img: cardImage10, description: 'The Hummingbird Project was the team\'s response to the need for a more precise and quickly configurable aircraft many years ago. The Wasp series of Unmanned Systems allows us to quickly change the payload and layout of the aircraft and fly different style missions within minutes of one another.' },
-  { id: 13, title: 'HYDRONE', subtitle: 'QUAD / 2nd at AEAC', year: '2024/25', img: cardImage11, description: 'Pellentesque habitant morbi tristique senectus et netus et malesuada.' }
+  { id: 11, title: 'MPS', subtitle: 'INFO NEEDED', year: 'INFO NEEDED', img: cardImage19, description: 'INFO NEEDED' },
+  { id: 13, title: 'IR/Camera Vision', subtitle: 'INFO NEEDED', year: 'INFO NEEDED', img: cardImage21, description: 'INFO NEEDED' },
+  { id: 14, title: 'SUAS Mapping', subtitle: 'INFO NEEDED', year: 'INFO NEEDED', img: cardImage22, description: 'INFO NEEDED' },
 ];
 
 const groundControl = [
@@ -208,14 +214,14 @@ const Projects = () => {
         <div className="hero-content">
           <h1>PROJECTS</h1>
           <p>
-            Our projects are split into three distinct categories: aircraft, payload and software.  Aircraft is the blah lbah lbalh. Payload is the attachments we design to fulfill the tasks set out by our competitions. Software deals with balh lbahlba.
+            Our projects are split into three distinct categories: aircraft, payload, and software. Aircraft houses our propulsion and electronics. Payload is the attachments we design to fulfill the tasks set out by our competitions. Software is the intelligence that enables autonomous mission execution.
           </p>
         </div>
       </section>
 
       <div className="projects-content-wrapper">
         <section className="project-section">
-          <h2 className="section-timeline">2019 - 2025</h2>
+          <h2 className="section-timeline">2018 - 2025</h2>
           <ProjectRow title="AIRCRAFT" projects={aircraftProjects} />
           <ProjectRow title="PAYLOAD" projects={payloadProjects} />
           <ProjectRow title="SOFTWARE" projects={softwareProjects} />
