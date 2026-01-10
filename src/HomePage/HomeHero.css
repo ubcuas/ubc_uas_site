@@ -29,10 +29,12 @@
             calc(100vw * var(--home-hero-image-ratio)));
     padding: clamp(2.5rem, calc(3rem + var(--home-hero-fluid-step) * 0.4), 5.5rem) clamp(1rem, calc(1.5rem + var(--home-hero-fluid-step) * 0.4), 3rem) clamp(3rem, calc(3.5rem + var(--home-hero-fluid-step) * 0.5), 6rem);
     background-color: #040a14;
-    background-image: url('../assets/home-hero-bg.png');
+    background-image: url('../assets/home-hero-bg.JPG');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    filter: brightness(0.9) contrast(1.05) saturate(1.05);
+
     color: #ffffff;
     overflow: hidden;
 }
@@ -44,14 +46,7 @@
     pointer-events: none;
 }
 
-.home-hero__glow {
-    position: absolute;
-    inset: 0;
-    background: none;
-    mix-blend-mode: screen;
-    opacity: 0;
-    pointer-events: none;
-}
+
 
 .home-hero__inner {
     position: relative;
@@ -122,6 +117,7 @@
         padding-top: clamp(2rem, 8vw, 3rem);
         background-size: cover;
         background-position: center;
+        opacity: 0.8;
         --home-hero-content-offset: 0px;
     }
 
