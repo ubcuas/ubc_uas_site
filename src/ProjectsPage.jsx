@@ -206,6 +206,7 @@ const ProjectRow = ({ title, projects }) => {
 
     const onPointerDown = (event) => {
       if (!event.isPrimary) return;
+      if (event.pointerType === 'touch') return;
 
       // Prevent drag initiation if clicking the Read More button
       if (event.target.closest('.read-more')) return;

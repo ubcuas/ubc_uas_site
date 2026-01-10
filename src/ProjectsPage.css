@@ -529,6 +529,8 @@
 
   .cards-wrapper {
     padding: 0 1rem 1.5rem 1rem; /* Add side padding for swipe indication */
+    scroll-snap-type: none;
+    touch-action: pan-x pan-y;
   }
 }
 
