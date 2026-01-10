@@ -17,7 +17,6 @@ import Raven from './assets/carousel/Raven.webp';
 import Sparrow from './assets/carousel/Sparrow.webp';
 import FlameWheel from './assets/carousel/FlameWheel.webp';
 import Thunderbird from './assets/carousel/Thunderbird.webp';
-import MPS from './assets/carousel/MPS.png';
 import SUAS from './assets/carousel/SUAS.png';
 import CAMVIS from './assets/carousel/Camvis.png';
 const cardImage1 = Hydrone;
@@ -38,7 +37,6 @@ const cardImage15 = Raven;
 const cardImage16 = Thunderbird;
 const cardImage17 = Sparrow;
 const cardImage18 = FlameWheel;
-const cardImage19 = MPS;
 const cardImage21 = CAMVIS;
 const cardImage22 = SUAS;
 
@@ -60,15 +58,12 @@ const payloadProjects = [
 ];
 
 const softwareProjects = [
-  { id: 11, title: 'MPS', subtitle: 'INFO NEEDED', year: 'INFO NEEDED', img: cardImage19, description: 'INFO NEEDED' },
-  { id: 13, title: 'IR/Camera Vision', subtitle: 'INFO NEEDED', year: 'INFO NEEDED', img: cardImage21, description: 'INFO NEEDED' },
-  { id: 14, title: 'SUAS Mapping', subtitle: 'INFO NEEDED', year: 'INFO NEEDED', img: cardImage22, description: 'INFO NEEDED' },
+  { id: 11, title: 'GCOM', subtitle: 'Ground Command', year: '2023/24', img: cardImage13, description: 'Over the past years UBC UAS has been working on the next generation ground command software (GCOM). A single suit that acts as a data consolidation platform, it gathers information about the UAS from multiple sources (e.g. Mavlink) and provides the following functionality: - Antenna tracker control - Drone communication and control - Collision avoidance - Reliable Image download - Image object detection - Image geotagging - Analytics on processed images - Autonomously report generation. In addition to the above functionalities, GCOM was designed with reliability and modularity in mind. This allows UBC UAS to achieve higher reliability standards since each module can be independently tested against all possible inputs. Additionally, GCOM operates using a fully reliable communication protocol developed to transmit variable length data between any two devices (UAS Message) that utilize serial, TCP, or UDP communications.' },
+  { id: 12, title: 'GCATS', subtitle: 'Data Transfer', year: '2023/24', img: cardImage12, description: 'The GCATS (Ground Control Antenna Tracking Station) family of projects are custom-developed, long-range data transfer solutions capable of automatically relaying images and videos from drones flying at long ranges back to the ground control station. Their job is to autonomously track our aircraft in flight and point a directional antenna in that exact direction. This allows the team to use higher gain antennas as opposed to less optimal omnidirectional options. Additionally, the ability to modify the height of the antenna tracker counters the Fresnel effect’s impact on our operations.' },
+  { id: 13, title: 'Hawkeye', subtitle: 'Image Detection', year: '2024-2025', img: cardImage21, description: 'Development with Infrared Sensing and Camera Vision has become paramount to competitions for both SUAS and AEAC. Identifiying IR emitters, capturing photos and all other applications are done with our custom built Hawkeye system, integrating tech from computer networking to machine learning.' },
+
 ];
 
-const groundControl = [
-  { id: 14, title: 'GCATS', subtitle: 'Data Transfer', year: '2023/24', img: cardImage12, description: 'The GCATS (Ground Control Antenna Tracking Station) family of projects are custom-developed, long-range data transfer solutions capable of automatically relaying images and videos from drones flying at long ranges back to the ground control station. Their job is to autonomously track our aircraft in flight and point a directional antenna in that exact direction. This allows the team to use higher gain antennas as opposed to less optimal omnidirectional options. Additionally, the ability to modify the height of the antenna tracker counters the Fresnel effect’s impact on our operations.' },
-  { id: 15, title: 'GCOM', subtitle: 'Ground Command', year: '2023/24', img: cardImage13, description: 'Over the past years UBC UAS has been working on the next generation ground command software (GCOM). A single suit that acts as a data consolidation platform, it gathers information about the UAS from multiple sources (e.g. Mavlink) and provides the following functionality: - Antenna tracker control - Drone communication and control - Collision avoidance - Reliable Image download - Image object detection - Image geotagging - Analytics on processed images - Autonomously report generation. In addition to the above functionalities, GCOM was designed with reliability and modularity in mind. This allows UBC UAS to achieve higher reliability standards since each module can be independently tested against all possible inputs. Additionally, GCOM operates using a fully reliable communication protocol developed to transmit variable length data between any two devices (UAS Message) that utilize serial, TCP, or UDP communications.' }
-];
 
 const legacyProjects = [
   { id: 19, title: 'Advanced Technology Demonstrator: Desert Hawk', subtitle: 'VTOL / 3rd at AEAC', year: '2017/18', img: cardImage14, description: 'Demanding real-world applications like Law Enforcement or Search And Rescue require high performance, multi-mission drones. The Advanced Technology Demonstrator was designed to be both a testbed of new drone technologies and the mission aircraft for the 2018 AUVSI SUAS competition. The Desert Hawk incorporated unique technologies and capabilities such as vortex generators and obstacle avoidance; it was also one of the first projects to include Augmented Reality prototyping to visualize subsystem integration. The project inspired growth and innovation for proceeding UBC UAS projects.' },
@@ -303,9 +298,8 @@ const Projects = () => {
         <section className="project-section">
           <h2 className="section-timeline">2018 - 2025</h2>
           <ProjectRow title="AIRCRAFT" projects={aircraftProjects} />
-          <ProjectRow title="PAYLOAD" projects={payloadProjects} />
+          {/* <ProjectRow title="PAYLOAD" projects={payloadProjects} /> */}
           <ProjectRow title="SOFTWARE" projects={softwareProjects} />
-          <ProjectRow title="GROUND CONTROL" projects={groundControl} />
         </section>
 
         <section className="project-section">
