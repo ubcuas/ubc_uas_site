@@ -5,6 +5,27 @@
     background: url('../assets/pages/sponsorship/hero-background.png') center / cover no-repeat;
 }
 
+@media (max-width: 420px) {
+    .info-page--sponsorship .info-page__content {
+        max-width: 22rem;
+        gap: 1rem;
+    }
+
+    .info-page--sponsorship .info-page__eyebrow {
+        font-size: 0.85rem;
+        letter-spacing: 0.28em;
+    }
+
+    .info-page--sponsorship .info-page__title {
+        font-size: clamp(2.2rem, 10vw, 3rem);
+        letter-spacing: 0.06em;
+    }
+
+    .info-page--sponsorship .info-page__body {
+        font-size: clamp(0.95rem, 4vw, 1.1rem);
+    }
+}
+
 .sponsorship-details {
     background-color: #040a14;
     padding: clamp(3.5rem, 8vw, 6rem) clamp(1.5rem, 8vw, 5rem) clamp(4rem, 10vw, 7rem);
@@ -213,4 +234,21 @@
 .sponsor-tiers__logos--contributor .sponsor-tiers__image {
     width: clamp(4.75rem, 2.6rem + 5vw, 8.5rem);
     max-height: clamp(2.9rem, 1.5rem + 1.9vw, 3.8rem);
+}
+
+@media (max-width: 720px) {
+    .sponsorship-details__container,
+    .sponsor-tiers__container {
+        text-align: center;
+    }
+
+    .sponsorship-details__actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .sponsorship-details__cta {
+        width: 100%;
+        max-width: 24rem;
+    }
 }
