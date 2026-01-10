@@ -19,6 +19,7 @@ import FlameWheel from './assets/carousel/FlameWheel.webp';
 import Thunderbird from './assets/carousel/Thunderbird.webp';
 import CAMVIS from './assets/carousel/Camvis.png';
 
+// SECTION 1: AIRCRAFT PROJECTS
 const aircraftProjects = [
   {
     id: 1,
@@ -105,6 +106,7 @@ const payloadProjects = [
   }
 ];
 
+// SECTION 2: SOFTWARE PROJECTS
 const softwareProjects = [
   {
     id: 11,
@@ -132,6 +134,7 @@ const softwareProjects = [
   }
 ];
 
+// SECTION 3: LEGACY PROJECTS
 const legacyProjects = [
   {
     id: 14,
@@ -186,14 +189,13 @@ const ProjectModal = ({ project, onClose }) => {
     };
   }, []);
 
-  // Stop propagation on overlay click to handle close logic safely
   const handleOverlayClick = (e) => {
     e.stopPropagation();
     onClose();
   };
 
   const handleContainerClick = (e) => {
-    e.stopPropagation(); // Prevent clicks inside modal from closing it
+    e.stopPropagation();
   };
 
   return createPortal(
@@ -225,7 +227,6 @@ const ProjectCard = ({ project }) => {
   const textLimit = 100;
 
   const openModal = (e) => {
-    // Stop propagation to prevent carousel drag
     e.preventDefault();
     e.stopPropagation();
     setIsModalOpen(true);
@@ -306,7 +307,6 @@ const ProjectRow = ({ title, projects }) => {
       if (!event.isPrimary) return;
       if (event.pointerType === 'touch') return;
 
-      // Prevent drag initiation if clicking the Read More button
       if (event.target.closest('.read-more')) return;
 
       pointerId = event.pointerId;
