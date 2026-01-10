@@ -12,8 +12,14 @@ const StatsSection = () => {
     <section
       className="stats"
       id="stats"
-      style={{ '--stats-background-image': `url(${backgroundImage})` }}
     >
+      <img
+        src={backgroundImage}
+        className="stats__background"
+        alt=""
+        aria-hidden="true"
+      />
+      <div className="stats__inner">
         <div className="stats__grid">
           {stats.map((stat) => (
             <article
@@ -25,7 +31,8 @@ const StatsSection = () => {
             </article>
           ))}
         </div>
-      <p className="stats__caption">Statistics since 2021</p>
+        <p className="stats__caption">Statistics since 2021</p>
+      </div>
     </section>
   )
 }
