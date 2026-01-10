@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import './styles/info-page.css';
+import { createPortal } from 'react-dom';
 import './ProjectsPage.css';
 import heroBackground from './assets/pages/projects/hero-background.png';
 import Hydrone from './assets/carousel/Hydrone.png';
@@ -82,23 +83,94 @@ const legacyProjects = [
 ];
 
 /**
+ * Modal component for displaying project details
+ */
+const ProjectModal = ({ project, onClose }) => {
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
+
+  // Stop propagation on overlay click to handle close logic safely
+  const handleOverlayClick = (e) => {
+    e.stopPropagation();
+    onClose();
+  };
+
+  const handleContainerClick = (e) => {
+    e.stopPropagation(); // Prevent clicks inside modal from closing it
+  };
+
+  return createPortal(
+    <div className="project-modal-overlay" onPointerDown={(e) => e.stopPropagation()} onClick={handleOverlayClick}>
+      <div className="project-modal-container" onClick={handleContainerClick}>
+        <button className="project-modal-close" onClick={onClose} aria-label="Close modal">
+          &times;
+        </button>
+        <div className="project-modal-image-wrapper">
+          <img src={project.img} alt={project.title} className="project-modal-image" />
+        </div>
+        <div className="project-modal-content">
+          <span className="project-modal-year">{project.year}</span>
+          <h2 className="project-modal-title">{project.title}</h2>
+          <h3 className="project-modal-subtitle">{project.subtitle}</h3>
+          <p className="project-modal-description">{project.description}</p>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+};
+
+/**
  * A reusable card for a single project
  */
-const ProjectCard = ({ project }) => (
-  <div className="project-card">
-    <div className="card-image-container">
-      <img src={project.img} alt={project.title} className="card-image" />
-      <span className="year-badge">{project.year}</span>
-    </div>
-    <div className="card-content">
-      <h4 className="card-title">{project.title}</h4>
-      <h5 className="card-subtitle">{project.subtitle}</h5>
-      <p className="card-description">{project.description}</p>
-      <a href="#" className="read-more">Read More...</a>
-    </div>
-  </div>
-);
+const ProjectCard = ({ project }) => {
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const textLimit = 100;
 
+  const openModal = (e) => {
+    // Stop propagation to prevent carousel drag
+    e.preventDefault();
+    e.stopPropagation();
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  return (
+    <>
+      <div className="project-card">
+        <div className="card-image-container">
+          <img src={project.img} alt={project.title} className="card-image" />
+          <span className="year-badge">{project.year}</span>
+        </div>
+        <div className="card-content">
+          <h4 className="card-title">{project.title}</h4>
+          <h5 className="card-subtitle">{project.subtitle}</h5>
+          <p className="card-description">
+            {project.description.length > textLimit
+              ? `${project.description.substring(0, textLimit)}...`
+              : project.description}
+          </p>
+          <button
+            className="read-more"
+            onClick={openModal}
+            onPointerDown={(e) => e.stopPropagation()}
+            type="button"
+          >
+            Read More...
+          </button>
+        </div>
+      </div>
+      {isModalOpen && <ProjectModal project={project} onClose={closeModal} />}
+    </>
+  );
+};
 /**
  * A reusable row component with functional carousel
  */
@@ -139,6 +211,10 @@ const ProjectRow = ({ title, projects }) => {
 
     const onPointerDown = (event) => {
       if (!event.isPrimary) return;
+
+      // Prevent drag initiation if clicking the Read More button
+      if (event.target.closest('.read-more')) return;
+
       pointerId = event.pointerId;
       startX = event.clientX;
       startScroll = container.scrollLeft;
