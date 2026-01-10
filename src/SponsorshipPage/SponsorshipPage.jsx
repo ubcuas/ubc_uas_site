@@ -12,6 +12,7 @@ import simnetLogo from '../assets/pages/sponsorship/simnet.webp'
 import stickerMuleLogo from '../assets/pages/sponsorship/sticker-mule.svg'
 import rockWestCompositesLogo from '../assets/pages/sponsorship/rock-west-composites.webp'
 import actuonixLogo from '../assets/pages/sponsorship/actuonix.webp'
+import '../styles/info-page.css'
 import './SponsorshipPage.css'
 
 const SponsorshipPage = () => {

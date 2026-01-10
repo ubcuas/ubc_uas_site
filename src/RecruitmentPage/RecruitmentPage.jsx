@@ -1,4 +1,6 @@
+import "../styles/info-page.css";
 import "./RecruitmentPage.css";
+import heroBackground from "../assets/pages/projects/hero-background.png";
 
 import TimelinePin from "../assets/icons/pin.png";
 import TimelineFlag from "../assets/icons/flag.png";
@@ -12,6 +14,7 @@ const RecruitmentPage = () => {
       <section
         className="info-page info-page--recruitment"
         aria-labelledby="recruitment-title"
+        style={{ backgroundImage: `url(${heroBackground})` }}
       >
         <div className="info-page__content">
           <p className="info-page__eyebrow">Join The Mission</p>

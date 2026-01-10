@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
+import './styles/info-page.css';
 import './ProjectsPage.css';
-import heropic from './assets/pages/projects/hero-background.png';
+import heroBackground from './assets/pages/projects/hero-background.png';
 import Hydrone from './assets/carousel/Hydrone.png';
 import Ataksak from './assets/carousel/ataksak.webp';
 import Beetle from './assets/carousel/beetle.webp';
@@ -18,9 +19,6 @@ import Thunderbird from './assets/carousel/Thunderbird.webp';
 import MPS from './assets/carousel/MPS.png';
 import SUAS from './assets/carousel/SUAS.png';
 import CAMVIS from './assets/carousel/Camvis.png';
-
-
-const heroImage = heropic;
 const cardImage1 = Hydrone;
 const cardImage2 = HummingBird;
 const cardImage3 = Albatross;
@@ -207,14 +205,20 @@ const Projects = () => {
     <main className="projects-page">
       {/* --- Hero Section --- */}
       <section
-        className="projects-hero"
-        style={{ backgroundImage: `url(${heroImage})` }}
+        className="info-page info-page--projects"
+        aria-labelledby="projects-title"
+        style={{ backgroundImage: `url(${heroBackground})` }}
       >
-        <div className="hero-overlay"></div>
-        <div className="hero-content">
-          <h1>PROJECTS</h1>
-          <p>
-            Our projects are split into three distinct categories: aircraft, payload, and software. Aircraft houses our propulsion and electronics. Payload is the attachments we design to fulfill the tasks set out by our competitions. Software is the intelligence that enables autonomous mission execution.
+        <div className="info-page__content">
+          <p className="info-page__eyebrow">Building Autonomous Systems</p>
+          <h1 className="info-page__title" id="projects-title">
+            Projects
+          </h1>
+          <p className="info-page__body">
+            Our projects are split into three distinct categories: aircraft, payload, and software.
+            Aircraft houses our propulsion and electronics. Payload is the attachments we design to
+            fulfill the tasks set out by our competitions. Software is the intelligence that enables
+            autonomous mission execution.
           </p>
         </div>
       </section>
