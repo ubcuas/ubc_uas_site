@@ -110,18 +110,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 110%;
   margin-bottom: 3rem;
-  position: relative;
+  position: center;
 }
 
 .carousel-arrow {
   background: transparent;
-  border: 2px solid var(--color-text-secondary);
+  border: 0.2em solid var(--color-text-secondary);
   color: var(--color-text-primary);
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  border-radius: 40%;
+  width: 10%;
+  height: 10%;
   font-size: 1.5rem;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -140,11 +140,11 @@
 }
 
 .carousel-arrow.left {
-  margin-right: 1rem;
+  margin-right: 0.1rem;
 }
 
 .carousel-arrow.right {
-  margin-left: 1rem;
+  margin-left: 0.2rem;
 }
 
 .row-content {
@@ -204,10 +204,16 @@
 /* --- Project Card --- */
 .project-card {
   background-color: var(--color-card-bg);
+<<<<<<< HEAD
   border-radius: var(--projects-card-radius);
   border: 1px solid var(--color-card-border);
   overflow: hidden;
   width: var(--projects-card-width);
+=======
+  border-radius: 2em;
+  border: 0.2em solid var(--color-card-border);
+  overflow: hidden;
+>>>>>>> d1584cd (Updated Projects Page and Mobile Layout)
   flex-shrink: 0;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -228,7 +234,7 @@
 
 .card-image {
   width: 100%;
-  height: 200px;
+  height: 10em;
   object-fit: cover;
   display: block;
   transition: transform 0.3s ease;
@@ -252,6 +258,7 @@
 
 .card-content {
   padding: 1.5rem;
+  width: 100%;
   position: relative;
 }
 
