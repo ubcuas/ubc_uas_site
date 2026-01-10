@@ -35,6 +35,12 @@
   --projects-card-body: clamp(0.85rem, calc(0.9rem + var(--projects-fluid-step) * 0.08), 1.05rem);
 }
 
+.info-page--projects {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 
 /* --- Hero Section --- */
 .projects-hero {
