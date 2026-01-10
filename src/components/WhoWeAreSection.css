@@ -1,161 +1,131 @@
 .who-we-are {
-    --who-we-are-fluid-step: clamp(0rem,
-            calc((clamp(320px, 100vw, 1200px) - 320px) * 0.0035),
-            3rem);
-    --who-we-are-bg-offset: clamp(-2rem, calc(var(--who-we-are-fluid-step) * -0.45), 0rem);
-    --who-we-are-content-offset: clamp(-1.25rem, calc(var(--who-we-are-fluid-step) * -0.3), 0rem);
-    --who-we-are-heading-size: clamp(2.5rem,
-            calc(3.2rem + var(--who-we-are-fluid-step) * 1.1),
-            6.5rem);
-    --who-we-are-body-size: clamp(1.1rem,
-            calc(1.3rem + var(--who-we-are-fluid-step) * 0.45),
-            2.1rem);
-    --who-we-are-max-width: min(108ch, calc(50vw + var(--who-we-are-fluid-step)));
-    --who-we-are-padding-block: clamp(3rem, calc(3.5rem + var(--who-we-are-fluid-step) * 0.35), 5.25rem);
-    --who-we-are-padding-inline: clamp(1.25rem, calc(1.5rem + var(--who-we-are-fluid-step) * 0.8), 5.5rem);
-    --who-we-are-image-ratio: 0.669;
-    --who-we-are-background-size: clamp(420px,
-            calc(clamp(320px, 100vw, 1200px) * 0.95),
-            1200px);
-    --who-we-are-background-bleed: 0px;
-    --who-we-are-type-scale: calc(var(--page-viewport-scale) * 1.25);
-
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: max(32rem,
-            calc(100vh - var(--nav-height, 0px)),
-            calc(100vw * var(--who-we-are-image-ratio)));
-    padding: var(--who-we-are-padding-block) var(--who-we-are-padding-inline);
-    background-color: #040a14;
-    background-image: var(--who-we-are-background);
-    background-repeat: no-repeat;
-    background-position: center calc(45% + var(--who-we-are-bg-offset));
-    background-size: calc(var(--who-we-are-background-size) + var(--who-we-are-background-bleed)) auto;
-
-    color: #004f79;
-
-    overflow: hidden;
-    isolation: isolate;
+  padding: clamp(3rem, 7vw, 6rem) clamp(1.25rem, 6vw, 4.5rem);
+  background: #03070f;
+  color: #f5f8ff;
 }
 
-/* Experimental Overlay (User's manual edit) - Commented out */
-/*
-.who-we-are::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(221, 224, 229, 0.27);
-    z-index: -1;
-    pointer-events: none;
+.who-we-are__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: center;
 }
-*/
 
 .who-we-are__content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-self: flex-start;
-    gap: clamp(1rem, 3vw, 1.75rem);
-    max-width: var(--who-we-are-max-width);
-    z-index: 1;
-    transform: translateY(var(--who-we-are-content-offset));
-    padding: clamp(1.5rem, 4vw, 3rem);
-    border-radius: clamp(1rem, 1.5vw, 1.75rem);
-    background-color: rgba(2, 6, 12, 0.05);
-    backdrop-filter: blur(6px);
+  display: grid;
+  gap: 1.25rem;
+}
+
+.who-we-are__eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  font-size: clamp(0.75rem, 1.5vw, 0.95rem);
+  color: rgba(255, 255, 255, 0.65);
 }
 
 .who-we-are__title {
-    margin: 0;
-    font-size: calc(var(--who-we-are-heading-size) * var(--who-we-are-type-scale));
-    font-weight: 800;
-    letter-spacing: clamp(0.05em, 0.04em + 0.08vw, 0.12em);
-    text-transform: uppercase;
-    line-height: clamp(0.95, 0.82 + 0.12vw, 1.05);
+  margin: 0;
+  font-size: clamp(2.1rem, 4vw, 3.5rem);
+  letter-spacing: 0.08em;
 }
 
 .who-we-are__description {
-    margin: 0;
-    font-size: calc(var(--who-we-are-body-size) * var(--who-we-are-type-scale));
-    text-align: center;
-    font-weight: 700;
-    line-height: clamp(1.25, 1.15 + 0.12vw, 1.45);
-    letter-spacing: clamp(0.04em, 0.03em + 0.05vw, 0.08em);
-
-    color: #004f79;
+  margin: 0;
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  color: rgba(236, 242, 255, 0.78);
+  line-height: 1.7;
 }
 
-@media (max-width: 720px) {
-    .who-we-are {
-        justify-content: center;
-        text-align: center;
-        min-height: clamp(22rem, 60vh, 32rem);
-        padding: clamp(2.25rem, 10vw, 3.5rem) clamp(1rem, 6vw, 2.25rem);
-        background-size: cover;
-        background-position: center;
-    }
-
-    .who-we-are__content {
-        align-items: center;
-        transform: none;
-        padding: 0;
-        background-color: transparent;
-        backdrop-filter: none;
-    }
+.who-we-are__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
-@media (max-width: 480px) {
-    .who-we-are {
-        --who-we-are-padding-inline: clamp(1.25rem, 8vw, 2rem);
-        --who-we-are-content-offset: 0px;
-        --who-we-are-bg-offset: -0.5rem;
-        --who-we-are-type-scale: calc(var(--page-viewport-scale) * 0.7);
-    }
-
-    .who-we-are__description {
-        letter-spacing: 0.02em;
-    }
+.who-we-are__chips span {
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.8);
 }
 
-@media (min-width: 1024px) {
-    .who-we-are__title {
-        font-size: clamp(3.2rem, 3.8vw, 5.8rem);
-    }
-
-    .who-we-are__description {
-        font-size: clamp(1.15rem, 1.45vw, 1.9rem);
-    }
+.who-we-are__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: clamp(0.75rem, 2vw, 1.25rem);
 }
 
-@media (min-width: 900px) and (max-width: 1199px) {
-    .who-we-are {
-        --who-we-are-type-scale: calc(var(--page-viewport-scale) * 1.75);
-    }
+.who-we-are__cards article {
+  background: rgba(6, 16, 34, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: clamp(1rem, 2vw, 1.5rem);
+  padding: clamp(1rem, 2vw, 1.6rem);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
 }
 
-@media (min-width: 1200px) {
-    .who-we-are {
-        background-size: cover;
-        background-position: center;
-        --who-we-are-type-scale: calc(var(--page-viewport-scale) * 2.5);
-    }
+.who-we-are__cards h3 {
+  margin: 0 0 0.4rem;
+  font-size: clamp(1.05rem, 2.3vw, 1.3rem);
+  color: #6ae0ff;
 }
 
-@media (min-width: 768px) and (max-width: 1199px) {
-    .who-we-are {
-        --who-we-are-background-bleed: clamp(0px, (100vh - 0.88 * 100vw) * 0.45, 240px);
-    }
+.who-we-are__cards p {
+  margin: 0;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  color: rgba(236, 242, 255, 0.78);
+  line-height: 1.5;
 }
 
-@media (min-width: 721px) and (max-width: 1024px) {
-    .who-we-are {
-        --who-we-are-content-offset: -0.5rem;
-        min-height: clamp(24rem, 65vh, 34rem);
-        padding: clamp(2.5rem, 9vw, 4rem) clamp(1rem, 6vw, 2.25rem);
-        background-size: cover;
-        background-position: center;
-    }
+.who-we-are__media {
+  position: relative;
+}
+
+.who-we-are__media-card {
+  border-radius: clamp(1rem, 2vw, 1.75rem);
+  background: radial-gradient(circle at 20% 20%, rgba(45, 160, 220, 0.25), transparent 70%),
+    rgba(6, 18, 37, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: clamp(0.75rem, 2vw, 1.25rem);
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.45);
+}
+
+.who-we-are__media-card img {
+  width: 100%;
+  display: block;
+  border-radius: calc(clamp(1rem, 2vw, 1.75rem) - 0.5rem);
+  object-fit: cover;
+}
+
+.who-we-are__media-note {
+  margin-top: clamp(0.75rem, 2vw, 1rem);
+  padding: 0.9rem 1.25rem;
+  border-radius: 0.8rem;
+  border: 1px solid rgba(45, 160, 220, 0.4);
+  background: rgba(5, 17, 36, 0.9);
+  font-size: 0.9rem;
+  color: rgba(236, 242, 255, 0.85);
+  line-height: 1.4;
+}
+
+.who-we-are__media-note strong {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 1.1rem;
+  color: #2da0dc;
+}
+
+@media (max-width: 640px) {
+  .who-we-are__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .who-we-are__chips {
+    justify-content: center;
+  }
 }
