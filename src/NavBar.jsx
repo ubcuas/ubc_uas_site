@@ -6,6 +6,18 @@ import './NavBar.css'
 const NavBar = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false)
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [theme, setTheme] = useState(() => {
+    if (typeof window === 'undefined') {
+      return 'dark'
+    }
+    const storedTheme = window.localStorage.getItem('theme')
+    if (storedTheme) {
+      return storedTheme
+    }
+    return window.matchMedia('(prefers-color-scheme: light)').matches
+      ? 'light'
+      : 'dark'
+  })
   const dropdownRef = useRef(null)
   const mobileMenuRef = useRef(null)
   const mobileToggleRef = useRef(null)
@@ -90,12 +102,21 @@ const NavBar = () => {
     }
   }, [isMobileMenuOpen])
 
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+    window.localStorage.setItem('theme', theme)
+  }, [theme])
+
   const handleJoinToggle = () => {
     setDropdownOpen((open) => !open)
   }
 
   const handleMobileMenuToggle = () => {
     setMobileMenuOpen((open) => !open)
+  }
+
+  const handleThemeToggle = () => {
+    setTheme((current) => (current === 'dark' ? 'light' : 'dark'))
   }
 
   return (
@@ -181,6 +202,15 @@ const NavBar = () => {
             </div>
           )}
         </div>
+        <button
+          type="button"
+          className="navbar__theme-toggle"
+          onClick={handleThemeToggle}
+          aria-pressed={theme === 'light'}
+          aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+        >
+          {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+        </button>
       </div>
     </nav>
   )

@@ -17,7 +17,6 @@ const RecruitmentPage = () => {
 
   return (
     <main>
-      {/* HERO / ALWAYS-ON SECTION */}
       <section
         className="info-page info-page--recruitment"
         aria-labelledby="recruitment-title"
@@ -318,7 +317,6 @@ const RecruitmentPage = () => {
               </section>
             )}
 
-            {/* TEAM INFO */}
             <section
               className="recruitment-section recruitment-teams"
               aria-labelledby="recruitment-teams-title"

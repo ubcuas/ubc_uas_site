@@ -19,7 +19,7 @@
   padding: clamp(4rem, 8vw, 6.5rem) clamp(1.5rem, 6vw, 5rem);
   text-align: center;
   overflow: hidden;
-  color: #ffffff;
+  color: var(--color-hero-text);
 }
 
 .info-page::before {
@@ -44,7 +44,7 @@
   font-size: clamp(0.9rem, 2vw, 1.2rem);
   letter-spacing: 0.4em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.72);
+  color: color-mix(in srgb, var(--color-hero-text) 72%, transparent);
 }
 
 .info-page__title {
@@ -59,7 +59,7 @@
   margin: 0;
   font-size: clamp(1.05rem, 2.6vw, 1.4rem);
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.85);
+  color: color-mix(in srgb, var(--color-hero-text) 85%, transparent);
 }
 
 .info-page__cta {
@@ -73,8 +73,8 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #050814;
-  background-color: #4b6fff;
+  color: var(--color-surface-alt);
+  background-color: var(--color-accent-strong);
   text-decoration: none;
   transition: transform 0.2s ease, filter 0.2s ease;
 }

@@ -5,15 +5,61 @@
     calc(clamp(320px, 100vw, 1200px) / 600),
     2
   );
+  --color-page-bg: #050505;
+  --color-page-bg-alt: #0a0a0a;
+  --color-surface: #0b1220;
+  --color-surface-alt: #111827;
+  --color-panel: rgba(6, 10, 22, 0.97);
+  --color-card-bg: #1a1a1a;
+  --color-card-border: #2a2a2a;
+  --color-text: #f5f7ff;
+  --color-text-muted: #b7c0d3;
+  --color-text-subtle: #8b95a7;
+  --color-border: rgba(255, 255, 255, 0.12);
+  --color-accent: #2da0dc;
+  --color-accent-strong: #4b6fff;
+  --color-accent-soft: #6ae0ff;
+  --color-shadow: rgba(0, 0, 0, 0.45);
+  --color-nav-bg: rgba(6, 8, 14, 0.88);
+  --color-nav-border: rgba(255, 255, 255, 0.08);
+  --color-footer-bg: #050505;
+  --color-footer-border: rgba(255, 255, 255, 0.12);
+  --color-hero-text: #ffffff;
+  --color-hero-overlay: rgba(0, 0, 0, 0.2);
   font-family: 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color-scheme: dark;
-  color: #ffffff;
-  background-color: #050505;
+  color: var(--color-text);
+  background-color: var(--color-page-bg);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html[data-theme='light'] {
+  color-scheme: light;
+  --color-page-bg: #f5f7fb;
+  --color-page-bg-alt: #e9eef5;
+  --color-surface: rgba(255, 255, 255, 0.92);
+  --color-surface-alt: #ffffff;
+  --color-panel: rgba(255, 255, 255, 0.92);
+  --color-card-bg: #ffffff;
+  --color-card-border: rgba(15, 23, 42, 0.12);
+  --color-text: #111827;
+  --color-text-muted: #4b5563;
+  --color-text-subtle: #6b7280;
+  --color-border: rgba(15, 23, 42, 0.12);
+  --color-accent: #2563eb;
+  --color-accent-strong: #1d4ed8;
+  --color-accent-soft: #93c5fd;
+  --color-shadow: rgba(15, 23, 42, 0.12);
+  --color-nav-bg: rgba(255, 255, 255, 0.9);
+  --color-nav-border: rgba(15, 23, 42, 0.12);
+  --color-footer-bg: #eef2f7;
+  --color-footer-border: rgba(15, 23, 42, 0.12);
+  --color-hero-text: #ffffff;
+  --color-hero-overlay: rgba(0, 0, 0, 0.35);
 }
 
 a {
@@ -22,14 +68,15 @@ a {
 }
 
 a:hover {
-  color: #ffffff;
+  color: var(--color-text);
 }
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: #050505;
+  background: var(--color-page-bg);
+  color: var(--color-text);
   overflow-x: hidden;
   width: 100%;
 }

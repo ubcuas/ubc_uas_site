@@ -5,9 +5,9 @@
   gap: 2rem;
   padding: 0rem 3rem;
   padding-top: 2.5rem;
-  background: #050505;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  color: #ffffff;
+  background: var(--color-footer-bg);
+  border-top: 1px solid var(--color-footer-border);
+  color: var(--color-text);
 }
 
 .footer__brand {
@@ -18,7 +18,7 @@
 }
 
 .footer__email {
-  color: #ffffff;
+  color: var(--color-text);
   text-align: center;
 }
 
@@ -64,6 +64,24 @@
   gap: 1rem;
 }
 
+.footer__social-icon {
+  width: 1.3rem;
+  height: 1.3rem;
+  display: block;
+}
+
+.footer__social-icon--light {
+  display: none;
+}
+
+html[data-theme='light'] .footer__social-icon--light {
+  display: block;
+}
+
+html[data-theme='light'] .footer__social-icon--dark {
+  display: none;
+}
+
 .footer__social-link {
   display: inline-flex;
   align-items: center;
@@ -80,7 +98,7 @@
 }
 
 .footer__social-link:hover {
-  background: #2DA0DC;
+  background: var(--color-accent);
   color: #ffffff;
 }
 
