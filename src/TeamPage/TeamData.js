@@ -24,8 +24,8 @@ import softwareGroup from "../assets/teamPhotos/software.jpg";
 
 export const teamData = [
   {
-    title: "Admin Team",
-    theme: "charcoal",
+    title: 'Admin Team',
+    theme: 'charcoal',
     members: [
       {
         heading: "Our Captain",
@@ -46,9 +46,9 @@ export const teamData = [
   },
 
   {
-    title: "Aircraft Team",
-    subtitle: "Co-Leads",
-    theme: "teal",
+    title: 'Aircraft Team',
+    subtitle: 'Co-Leads',
+    theme: 'teal',
     members: [
       {
         name: "Sean Lee",
@@ -67,9 +67,9 @@ export const teamData = [
   },
 
   {
-    title: "Payload Team",
-    subtitle: "Co-Leads",
-    theme: "charcoal",
+    title: 'Payload Team',
+    subtitle: 'Co-Leads',
+    theme: 'charcoal',
     members: [
       {
         name: "Jaden Chan",
@@ -88,9 +88,9 @@ export const teamData = [
   },
 
   {
-    title: "Electrical Team",
-    subtitle: "Co-Leads",
-    theme: "teal",
+    title: 'Electrical Team',
+    subtitle: 'Co-Leads',
+    theme: 'teal',
     members: [
       {
         name: "Wayne Sudanartha",
@@ -109,9 +109,9 @@ export const teamData = [
   },
 
   {
-    title: "Software Team",
-    subtitle: "Co-Leads",
-    theme: "charcoal",
+    title: 'Software Team',
+    subtitle: 'Co-Leads',
+    theme: 'charcoal',
     members: [
       {
         name: "Mercury Mcindoe",
@@ -128,4 +128,4 @@ export const teamData = [
     caption:
       "Software Team: Vittal Ayer, Chaitanya Choudhary, Wilfred Chow, Jingyang Cui, Michael Dickinson, Justin Hoang, Diego Islas, Ram Jayakumar, Anant Khanna, JunHyun Kim, Louis Lin, Anthony Lu, Yash Mali, Mercury McIndoe, Aniket Nemade, Minori Poedjokerto, Sankalp Prashanth, Harun Sameer, Athalia Setiawan, Sayyam Singla, Jason Staker, Yash Vasdev, Elsa Zheng",
   },
-];
+]
