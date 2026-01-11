@@ -106,9 +106,10 @@
   margin-top: clamp(0.75rem, 2vw, 1rem);
   padding: 0.9rem 1.25rem;
   border-radius: 0.8rem;
+  text-align: center;
   border: 1px solid color-mix(in srgb, var(--color-accent) 40%, transparent);
   background: color-mix(in srgb, var(--color-surface-alt) 90%, transparent);
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--color-text-muted);
   line-height: 1.4;
 }

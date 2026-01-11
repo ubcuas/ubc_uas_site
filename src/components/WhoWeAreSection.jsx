@@ -2,9 +2,9 @@ import backgroundImage from '../assets/home/who-we-are/background.png'
 import './WhoWeAreSection.css'
 
 const focusAreas = [
-  { title: '12 sub-teams', body: 'Aircraft, payload, software, electrical, ops, and more.' },
-  { title: '80+ members', body: 'Students from Applied Science, Science, and Sauder.' },
-  { title: '2 annual intakes', body: 'Recruitment in September and January keeps talent flowing.' },
+  { title: '4 sub-teams', body: 'Aircraft, Payload, Software, Electrical' },
+  { title: '60+ members', body: 'Students from Applied Science, Science, and Sauder' },
+  { title: '2 annual intakes', body: 'Our recruitment opens in September and January' },
 ]
 
 const WhoWeAreSection = () => {
@@ -41,7 +41,7 @@ const WhoWeAreSection = () => {
           <div className="who-we-are__media-card">
             <img src={backgroundImage} alt="" loading="lazy" />
             <div className="who-we-are__media-note">
-              <span>Field testing at Boundary Bay</span>
+              <span>UBC UAS 2025/2026 Roster</span>
             </div>
           </div>
         </div>
