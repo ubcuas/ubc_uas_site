@@ -1,0 +1,70 @@
+{
+    "email": "recruitment@ubcuas.com",
+    "applyUrl": "https://docs.google.com/forms/d/1rj81y4gIr6jUM3C6q0HVXvp5ahNigkVfnTw2J3mUuEQ/viewform?edit_requested=true",
+    "open": true,
+    "cycle": "winter",
+    "hero": {
+      "eyebrow": "Join The Mission",
+      "title": "Recruitment",
+      "body": "We welcome engineers, makers, and storytellers who want to build the next generation of UAS. Applications open each September and January. Share your interest and we’ll send the next briefing."
+    },
+    "panel": {
+      "title": "RECRUITMENT",
+      "body": "We are currently recruiting roles in all of our sub-teams including aircraft, payload, electrical, and software. Scroll for more information on our team.",
+      "ctaText": "Apply Now"
+    },
+    "cycles": {
+      "fall": {
+        "label": "Recruitment Timeline",
+        "events": {
+          "applicationsOpen": {
+            "label": "Applications Open",
+            "meta": "August 22"
+          },
+          "imagineDay": {
+            "label": "Imagine Day",
+            "meta": "September 2 · 13:00–17:00"
+          },
+          "inPersonInfo": {
+            "label": "In-Person Info Session",
+            "meta": "September 3 · 19:00 · ANGU 339"
+          },
+          "onlineInfo": {
+            "label": "Online Info Session",
+            "meta": "September 7 · 19:00"
+          },
+          "applicationsClose": {
+            "label": "Applications Close",
+            "meta": "September 14 · 23:59"
+          },
+          "resultsReleased": {
+            "label": "Results Released",
+            "meta": "September 21"
+          },
+          "firstMeeting": {
+            "label": "First Meeting",
+            "meta": "September 27"
+          }
+        }
+      },
+      "winter": {
+        "label": "Winter Recruitment Timeline",
+        "note": "NOTE: New openings for the January 2026 intake are limited in comparison to the September 2025 intake. Specific roles may not be available during this recruitment cycle, however we encourage applicants to apply if they meet the qualifications and are interested in joining the team. For those who don’t meet these qualifications, we recommend applying during the September 2026 recruitment cycle for a wider range of opportunities.",
+        "events": {
+          "applicationsOpen": {
+            "label": "Applications Open",
+            "meta": "January 04 · 00:00"
+          },
+          "appsClose": { 
+            "label": "Applications Close ",
+            "meta": "January 23 · 23:59 "
+          },
+          "firstMeeting": {
+            "label": "First Meeting",
+            "meta": "January 31"
+          }
+        }
+      }
+    }
+  }
+  
