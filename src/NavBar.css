@@ -20,9 +20,9 @@
   justify-content: space-between;
   gap: var(--navbar-gap);
   padding: var(--navbar-padding-block) var(--navbar-padding-inline);
-  background: rgba(6, 8, 14, 0.88);
+  background: var(--color-nav-bg);
   backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid var(--color-nav-border);
 }
 
 .navbar__brand {
@@ -37,9 +37,21 @@
   align-items: center;
 }
 
-.navbar__logo img {
+.navbar__logo-img {
   width: var(--navbar-logo-size);
   height: auto;
+  display: block;
+}
+
+.navbar__logo-img--light {
+  display: none;
+}
+
+html[data-theme='light'] .navbar__logo-img--dark {
+  display: none;
+}
+
+html[data-theme='light'] .navbar__logo-img--light {
   display: block;
 }
 
@@ -60,9 +72,9 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   border-radius: 999px;
-  border: 1.5px solid rgba(127, 206, 255, 0.35);
-  background-color: rgba(11, 18, 32, 0.85);
-  color: rgba(233, 241, 255, 0.86);
+  border: 1.5px solid color-mix(in srgb, var(--color-accent) 35%, transparent);
+  background-color: color-mix(in srgb, var(--color-surface) 88%, transparent);
+  color: var(--color-text-muted);
   cursor: pointer;
   transition: transform 0.2s ease, border-color 0.2s ease,
     background-color 0.2s ease, color 0.2s ease;
@@ -71,12 +83,12 @@
 .navbar__menu-toggle:hover,
 .navbar__menu-toggle:focus-visible {
   transform: translateY(-1px);
-  border-color: rgba(127, 206, 255, 0.55);
-  color: #ffffff;
+  border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
+  color: var(--color-text);
 }
 
 .navbar__menu-toggle:focus-visible {
-  outline: 2px solid rgba(127, 206, 255, 0.7);
+  outline: 2px solid color-mix(in srgb, var(--color-accent) 70%, transparent);
   outline-offset: 2px;
 }
 
@@ -106,6 +118,38 @@
   align-items: center;
 }
 
+.navbar__theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--navbar-button-padding-block) var(--navbar-button-padding-inline);
+  min-width: var(--navbar-button-min-width);
+  font-size: var(--navbar-button-font-size);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  border: 1.5px solid color-mix(in srgb, var(--color-accent) 28%, transparent);
+  background-color: color-mix(in srgb, var(--color-surface) 92%, transparent);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease,
+    background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.navbar__theme-toggle:hover,
+.navbar__theme-toggle:focus-visible {
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
+  color: var(--color-text);
+  box-shadow: 0 12px 26px var(--color-shadow);
+}
+
+.navbar__theme-toggle:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--color-accent) 70%, transparent);
+  outline-offset: 3px;
+}
+
 .navbar__button {
   position: relative;
   display: inline-flex;
@@ -120,9 +164,9 @@
   text-decoration: none;
   border-radius: 999px;
   border: 1.5px solid transparent;
-  background-color: #0b1220;
-  color: rgba(233, 241, 255, 0.86);
-  box-shadow: 0 10px 26px rgba(4, 8, 16, 0.45);
+  background-color: var(--color-surface);
+  color: var(--color-text-muted);
+  box-shadow: 0 10px 26px var(--color-shadow);
   cursor: pointer;
   transition: transform 0.2s ease, color 0.2s ease, border-color 0.2s ease,
     background-color 0.2s ease, box-shadow 0.2s ease;
@@ -131,36 +175,36 @@
 .navbar__button:hover,
 .navbar__button:focus-visible {
   transform: translateY(-1px);
-  color: #ffffff;
+  color: var(--color-text);
 }
 
 .navbar__button:focus-visible {
-  outline: 2px solid rgba(127, 206, 255, 0.7);
+  outline: 2px solid color-mix(in srgb, var(--color-accent) 70%, transparent);
   outline-offset: 3px;
 }
 
 .navbar__button--basic {
-  background-color: #0b1220;
-  border-color: rgba(127, 206, 255, 0.24);
+  background-color: var(--color-surface);
+  border-color: color-mix(in srgb, var(--color-accent) 22%, transparent);
 }
 
 .navbar__button--basic:hover,
 .navbar__button--basic:focus-visible {
-  color: #ffffff;
-  border-color: rgba(127, 206, 255, 0.5);
-  box-shadow: 0 12px 28px rgba(8, 16, 30, 0.55);
+  color: var(--color-text);
+  border-color: color-mix(in srgb, var(--color-accent) 45%, transparent);
+  box-shadow: 0 12px 28px var(--color-shadow);
 }
 
 .navbar__button--active {
-  background-color: #2DA0DC;
+  background-color: var(--color-accent);
   border-color: transparent;
   color:#ffffff;
-  box-shadow: 0 16px 34px rgba(80, 137, 255, 0.45);
+  box-shadow: 0 16px 34px color-mix(in srgb, var(--color-accent) 45%, transparent);
 }
 
 .navbar__button--active:hover,
 .navbar__button--active:focus-visible {
-  box-shadow: 0 18px 36px rgba(80, 137, 255, 0.55);
+  box-shadow: 0 18px 36px color-mix(in srgb, var(--color-accent) 55%, transparent);
   color: #ffffff;
 }
 
@@ -183,10 +227,10 @@
 }
 
 .navbar__button--dropdown-open {
-  background-color: #213a71;
-  border-color: rgba(127, 206, 255, 0.65);
+  background-color: color-mix(in srgb, var(--color-accent-strong) 65%, var(--color-surface));
+  border-color: color-mix(in srgb, var(--color-accent) 65%, transparent);
   color: #ffffff;
-  box-shadow: 0 16px 32px rgba(75, 111, 255, 0.4);
+  box-shadow: 0 16px 32px color-mix(in srgb, var(--color-accent) 40%, transparent);
 }
 
 .navbar__dropdown {
@@ -198,10 +242,10 @@
   gap: var(--navbar-dropdown-gap);
   padding: clamp(0.85rem, 0.55rem + 0.8vw, 1.25rem)
     clamp(1rem, 0.75rem + 0.8vw, 1.5rem);
-  background: rgba(8, 11, 18, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
   border-radius: 1.25rem;
-  box-shadow: 0 20px 40px rgba(3, 6, 14, 0.45);
+  box-shadow: 0 20px 40px var(--color-shadow);
 }
 
 .navbar__dropdown .navbar__button {
@@ -242,10 +286,10 @@
     gap: clamp(0.5rem, 0.35rem + 0.6vw, 0.85rem);
     padding: clamp(0.7rem, 0.45rem + 0.6vw, 1rem)
       clamp(0.8rem, 0.55rem + 0.8vw, 1.25rem);
-    background: rgba(8, 11, 18, 0.95);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: var(--color-surface-alt);
+    border: 1px solid var(--color-border);
     border-radius: 1.1rem;
-    box-shadow: 0 18px 34px rgba(3, 6, 14, 0.48);
+    box-shadow: 0 18px 34px var(--color-shadow);
   }
 
   .navbar__menu--open {
@@ -259,6 +303,11 @@
   }
 
   .navbar__button {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .navbar__theme-toggle {
     width: 100%;
     min-width: 0;
   }

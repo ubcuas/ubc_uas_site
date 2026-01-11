@@ -7,9 +7,9 @@
 
   position: relative;
   padding: var(--stats-padding-block) var(--stats-padding-inline);
-  background: radial-gradient(circle at top, rgba(45, 160, 220, 0.25), transparent 60%),
-    linear-gradient(135deg, #030b15 0%, #050f20 60%, #031226 100%);
-  color: #ecf2ff;
+  background: radial-gradient(circle at top, color-mix(in srgb, var(--color-accent) 25%, transparent), transparent 60%),
+    linear-gradient(135deg, color-mix(in srgb, var(--color-page-bg) 85%, transparent) 0%, color-mix(in srgb, var(--color-page-bg-alt) 80%, transparent) 60%, color-mix(in srgb, var(--color-page-bg-alt) 70%, transparent) 100%);
+  color: var(--color-text);
   overflow: hidden;
   isolation: isolate;
 }
@@ -60,7 +60,7 @@
   text-transform: uppercase;
   letter-spacing: 0.4em;
   font-size: clamp(0.7rem, 1.8vw, 0.9rem);
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--color-text-subtle);
 }
 
 .stats__title {
@@ -72,7 +72,7 @@
 .stats__description {
   margin: 0;
   font-size: clamp(1rem, 2.2vw, 1.2rem);
-  color: rgba(236, 242, 255, 0.75);
+  color: var(--color-text-muted);
   line-height: 1.6;
 }
 
@@ -85,9 +85,9 @@
 .stats__item {
   border-radius: var(--stats-radius);
   padding: clamp(1.5rem, 3vw, 2.5rem);
-  background: rgba(5, 17, 36, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  box-shadow: 0 20px 40px var(--color-shadow);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -105,19 +105,19 @@
 }
 
 .stats__item--featured {
-  background: linear-gradient(145deg, rgba(45, 160, 220, 0.12), rgba(45, 160, 220, 0.03));
-  border-color: rgba(45, 160, 220, 0.4);
+  background: linear-gradient(145deg, color-mix(in srgb, var(--color-accent) 15%, transparent), color-mix(in srgb, var(--color-accent) 4%, transparent));
+  border-color: color-mix(in srgb, var(--color-accent) 40%, transparent);
 }
 
 .stats__value {
   font-size: clamp(2.5rem, 8vw, 4.75rem);
   font-weight: 700;
-  color: #2da0dc;
+  color: var(--color-accent);
   line-height: 1;
 }
 
 .stats__item--featured .stats__value {
-  color: #6ae0ff;
+  color: var(--color-accent-soft);
   font-size: clamp(3rem, 9vw, 5.5rem);
 }
 
@@ -125,7 +125,7 @@
   text-transform: uppercase;
   letter-spacing: 0.2em;
   font-size: clamp(0.8rem, 1.8vw, 0.95rem);
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--color-text-subtle);
 }
 
 @media (max-width: 600px) {

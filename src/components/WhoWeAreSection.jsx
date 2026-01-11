@@ -42,7 +42,6 @@ const WhoWeAreSection = () => {
             <img src={backgroundImage} alt="" loading="lazy" />
             <div className="who-we-are__media-note">
               <span>Field testing at Boundary Bay</span>
-              <strong>60+ sorties / year</strong>
             </div>
           </div>
         </div>

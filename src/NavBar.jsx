@@ -1,11 +1,24 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import uasLogo from './assets/uas-logo.png'
+import uasLogoLight from './assets/logo.png'
 import './NavBar.css'
 
 const NavBar = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false)
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [theme, setTheme] = useState(() => {
+    if (typeof window === 'undefined') {
+      return 'dark'
+    }
+    const storedTheme = window.localStorage.getItem('theme')
+    if (storedTheme) {
+      return storedTheme
+    }
+    return window.matchMedia('(prefers-color-scheme: light)').matches
+      ? 'light'
+      : 'dark'
+  })
   const dropdownRef = useRef(null)
   const mobileMenuRef = useRef(null)
   const mobileToggleRef = useRef(null)
@@ -90,6 +103,11 @@ const NavBar = () => {
     }
   }, [isMobileMenuOpen])
 
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+    window.localStorage.setItem('theme', theme)
+  }, [theme])
+
   const handleJoinToggle = () => {
     setDropdownOpen((open) => !open)
   }
@@ -98,11 +116,24 @@ const NavBar = () => {
     setMobileMenuOpen((open) => !open)
   }
 
+  const handleThemeToggle = () => {
+    setTheme((current) => (current === 'dark' ? 'light' : 'dark'))
+  }
+
   return (
     <nav className="navbar" aria-label="Primary navigation">
       <div className="navbar__brand">
         <Link to="/" className="navbar__logo" aria-label="UBC UAS home">
-          <img src={uasLogo} alt="UBC UAS logo" />
+          <img
+            className="navbar__logo-img navbar__logo-img--dark"
+            src={uasLogo}
+            alt="UBC UAS logo"
+          />
+          <img
+            className="navbar__logo-img navbar__logo-img--light"
+            src={uasLogoLight}
+            alt="UBC UAS logo"
+          />
         </Link>
       </div>
       <button
@@ -181,6 +212,15 @@ const NavBar = () => {
             </div>
           )}
         </div>
+        <button
+          type="button"
+          className="navbar__theme-toggle"
+          onClick={handleThemeToggle}
+          aria-pressed={theme === 'light'}
+          aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+        >
+          {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+        </button>
       </div>
     </nav>
   )

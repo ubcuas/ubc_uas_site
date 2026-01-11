@@ -1,4 +1,5 @@
 import textureRibbon from '../assets/home/last-screen/drone.png'
+import textureRibbonLight from '../assets/home/last-screen/drone-light.png'
 import './TeamHighlightsSection.css'
 
 const whatWeDo = [
@@ -36,7 +37,18 @@ const TeamHighlightsSection = () => (
         </article>
 
         <article className="team-highlights__media">
-          <img src={textureRibbon} alt="UBC UAS drone" loading="lazy" />
+          <img
+            className="team-highlights__media-img team-highlights__media-img--dark"
+            src={textureRibbon}
+            alt="UBC UAS drone"
+            loading="lazy"
+          />
+          <img
+            className="team-highlights__media-img team-highlights__media-img--light"
+            src={textureRibbonLight}
+            alt="UBC UAS drone"
+            loading="lazy"
+          />
           <div className="team-highlights__media-note">
             <span>Flight testing at Boundary Bay</span>
             <strong>180+ hours last season</strong>

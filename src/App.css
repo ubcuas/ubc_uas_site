@@ -6,8 +6,8 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: #050505;
-  color: #ffffff;
+  background: var(--color-page-bg);
+  color: var(--color-text);
 }
 
 .app__content {

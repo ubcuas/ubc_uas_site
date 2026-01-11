@@ -1,7 +1,7 @@
 .sponsors-section {
   padding: clamp(3rem, 7vw, 5rem) clamp(1.25rem, 6vw, 4rem);
-  background: linear-gradient(145deg, #02060c, #040f22 60%, #051732 100%);
-  color: #f5f8ff;
+  background: linear-gradient(145deg, var(--color-page-bg) 0%, var(--color-page-bg-alt) 60%, var(--color-page-bg-alt) 100%);
+  color: var(--color-text);
 }
 
 .sponsors-section__inner {
@@ -22,7 +22,7 @@
   text-transform: uppercase;
   letter-spacing: 0.4em;
   font-size: clamp(0.75rem, 1.5vw, 0.95rem);
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--color-text-subtle);
 }
 
 .sponsors-section__title {
@@ -34,7 +34,7 @@
 .sponsors-section__body {
   margin: 0;
   font-size: clamp(1rem, 2.2vw, 1.15rem);
-  color: rgba(236, 242, 255, 0.75);
+  color: var(--color-text-muted);
   line-height: 1.6;
 }
 
@@ -52,7 +52,7 @@
   scroll-snap-type: x mandatory;
   padding: 0.25rem;
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.4) transparent;
+  scrollbar-color: color-mix(in srgb, var(--color-text) 25%, transparent) transparent;
 }
 
 .sponsors-section__carousel::-webkit-scrollbar {
@@ -60,7 +60,7 @@
 }
 
 .sponsors-section__carousel::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.4);
+  background: color-mix(in srgb, var(--color-text) 25%, transparent);
   border-radius: 999px;
 }
 
@@ -70,16 +70,21 @@
 
 .sponsors-section__card {
   flex: 0 0 clamp(180px, 24vw, 260px);
-  background: #ffffff;
+  background: var(--color-card-bg);
   border-radius: clamp(0.9rem, 1.6vw, 1.2rem);
   min-height: clamp(110px, 18vw, 150px);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 25px 45px rgba(5, 17, 36, 0.25);
-  border: 1px solid rgba(5, 17, 36, 0.08);
+  box-shadow: 0 25px 45px var(--color-shadow);
+  border: 1px solid var(--color-card-border);
   scroll-snap-align: center;
   padding: clamp(0.75rem, 2vw, 1.25rem);
+}
+
+html[data-theme='dark'] .sponsors-section__card {
+  background: #ffffff;
+  border-color: rgba(15, 23, 42, 0.12);
 }
 
 .sponsors-section__card img {
@@ -92,9 +97,9 @@
   width: 2.75rem;
   height: 2.75rem;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  background: rgba(5, 12, 26, 0.65);
-  color: #f5f8ff;
+  border: 1px solid var(--color-border);
+  background: color-mix(in srgb, var(--color-surface-alt) 85%, transparent);
+  color: var(--color-text);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -104,6 +109,6 @@
 }
 
 .sponsors-section__nav:hover {
-  border-color: #6ae0ff;
-  color: #6ae0ff;
+  border-color: var(--color-accent-soft);
+  color: var(--color-accent-soft);
 }

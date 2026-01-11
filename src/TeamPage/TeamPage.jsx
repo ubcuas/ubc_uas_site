@@ -46,12 +46,6 @@ export default function TeamPage() {
 
   return (
        <section className="team-page" aria-label="UBC UAS Team">
-      {/* floating background drones */}
-      <div className="team-page__bg" aria-hidden="true">
-        <div className="team-page__drone team-page__drone--left" />
-        <div className="team-page__drone team-page__drone--right" />
-      </div>
-
       <div className="team-page__title-banner" aria-hidden="true" />
       <div className="team-heading-wrap">
         <h1 className="team-heading">Meet Our Team</h1>

@@ -1,20 +1,9 @@
 /* --- Global Variables --- */
-:root {
-  --color-bg: #0a0a0a;
-  --color-card-bg: #1a1a1a;
-  --color-card-border: #2a2a2a;
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #999999;
-  --color-text-tertiary: #cccccc;
-  --color-hover-bg: #252525;
-  --font-main: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-}
-
 /* --- Main Page Container --- */
 .projects-page {
-  background-color: var(--color-bg);
-  color: var(--color-text-primary);
-  font-family: var(--font-main);
+  background-color: var(--color-page-bg);
+  color: var(--color-text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
   overflow-x: hidden;
   --projects-fluid-step: clamp(
     0rem,
@@ -121,7 +110,7 @@
 .hero-content p {
   font-size: var(--projects-hero-body-size);
   line-height: 1.6;
-  color: var(--color-text-tertiary);
+  color: var(--color-text-subtle);
   max-width: 650px;
   margin: 0 auto;
 }
@@ -160,8 +149,8 @@
 
 .carousel-arrow {
   background: transparent;
-  border: 2px solid var(--color-text-secondary);
-  color: var(--color-text-primary);
+  border: 2px solid var(--color-text-muted);
+  color: var(--color-text);
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -176,10 +165,10 @@
 }
 
 .carousel-arrow:hover {
-  background-color: var(--color-hover-bg);
-  border-color: var(--color-text-primary);
+  background-color: var(--color-page-bg-alt);
+  border-color: var(--color-text);
   transform: scale(1.1);
-  color: #ffffff;
+  color: var(--color-text);
 }
 
 .carousel-arrow.left {
@@ -202,7 +191,7 @@
   font-weight: 600;
   text-transform: uppercase;
   margin-bottom: 1.5rem;
-  color: var(--color-text-primary);
+  color: var(--color-text);
   letter-spacing: 0.05em;
   text-align: center;
 }
@@ -215,7 +204,7 @@
   scroll-behavior: smooth;
   scroll-snap-type: x proximity;
   scrollbar-width: thin;
-  scrollbar-color: #333 transparent;
+  scrollbar-color: color-mix(in srgb, var(--color-text) 25%, transparent) transparent;
   justify-content: flex-start;
   cursor: grab;
   touch-action: pan-y;
@@ -232,18 +221,18 @@
 }
 
 .cards-wrapper::-webkit-scrollbar-track {
-  background: var(--color-bg);
+  background: var(--color-page-bg); /* Match page background */
   border-radius: 4px;
 }
 
 .cards-wrapper::-webkit-scrollbar-thumb {
   background: var(--color-card-border);
   border-radius: 4px;
-  border: 2px solid var(--color-bg);
+  border: 2px solid var(--color-page-bg); /* Creates a padding effect */
 }
 
 .cards-wrapper::-webkit-scrollbar-thumb:hover {
-  background: var(--color-text-secondary);
+  background: var(--color-text-muted); /* Lighter grey on hover */
 }
 
 /* --- Project Card --- */
@@ -263,7 +252,7 @@
 .project-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
-  border-color: #444;
+  border-color: color-mix(in srgb, var(--color-text) 25%, transparent);
 }
 
 .card-image-container {
@@ -320,8 +309,8 @@
 }
 
 .project-modal-container {
-  background-color: #1a1a1a;
-  border: 1px solid #333;
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
   border-radius: 16px;
   width: 100%;
   max-width: 900px;
@@ -342,9 +331,9 @@
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: rgba(0,0,0,0.5);
+  background: color-mix(in srgb, var(--color-page-bg) 55%, transparent);
   border: none;
-  color: #fff;
+  color: var(--color-text);
   font-size: 1.5rem;
   cursor: pointer;
   width: 36px;
@@ -358,15 +347,15 @@
 }
 
 .project-modal-close:hover {
-  background: #fff;
-  color: #000;
+  background: var(--color-text);
+  color: var(--color-page-bg);
 }
 
 .project-modal-image-wrapper {
   flex: 1.2;
   position: relative;
   min-height: 300px;
-  background: #000;
+  background: var(--color-page-bg-alt);
 }
 
 .project-modal-image {
@@ -417,7 +406,7 @@
   font-size: var(--projects-card-title);
   font-weight: 700;
   margin: 0 0 0.25rem;
-  color: var(--color-text-primary);
+  color: var(--color-text);
   text-transform: uppercase;
   letter-spacing: 0.02em;
 }
@@ -425,7 +414,7 @@
 .card-subtitle {
   font-size: 0.95rem;
   font-weight: 400;
-  color: var(--color-text-secondary);
+  color: var(--color-text-muted);
   margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.02em;
@@ -433,7 +422,7 @@
 
 .card-description {
   font-size: var(--projects-card-body);
-  color: var(--color-text-tertiary);
+  color: var(--color-text-subtle);
   line-height: 1.6;
   min-height: clamp(60px, 10vw, 80px);
   margin-bottom: 0.75rem;
@@ -441,11 +430,11 @@
 
 .read-more {
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid color-mix(in srgb, var(--color-text) 40%, transparent);
   border-radius: 999px;
   padding: 0.5em 1.2em;
   font-family: inherit;
-  color: var(--color-text-primary);
+  color: var(--color-text);
   font-weight: 600;
   text-decoration: none;
   font-size: 0.85rem;
@@ -468,15 +457,15 @@
 @media (max-width: 1200px) {
   .read-more {
     opacity: 1;
-    border-color: rgba(255, 255, 255, 0.6);
+    border-color: color-mix(in srgb, var(--color-text) 60%, transparent);
   }
 }
 
 .read-more:hover {
-  background-color: #ffffff;
-  color: #000000;
-  border-color: #ffffff;
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+  background-color: var(--color-text);
+  color: var(--color-page-bg);
+  border-color: var(--color-text);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--color-text) 30%, transparent);
 }
 
 /* --- Responsive Design --- */

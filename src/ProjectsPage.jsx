@@ -87,7 +87,7 @@ const payloadProjects = [
     subtitle: '',
     year: '',
     img: Payload,
-    description: 'he UAS Payload subteam is dedicated to developing innovative solutions for complex design challenges. Our history includes successful projects ranging from package retrieval systems to drone firefighting technology that incorporates electromechanical systems and CAD/3D printing design. Collaborating closely with the wider team, our talented students consistently push boundaries, challenge creative limits, and deliver systems that address practical, real-world problems. We focus on applying problem-solving and robust manufacturing processes, culminating in showcasing our design achievements at annual competitions across North America.'
+    description: 'The UAS Payload subteam is dedicated to developing innovative solutions for complex design challenges. Our history includes successful projects ranging from package retrieval systems to drone firefighting technology that incorporates electromechanical systems and CAD/3D printing design. Collaborating closely with the wider team, our talented students consistently push boundaries, challenge creative limits, and deliver systems that address practical, real-world problems. We focus on applying problem-solving and robust manufacturing processes, culminating in showcasing our design achievements at annual competitions across North America.'
   }
 ];
 

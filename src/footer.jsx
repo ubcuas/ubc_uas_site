@@ -1,9 +1,13 @@
 import uasLogo from './assets/uas-logo.png'
 import './footer.css'
-import github from '../src/assets/github-white.svg'
-import instagram from '../src/assets/instagram-white.svg'
-import facebook from '../src/assets/facebook-white.svg'
-import linkedin from '../src/assets/linkedin-white.svg'
+import githubWhite from '../src/assets/github-white.svg'
+import instagramWhite from '../src/assets/instagram-white.svg'
+import facebookWhite from '../src/assets/facebook-white.svg'
+import linkedinWhite from '../src/assets/linkedin-white.svg'
+import githubDefault from '../src/assets/github.svg'
+import instagramDefault from '../src/assets/instagram.svg'
+import facebookDefault from '../src/assets/facebook.svg'
+import linkedinDefault from '../src/assets/linkedin.svg'
 const Footer = () => {
   return (
     <footer className="footer" aria-labelledby="footer-heading">
@@ -27,7 +31,8 @@ const Footer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <img src={linkedin} alt="Linkedin"/>
+            <img className="footer__social-icon footer__social-icon--dark" src={linkedinWhite} alt="Linkedin" />
+            <img className="footer__social-icon footer__social-icon--light" src={linkedinDefault} alt="Linkedin" />
           </a>
           <a
             className="footer__social-link footer__social-link--instagram"
@@ -35,7 +40,8 @@ const Footer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <img src={instagram} alt="Instagram"/>
+            <img className="footer__social-icon footer__social-icon--dark" src={instagramWhite} alt="Instagram" />
+            <img className="footer__social-icon footer__social-icon--light" src={instagramDefault} alt="Instagram" />
           </a>
           <a
             className="footer__social-link footer__social-link--facebook"
@@ -43,7 +49,8 @@ const Footer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <img src={facebook} alt="Facebook"/>
+            <img className="footer__social-icon footer__social-icon--dark" src={facebookWhite} alt="Facebook" />
+            <img className="footer__social-icon footer__social-icon--light" src={facebookDefault} alt="Facebook" />
           </a>
           <a
             className="footer__social-link footer__social-link--github"
@@ -51,7 +58,8 @@ const Footer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <img src={github} alt="Github"/>
+            <img className="footer__social-icon footer__social-icon--dark" src={githubWhite} alt="Github" />
+            <img className="footer__social-icon footer__social-icon--light" src={githubDefault} alt="Github" />
           </a>
         </nav>
       </div>
