@@ -43,8 +43,8 @@ const MissionSection = () => {
             ))}
           </div>
           <div className="mission__note">
-            <p>Every subsystem is backed by design reviews, simulation, and iterative flight tests.</p>
-            <strong>Research + build + fly</strong>
+            <p>Built for AEAC + SUAS: autonomous aircraft and the support systems that bring missions home</p>
+            <strong>Build + Test + Compete</strong>
           </div>
         </div>
       </div>
