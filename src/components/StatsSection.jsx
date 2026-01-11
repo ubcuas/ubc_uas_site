@@ -1,9 +1,9 @@
 import './StatsSection.css'
 
 const stats = [
-  { value: '6', label: 'podiums' },
+  { value: '5', label: 'podiums' },
   { value: '7', label: 'awards', featured: true },
-  { value: '10', label: 'competitions' },
+  { value: '6', label: 'competitions' },
 ]
 
 const StatsSection = () => {
