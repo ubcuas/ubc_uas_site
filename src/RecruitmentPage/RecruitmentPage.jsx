@@ -1,3 +1,4 @@
+// RecruitmentPage.jsx
 import "../styles/info-page.css";
 import "./RecruitmentPage.css";
 import heroBackground from "../assets/pages/Recruitment/team.png";
@@ -5,383 +6,377 @@ import heroBackground from "../assets/pages/Recruitment/team.png";
 import TimelinePin from "../assets/icons/pin.png";
 import TimelineFlag from "../assets/icons/flag.png";
 
-const RECRUITMENT_OPEN = true; // toggle when cycle is live
-const RECRUITMENT_CYCLE = "winter";
+import recruitmentData from "./recruitmentData.json";
 
 const RecruitmentPage = () => {
-    return (
-      <main>
-        {/* HERO / ALWAYS-ON SECTION */}
-        <section
-          className="info-page info-page--recruitment"
-          aria-labelledby="recruitment-title"
-          style={{ backgroundImage: `url(${heroBackground})` }}
-        >
-          <div className="info-page__content">
-            <p className="info-page__eyebrow">Join The Mission</p>
-            <h1 className="info-page__title" id="recruitment-title">
-              Recruitment
-            </h1>
-            <p className="info-page__body">
-              We welcome engineers, makers, and storytellers who want to build
-              next-generation UAS. Applications open each September and January.
-              Share your interest and we&rsquo;ll send the next briefing.
-            </p>
-            <a className="info-page__cta" href="mailto:recruitment@ubcuas.com">
-              Contact Recruitment
-            </a>
-          </div>
-        </section>
-  
-        {/* DETAILS SECTION – ONLY WHEN RECRUITMENT IS OPEN */}
-        {RECRUITMENT_OPEN && (
-          <section
-            className="recruitment-details"
-            aria-label="Current recruitment cycle information"
+  const { open, cycle, email, applyUrl, hero, panel, cycles } = recruitmentData;
+  const currentCycle = cycles?.[cycle];
+
+  const heroCtaHref = open ? "#recruitment-cycle" : `mailto:${email}`;
+  const heroCtaText = open ? "Applications are open | Learn More" : "Contact Recruitment";
+
+  return (
+    <main>
+      {/* HERO / ALWAYS-ON SECTION */}
+      <section
+        className="info-page info-page--recruitment"
+        aria-labelledby="recruitment-title"
+        style={{ backgroundImage: `url(${heroBackground})` }}
+      >
+        <div className="info-page__content">
+          <p className="info-page__eyebrow">{hero?.eyebrow}</p>
+
+          <h1 className="info-page__title" id="recruitment-title">
+            {hero?.title}
+          </h1>
+
+          <p className="info-page__body">{hero?.body}</p>
+
+          <a
+            className={`info-page__cta ${open ? "info-page__cta--scroll" : ""}`}
+            href={heroCtaHref}
           >
-            <div className="recruitment-panel">
-              {/* Figma-style RECRUITMENT + copy + Apply button */}
-              <header className="recruitment-panel__header">
-                <h2 className="recruitment-panel__title-main">RECRUITMENT</h2>
-                <p className="recruitment-panel__body">
-                  We are currently recruiting roles in all of our sub-teams
-                  including aircraft, payload, electrical, and software. Scroll
-                  for more information on our team.
-                </p>
-                <a
-                  className="recruitment-panel__cta"
-                  href="https://docs.google.com/forms/d/1rj81y4gIr6jUM3C6q0HVXvp5ahNigkVfnTw2J3mUuEQ/viewform?edit_requested=true"
-                  target="_blank"
-                  rel="noreferrer"
+            {heroCtaText}
+          </a>
+        </div>
+      </section>
+
+      {/* DETAILS SECTION – ONLY WHEN RECRUITMENT IS OPEN */}
+      {open && (
+        <section
+          className="recruitment-details"
+          aria-label="Current recruitment cycle information"
+        >
+          <div className="recruitment-panel">
+            <header className="recruitment-panel__header">
+              <h2 className="recruitment-panel__title-main">{panel?.title}</h2>
+              <p className="recruitment-panel__body">{panel?.body}</p>
+
+              <a
+                className="recruitment-panel__cta"
+                href={applyUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {panel?.ctaText ?? "Apply Now"}
+              </a>
+            </header>
+
+            {/* Anchor target for the HERO button */}
+            <div id="recruitment-cycle" className="recruitment-cycle" />
+
+            {/* FALL */}
+            {cycle === "fall" && currentCycle && (
+              <section
+                className="recruitment-section recruitment-timeline"
+                aria-labelledby="recruitment-timeline-title"
+              >
+                <h3
+                  id="recruitment-timeline-title"
+                  className="recruitment-section__heading recruitment-section__heading--timeline"
                 >
-                  Apply Now
-                </a>
-              </header>
-  
-              {/* FALL RECRUITMENT TIMELINE (summer-only in your earlier description, but using "fall" as requested) */}
-              {RECRUITMENT_CYCLE === "fall" && (
-                <section
-                  className="recruitment-section recruitment-timeline"
-                  aria-labelledby="recruitment-timeline-title"
-                >
-                  <h3
-                    id="recruitment-timeline-title"
-                    className="recruitment-section__heading recruitment-section__heading--timeline"
+                  {currentCycle.label}
+                </h3>
+
+                <div className="recruitment-timeline__canvas">
+                  <svg
+                    className="recruitment-timeline__path"
+                    viewBox="0 0 600 360"
+                    preserveAspectRatio="xMidYMid meet"
+                    aria-hidden="true"
                   >
-                    Recruitment Timeline
-                  </h3>
-  
-                  <div className="recruitment-timeline__canvas">
-                    {/* Curved blue dashed path */}
+                    <path
+                      className="recruitment-timeline__path-line recruitment-timeline__path-line--animated"
+                      d="
+                        M 80 35
+                        Q 170 10 270 70
+                        T 420 110
+                        T 500 165
+                        T 420 220
+                        T 280 260
+                        T 55 325
+                      "
+                    />
+
+                    <image
+                      href={TimelinePin}
+                      x={62}
+                      y={20}
+                      width="18"
+                      height="18"
+                      className="recruitment-timeline__icon"
+                    />
+                    <image
+                      href={TimelinePin}
+                      x={250}
+                      y={50}
+                      width="18"
+                      height="18"
+                      className="recruitment-timeline__icon"
+                    />
+                    <image
+                      href={TimelinePin}
+                      x={322}
+                      y={85}
+                      width="18"
+                      height="18"
+                      className="recruitment-timeline__icon"
+                    />
+                    <image
+                      href={TimelinePin}
+                      x={491}
+                      y={150}
+                      width="18"
+                      height="18"
+                      className="recruitment-timeline__icon"
+                    />
+                    <image
+                      href={TimelinePin}
+                      x={390}
+                      y={200}
+                      width="18"
+                      height="18"
+                      className="recruitment-timeline__icon"
+                    />
+                    <image
+                      href={TimelinePin}
+                      x={222}
+                      y={282}
+                      width="18"
+                      height="18"
+                      className="recruitment-timeline__icon"
+                    />
+
+                    <image
+                      href={TimelineFlag}
+                      x={55 - 10}
+                      y={325 - 10}
+                      width="20"
+                      height="20"
+                      className="recruitment-timeline__flag-icon"
+                    />
+                  </svg>
+
+                  <ol className="recruitment-timeline__list">
+                    <li className="recruitment-timeline__item recruitment-timeline__item--imagine">
+                      <p className="recruitment-timeline__label">
+                        {currentCycle.events?.imagineDay?.label}
+                      </p>
+                      <p className="recruitment-timeline__meta">
+                        {currentCycle.events?.imagineDay?.meta}
+                      </p>
+                    </li>
+
+                    <li className="recruitment-timeline__item recruitment-timeline__item--apps-open">
+                      <p className="recruitment-timeline__label">
+                        {currentCycle.events?.applicationsOpen?.label}
+                      </p>
+                      <p className="recruitment-timeline__meta">
+                        {currentCycle.events?.applicationsOpen?.meta}
+                      </p>
+                    </li>
+
+                    <li className="recruitment-timeline__item recruitment-timeline__item--in-person">
+                      <p className="recruitment-timeline__label">
+                        {currentCycle.events?.inPersonInfo?.label}
+                      </p>
+                      <p className="recruitment-timeline__meta">
+                        {currentCycle.events?.inPersonInfo?.meta}
+                      </p>
+                    </li>
+
+                    <li className="recruitment-timeline__item recruitment-timeline__item--online">
+                      <p className="recruitment-timeline__label">
+                        {currentCycle.events?.onlineInfo?.label}
+                      </p>
+                      <p className="recruitment-timeline__meta">
+                        {currentCycle.events?.onlineInfo?.meta}
+                      </p>
+                    </li>
+
+                    <li className="recruitment-timeline__item recruitment-timeline__item--close">
+                      <p className="recruitment-timeline__label">
+                        {currentCycle.events?.applicationsClose?.label}
+                      </p>
+                      <p className="recruitment-timeline__meta">
+                        {currentCycle.events?.applicationsClose?.meta}
+                      </p>
+                    </li>
+
+                    <li className="recruitment-timeline__item recruitment-timeline__item--results">
+                      <p className="recruitment-timeline__label">
+                        {currentCycle.events?.appsClose?.label}
+                      </p>
+                      <p className="recruitment-timeline__meta">
+                        {currentCycle.events?.appsClose?.meta}
+                      </p>
+                    </li>
+
+                    <li className="recruitment-timeline__item recruitment-timeline__item--meeting">
+                      <p className="recruitment-timeline__label">
+                        {currentCycle.events?.firstMeeting?.label}
+                      </p>
+                      <p className="recruitment-timeline__meta">
+                        {currentCycle.events?.firstMeeting?.meta}
+                      </p>
+                    </li>
+                  </ol>
+                </div>
+              </section>
+            )}
+
+            {/* WINTER */}
+            {cycle === "winter" && currentCycle && (
+              <section
+                className="recruitment-section recruitment-winter"
+                aria-labelledby="recruitment-winter-title"
+              >
+                <h3
+                  id="recruitment-winter-title"
+                  className="recruitment-section__heading recruitment-section__heading--timeline"
+                >
+                  {currentCycle.label}
+                </h3>
+
+                <div className="recruitment-winter__wrap">
+                  <div className="recruitment-winter__card">
                     <svg
-                      className="recruitment-timeline__path"
-                      viewBox="0 0 600 360"
+                      className="recruitment-winter__path"
+                      viewBox="0 0 600 220"
                       preserveAspectRatio="xMidYMid meet"
                       aria-hidden="true"
                     >
                       <path
-                        className="recruitment-timeline__path-line recruitment-timeline__path-line--animated"
+                        className="recruitment-winter__path-line"
                         d="
-                          M 80 35
-                          Q 170 10 270 70
-                          T 420 110
-                          T 500 165
-                          T 420 220
-                          T 280 260
-                          T 55 325
+                          M 70 170
+                          Q 210 60 300 105
+                          T 530 70
                         "
                       />
-  
-                      {/* Application Open pin */}
+
                       <image
                         href={TimelinePin}
-                        x={62}
-                        y={20}
+                        x={60}
+                        y={158}
                         width="18"
                         height="18"
-                        className="recruitment-timeline__icon"
+                        className="recruitment-winter__icon"
                       />
-  
-                      {/* Imagine Day pin */}
                       <image
                         href={TimelinePin}
-                        x={250}
-                        y={50}
+                        x={288}
+                        y={93}
                         width="18"
                         height="18"
-                        className="recruitment-timeline__icon"
+                        className="recruitment-winter__icon"
                       />
-  
-                      {/* In-Person Info Session pin */}
-                      <image
-                        href={TimelinePin}
-                        x={322}
-                        y={85}
-                        width="18"
-                        height="18"
-                        className="recruitment-timeline__icon"
-                      />
-  
-                      {/* Online Info Session pin */}
-                      <image
-                        href={TimelinePin}
-                        x={491}
-                        y={150}
-                        width="18"
-                        height="18"
-                        className="recruitment-timeline__icon"
-                      />
-  
-                      {/* Applications Close pin */}
-                      <image
-                        href={TimelinePin}
-                        x={390}
-                        y={200}
-                        width="18"
-                        height="18"
-                        className="recruitment-timeline__icon"
-                      />
-  
-                      {/* Results Released pin */}
-                      <image
-                        href={TimelinePin}
-                        x={222}
-                        y={282}
-                        width="18"
-                        height="18"
-                        className="recruitment-timeline__icon"
-                      />
-  
-                      {/* First Meeting flag */}
                       <image
                         href={TimelineFlag}
-                        x={55 - 10}
-                        y={325 - 10}
+                        x={520}
+                        y={58}
                         width="20"
                         height="20"
-                        className="recruitment-timeline__flag-icon"
+                        className="recruitment-winter__flag"
                       />
                     </svg>
-  
-                    {/* Events positioned near the path */}
-                    <ol className="recruitment-timeline__list">
-                      <li className="recruitment-timeline__item recruitment-timeline__item--imagine">
-                        <p className="recruitment-timeline__label">Imagine Day</p>
-                        <p className="recruitment-timeline__meta">
-                          September 2 · 13:00–17:00
+
+                    <ol className="recruitment-winter__list">
+                      <li className="recruitment-winter__item recruitment-winter__item--open">
+                        <p className="recruitment-winter__label">
+                          {currentCycle.events?.applicationsOpen?.label}
+                        </p>
+                        <p className="recruitment-winter__meta">
+                          {currentCycle.events?.applicationsOpen?.meta}
                         </p>
                       </li>
-  
-                      <li className="recruitment-timeline__item recruitment-timeline__item--apps-open">
-                        <p className="recruitment-timeline__label">
-                          Applications Open
+
+                      <li className="recruitment-winter__item recruitment-winter__item--results">
+                        <p className="recruitment-winter__label">
+                          {currentCycle.events?.appsClose?.label}
                         </p>
-                        <p className="recruitment-timeline__meta">August 22</p>
-                      </li>
-  
-                      <li className="recruitment-timeline__item recruitment-timeline__item--in-person">
-                        <p className="recruitment-timeline__label">
-                          In-Person Info Session
-                        </p>
-                        <p className="recruitment-timeline__meta">
-                          September 3 · 19:00 · ANGU 339
+                        <p className="recruitment-winter__meta">
+                          {currentCycle.events?.appsClose?.meta}
                         </p>
                       </li>
-  
-                      <li className="recruitment-timeline__item recruitment-timeline__item--online">
-                        <p className="recruitment-timeline__label">
-                          Online Info Session
+
+                      <li className="recruitment-winter__item recruitment-winter__item--meeting">
+                        <p className="recruitment-winter__label">
+                          {currentCycle.events?.firstMeeting?.label}
                         </p>
-                        <p className="recruitment-timeline__meta">
-                          September 7 · 19:00
+                        <p className="recruitment-winter__meta">
+                          {currentCycle.events?.firstMeeting?.meta}
                         </p>
-                      </li>
-  
-                      <li className="recruitment-timeline__item recruitment-timeline__item--close">
-                        <p className="recruitment-timeline__label">
-                          Applications Close
-                        </p>
-                        <p className="recruitment-timeline__meta">
-                          September 14 · 23:59
-                        </p>
-                      </li>
-  
-                      <li className="recruitment-timeline__item recruitment-timeline__item--results">
-                        <p className="recruitment-timeline__label">
-                          Results Released
-                        </p>
-                        <p className="recruitment-timeline__meta">September 21</p>
-                      </li>
-  
-                      <li className="recruitment-timeline__item recruitment-timeline__item--meeting">
-                        <p className="recruitment-timeline__label">
-                          First Meeting
-                        </p>
-                        <p className="recruitment-timeline__meta">September 27</p>
                       </li>
                     </ol>
                   </div>
-                </section>
-              )}
-  
-             {/* WINTER RECRUITMENT SECTION */}
-{RECRUITMENT_CYCLE === "winter" && (
-  <section
-    className="recruitment-section recruitment-winter"
-    aria-labelledby="recruitment-winter-title"
-  >
-    <h3
-      id="recruitment-winter-title"
-      className="recruitment-section__heading recruitment-section__heading--timeline"
-    >
-      Winter Recruitment Timeline
-    </h3>
 
-    <div className="recruitment-winter__wrap">
-      <div className="recruitment-winter__card">
-        {/* animated dotted path */}
-        <svg
-          className="recruitment-winter__path"
-          viewBox="0 0 600 220"
-          preserveAspectRatio="xMidYMid meet"
-          aria-hidden="true"
-        >
-          <path
-            className="recruitment-winter__path-line"
-            d="
-              M 70 170
-              Q 210 60 300 105
-              T 530 70
-            "
-          />
-
-          {/* pins */}
-          <image
-            href={TimelinePin}
-            x={60}
-            y={158}
-            width="18"
-            height="18"
-            className="recruitment-winter__icon"
-          />
-          <image
-            href={TimelinePin}
-            x={288}
-            y={93}
-            width="18"
-            height="18"
-            className="recruitment-winter__icon"
-          />
-          <image
-            href={TimelineFlag}
-            x={520}
-            y={58}
-            width="20"
-            height="20"
-            className="recruitment-winter__flag"
-          />
-        </svg>
-
-        {/* labels positioned over the path */}
-        <ol className="recruitment-winter__list">
-          <li className="recruitment-winter__item recruitment-winter__item--open">
-            <p className="recruitment-winter__label">Applications Open</p>
-            <p className="recruitment-winter__meta">January __</p>
-          </li>
-
-          <li className="recruitment-winter__item recruitment-winter__item--results">
-            <p className="recruitment-winter__label">Results Released</p>
-            <p className="recruitment-winter__meta">February __</p>
-          </li>
-
-          <li className="recruitment-winter__item recruitment-winter__item--meeting">
-            <p className="recruitment-winter__label">First Meeting</p>
-            <p className="recruitment-winter__meta">February __</p>
-          </li>
-        </ol>
-      </div>
-
-      {/* optional little note (remove if you don’t want) */}
-      <p className="recruitment-winter__note">
-      NOTE: New openings for the January 2026 intake are limited in comparison to the September 2025 intake. 
-      Specific roles may not be available during this recruitment cycle, however we encourage applicants to apply if they meet the qualifications and are interested in 
-      joining the team. For those who don’t meet these qualifications, we recommend applying during the September 2026 recruitment cycle for a wider range of opportunities
-      </p>
-    </div>
-  </section>
-)}
-
-  
-              {/* TEAM INFO (shown for both fall and winter) */}
-              <section
-                className="recruitment-section recruitment-teams"
-                aria-labelledby="recruitment-teams-title"
-              >
-                <h3
-                  id="recruitment-teams-title"
-                  className="recruitment-section__heading"
-                >
-                  Team Information
-                </h3>
-                <p className="recruitment-teams__intro">
-                  Our team competes twice annually at AEAC and SUAS. Each year we
-                  develop aircraft from the ground up to complete new missions. To
-                  divide the work, our team is split into the following sub-teams:
-                  Aircraft, Payload, Electrical, and Software.
-                </p>
-  
-                <div className="recruitment-teams__grid">
-                  <article className="recruitment-team">
-                    <h4 className="recruitment-team__name">Aircraft</h4>
-                    <p className="recruitment-team__body">
-                      Mechanical-focused team. Designs and manufactures the
-                      airframe to accommodate the payload, electronics, and
-                      anything else the mission needs.
-                    </p>
-                  </article>
-  
-                  <article className="recruitment-team">
-                    <h4 className="recruitment-team__name">Payload</h4>
-                    <p className="recruitment-team__body">
-                      Mechanical-focused team. Designs and builds mechanisms that
-                      carry out competition tasks such as payload drops and other
-                      moving systems.
-                    </p>
-                  </article>
-  
-                  <article className="recruitment-team">
-                    <h4 className="recruitment-team__name">Electrical</h4>
-                    <p className="recruitment-team__body">
-                      Works on avionics and power systems, including PCBs for
-                      power distribution, payload interfaces, sensors, and other
-                      electronics.
-                    </p>
-                  </article>
-  
-                  <article className="recruitment-team">
-                    <h4 className="recruitment-team__name">Software</h4>
-                    <p className="recruitment-team__body">
-                      Handles mission software, including UTM tools, vision/M&amp;L
-                      pipelines, and ground-station interfaces that keep flights
-                      safe and autonomous.
-                    </p>
-                  </article>
+                  {currentCycle.note && (
+                    <p className="recruitment-winter__note">{currentCycle.note}</p>
+                  )}
                 </div>
               </section>
-            </div>
-          </section>
-        )}
-      </main>
-    );
-  };
-  
-  export default RecruitmentPage;
-  
-  
-  
-  
-  
-  
-  
-  
-  
+            )}
+
+            {/* TEAM INFO */}
+            <section
+              className="recruitment-section recruitment-teams"
+              aria-labelledby="recruitment-teams-title"
+            >
+              <h3 id="recruitment-teams-title" className="recruitment-section__heading">
+                Team Information
+              </h3>
+
+              <p className="recruitment-teams__intro">
+                Our team competes twice annually at AEAC and SUAS. Each year we
+                develop aircraft from the ground up to complete new missions. To
+                divide the work, our team is split into the following sub-teams:
+                Aircraft, Payload, Electrical, and Software.
+              </p>
+
+              <div className="recruitment-teams__grid">
+                <article className="recruitment-team">
+                  <h4 className="recruitment-team__name">Aircraft</h4>
+                  <p className="recruitment-team__body">
+                    Mechanical-focused team. Designs and manufactures the
+                    airframe to accommodate the payload, electronics, and
+                    anything else the mission needs.
+                  </p>
+                </article>
+
+                <article className="recruitment-team">
+                  <h4 className="recruitment-team__name">Payload</h4>
+                  <p className="recruitment-team__body">
+                    Mechanical-focused team. Designs and builds mechanisms that
+                    carry out competition tasks such as payload drops and other
+                    moving systems.
+                  </p>
+                </article>
+
+                <article className="recruitment-team">
+                  <h4 className="recruitment-team__name">Electrical</h4>
+                  <p className="recruitment-team__body">
+                    Works on avionics and power systems, including PCBs for
+                    power distribution, payload interfaces, sensors, and other
+                    electronics.
+                  </p>
+                </article>
+
+                <article className="recruitment-team">
+                  <h4 className="recruitment-team__name">Software</h4>
+                  <p className="recruitment-team__body">
+                    Handles mission software, including UTM tools, vision/M&amp;L
+                    pipelines, and ground-station interfaces that keep flights
+                    safe and autonomous.
+                  </p>
+                </article>
+              </div>
+            </section>
+          </div>
+        </section>
+      )}
+    </main>
+  );
+};
+
+export default RecruitmentPage;

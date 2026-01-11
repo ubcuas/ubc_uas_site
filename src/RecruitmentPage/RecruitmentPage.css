@@ -1,27 +1,39 @@
 /* RecruitmentPage.css */
 
-.info-page--recruitment {
+/* smooth anchor scroll */
+html {
+    scroll-behavior: smooth;
+  }
+  
+  .info-page--recruitment {
     --info-page-image-ratio: 0.746;
-    --info-page-overlay: linear-gradient(135deg, rgba(3, 8, 20, 0.5) 0%, rgba(5, 24, 54, 0.3) 55%, rgba(3, 8, 20, 0.5) 100%);
+    --info-page-overlay: linear-gradient(
+      135deg,
+      rgba(3, 8, 20, 0.5) 0%,
+      rgba(5, 24, 54, 0.3) 55%,
+      rgba(3, 8, 20, 0.5) 100%
+    );
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #050814;
-}
-
-/* Original RecruitmentPage.css Content */
-
-/* Wrapper section under the hero */
-.recruitment-details {
+  }
+  
+  /* Anchor spacer (scroll target) */
+  .recruitment-cycle {
+    scroll-margin-top: 110px; /* adjust if you have a sticky header */
+  }
+  
+  /* Wrapper section under the hero */
+  .recruitment-details {
     background: #050814;
-    /* match site background */
     padding: 4.5rem 0 5.5rem;
     display: flex;
     justify-content: center;
-}
-
-/* Main card */
-.recruitment-panel {
+  }
+  
+  /* Main card */
+  .recruitment-panel {
     width: 100%;
     max-width: 1080px;
     padding: 2.5rem 3.25rem 3rem;
@@ -31,39 +43,39 @@
     box-shadow: 0 20px 48px rgba(0, 0, 0, 0.6);
     color: #f5f7ff;
     text-align: center;
-}
-
-/* Header / CTA */
-
-.recruitment-panel__header {
+  }
+  
+  /* Header / CTA */
+  .recruitment-panel__header {
     margin-bottom: 2.3rem;
-}
-
-.recruitment-panel__title-main {
+  }
+  
+  .recruitment-panel__title-main {
     font-size: 2.2rem;
     font-weight: 700;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     margin-bottom: 0.9rem;
-}
-
-.recruitment-panel__body {
+  }
+  
+  .recruitment-panel__body {
     font-size: 1.5rem;
     line-height: 1.6;
     max-width: 45rem;
     color: #ccd3e5;
     margin: 0 auto 1.6rem;
-}
-
-.recruitment-panel__cta {
+  }
+  
+  /* Bigger Apply button */
+  .recruitment-panel__cta {
     display: inline-flex;
     align-items: center;
     justify-content: center;
   
-    padding: 0.9rem 2.4rem;          /* bigger */
+    padding: 0.9rem 2.4rem;
     border-radius: 999px;
   
-    font-size: 1rem;                /* bigger text */
+    font-size: 1rem;
     font-weight: 700;
     letter-spacing: 0.02em;
   
@@ -71,38 +83,25 @@
     color: #ffffff;
     text-decoration: none;
   
-    box-shadow:
-      0 14px 34px rgba(47, 137, 255, 0.28),
+    box-shadow: 0 14px 34px rgba(47, 137, 255, 0.28),
       0 10px 26px rgba(0, 0, 0, 0.35);
   
-    transition:
-      transform 0.15s ease,
-      box-shadow 0.15s ease,
-      filter 0.15s ease;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
   }
   
   .recruitment-panel__cta:hover {
     transform: translateY(-2px);
     filter: brightness(1.05);
-    box-shadow:
-      0 18px 42px rgba(47, 137, 255, 0.35),
+    box-shadow: 0 18px 42px rgba(47, 137, 255, 0.35),
       0 12px 30px rgba(0, 0, 0, 0.42);
   }
   
-
-.recruitment-panel__cta:hover {
-    background: #3d98ff;
-    transform: translateY(-1px);
-    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.4);
-}
-
-/* Section headings inside the card (Timeline / Team Info) */
-
-.recruitment-section {
+  /* Section headings inside the card (Timeline / Team Info) */
+  .recruitment-section {
     margin-top: 2.2rem;
-}
-
-.recruitment-section__heading {
+  }
+  
+  .recruitment-section__heading {
     font-size: 0.95rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -110,122 +109,95 @@
     margin-bottom: 1.5rem;
     color: #aeb7cc;
     align-self: center;
-}
-
-/* make "Recruitment Timeline" closer to the Figma */
-.recruitment-section__heading--timeline {
+  }
+  
+  /* make "Recruitment Timeline" closer to the Figma */
+  .recruitment-section__heading--timeline {
     font-size: 1.1rem;
     letter-spacing: 0.18em;
     text-align: center;
     margin-bottom: 4rem;
-}
-
-/* === CURVED BLUE TIMELINE === */
-
-.recruitment-timeline {
+  }
+  
+  /* === CURVED BLUE TIMELINE (FALL) === */
+  .recruitment-timeline {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-/* Match Figma-ish aspect ratio for the curve */
-.recruitment-timeline__canvas {
+  }
+  
+  .recruitment-timeline__canvas {
     position: relative;
     width: min(100%, 800px);
     margin: 0 auto;
     aspect-ratio: 600 / 360;
-}
-
-/* SVG curve */
-/* SVG curve */
-.recruitment-timeline__path {
+  }
+  
+  .recruitment-timeline__path {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     pointer-events: none;
-}
-
-/* Base dashed style */
-.recruitment-timeline__path-line {
+  }
+  
+  .recruitment-timeline__path-line {
     fill: none;
     stroke: #2da0dc;
-    /* Figma blue */
     stroke-width: 2px;
     stroke-dasharray: 10 30;
-    /* Figma dashes: 10, 30 */
     stroke-linecap: round;
-}
-
-/* Animation layer – applies because of the extra class in JSX */
-.recruitment-timeline__path-line--animated {
-    /* Big dash/offset to "hide" the line initially */
+  }
+  
+  .recruitment-timeline__path-line--animated {
     stroke-dasharray: 1000;
     stroke-dashoffset: 1000;
-    animation:
-        /* 0s → 2s: your original wipe-in */
-        timeline-draw 2s ease-out forwards,
-
-        /* at 2s: snap to dashed pattern */
-        timeline-dashify 0.01s linear 2s forwards,
-
-        /* 2s → 4.2s: gentle start of motion */
-        timeline-soft-scroll 2.2s ease-out 2s forwards,
-
-        /* from 4.2s onward: steady conveyor belt, looping */
-        timeline-scroll 4s linear 4.2s infinite;
-}
-
-/* 1) Draw the line from start to end (same as you had) */
-@keyframes timeline-draw {
+    animation: timeline-draw 2s ease-out forwards,
+      timeline-dashify 0.01s linear 2s forwards,
+      timeline-soft-scroll 2.2s ease-out 2s forwards,
+      timeline-scroll 4s linear 4.2s infinite;
+  }
+  
+  @keyframes timeline-draw {
     from {
-        stroke-dashoffset: 1000;
+      stroke-dashoffset: 1000;
     }
-
     to {
-        stroke-dashoffset: 0;
+      stroke-dashoffset: 0;
     }
-}
-
-/* 2) After it’s fully drawn, switch to dashed pattern (same as you had) */
-@keyframes timeline-dashify {
+  }
+  
+  @keyframes timeline-dashify {
     to {
-        stroke-dasharray: 10 30;
+      stroke-dasharray: 10 30;
     }
-}
-
-/* 3) Gentle “fade into motion” once, right after the draw */
-@keyframes timeline-soft-scroll {
+  }
+  
+  @keyframes timeline-soft-scroll {
     from {
-        stroke-dashoffset: 0;
+      stroke-dashoffset: 0;
     }
-
     to {
-        stroke-dashoffset: -20;
-        /* small move, looks like easing into motion */
+      stroke-dashoffset: -20;
     }
-}
-
-/* 4) Then normal conveyor belt forever */
-@keyframes timeline-scroll {
+  }
+  
+  @keyframes timeline-scroll {
     from {
-        stroke-dashoffset: -20;
+      stroke-dashoffset: -20;
     }
-
     to {
-        stroke-dashoffset: -60;
-        /* same direction, steady speed */
+      stroke-dashoffset: -60;
     }
-}
-
-
-.recruitment-timeline__icon,
-.recruitment-timeline__flag-icon {
+  }
+  
+  .recruitment-timeline__icon,
+  .recruitment-timeline__flag-icon {
     pointer-events: none;
-}
-
-/* Text / events overlay */
-.recruitment-timeline__list {
+  }
+  
+  /* Text / events overlay */
+  .recruitment-timeline__list {
     position: absolute;
     inset: 0;
     margin: 0;
@@ -233,142 +205,136 @@
     list-style: none;
     font-size: 0.88rem;
     color: #f5f7ff;
-}
-
-.recruitment-timeline__item {
+  }
+  
+  .recruitment-timeline__item {
     position: absolute;
     max-width: 260px;
-}
-
-/* Positions tuned to match Figma and stay off the line */
-.recruitment-timeline__item--imagine {
+  }
+  
+  .recruitment-timeline__item--imagine {
     top: 15%;
     right: 58%;
     text-align: right;
-}
-
-.recruitment-timeline__item--apps-open {
+  }
+  
+  .recruitment-timeline__item--apps-open {
     top: -10%;
     left: 7%;
     text-align: left;
-}
-
-.recruitment-timeline__item--in-person {
+  }
+  
+  .recruitment-timeline__item--in-person {
     top: 9%;
     left: 55%;
     text-align: left;
-}
-
-.recruitment-timeline__item--online {
+  }
+  
+  .recruitment-timeline__item--online {
     top: 38%;
     right: -7%;
     text-align: center;
-    /* 'middle' isn't valid; use center */
-}
-
-.recruitment-timeline__item--close {
+  }
+  
+  .recruitment-timeline__item--close {
     top: 62%;
     right: 24%;
     text-align: left;
-}
-
-.recruitment-timeline__item--results {
+  }
+  
+  .recruitment-timeline__item--results {
     top: 68%;
     right: 60%;
     text-align: left;
-}
-
-.recruitment-timeline__item--meeting {
+  }
+  
+  .recruitment-timeline__item--meeting {
     top: 92%;
     left: 8%;
     text-align: left;
-}
-
-/* Typography */
-.recruitment-timeline__label {
-    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro",
-        system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  
+  .recruitment-timeline__label {
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", system-ui,
+      -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-weight: 600;
     font-size: 1rem;
     line-height: 0.6;
     letter-spacing: 0.03em;
     color: #ffffff;
-}
-
-.recruitment-timeline__meta {
+  }
+  
+  .recruitment-timeline__meta {
     font-size: 0.78rem;
     color: #b7c0d3;
-}
-
-/* === TEAM INFORMATION === */
-
-.recruitment-teams__intro {
+  }
+  
+  /* === TEAM INFORMATION === */
+  .recruitment-teams__intro {
     font-size: 1.2rem;
     line-height: 1.5;
     color: #c7cfe0;
     max-width: 45rem;
     margin: 0.25rem auto 2rem;
     text-align: center;
-}
-
-.recruitment-teams__grid {
+  }
+  
+  .recruitment-teams__grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    /* 2×2 grid on desktop */
     gap: 3rem 4rem;
     justify-items: center;
-}
-
-.recruitment-team {
+  }
+  
+  .recruitment-team {
     max-width: 300px;
     text-align: center;
-}
-
-.recruitment-team__name {
+  }
+  
+  .recruitment-team__name {
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 0.4rem;
-}
-
-.recruitment-team__body {
+  }
+  
+  .recruitment-team__body {
     font-size: 1.1rem;
     line-height: 1.5;
     color: #c5cde0;
-}
-
-/* === MOBILE: fall back to vertical list === */
-
-@media (max-width: 768px) {
+  }
+  
+  /* === MOBILE (FALL) === */
+  @media (max-width: 768px) {
     .recruitment-timeline__canvas {
-        aspect-ratio: auto;
+      aspect-ratio: auto;
     }
-
+  
     .recruitment-timeline__path {
-        display: none;
+      display: none;
     }
-
+  
     .recruitment-timeline__list {
-        position: static;
-        padding-top: 0.5rem;
+      position: static;
+      padding-top: 0.5rem;
     }
-
+  
     .recruitment-timeline__item {
-        position: static;
-        max-width: none;
-        margin-bottom: 1.5rem;
-        text-align: left;
+      position: static;
+      max-width: none;
+      margin-bottom: 1.5rem;
+      text-align: left;
     }
-
+  
     .recruitment-teams__grid {
-        grid-template-columns: 1fr;
+      grid-template-columns: 1fr;
     }
-    
-}
-/* =========================
-   WINTER TIMELINE (CLEAN GLASS)
-   ========================= */
-
-   .recruitment-winter__wrap {
+  }
+  
+  /* =========================
+     WINTER TIMELINE (CLEAN GLASS)
+     ========================= */
+  
+  .recruitment-winter__wrap {
     width: 100%;
     display: grid;
     gap: 1.1rem;
@@ -379,44 +345,41 @@
     position: relative;
     width: min(100%, 920px);
     padding: 2.2rem 2rem 1.7rem;
-  
     border-radius: 1.6rem;
   
-    /* cleaner than big gradient */
     background: rgba(10, 16, 30, 0.65);
     border: 1px solid rgba(255, 255, 255, 0.08);
   
     backdrop-filter: blur(18px);
-    box-shadow:
-      0 24px 70px rgba(0, 0, 0, 0.55),
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55),
       inset 0 1px 0 rgba(255, 255, 255, 0.06);
   
     overflow: hidden;
     transform: translateZ(0);
   }
   
-  /* subtle top “ice glow” (very light, not a full gradient background) */
   .recruitment-winter__card::before {
     content: "";
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background:
-      radial-gradient(circle at 50% 0%, rgba(120, 210, 255, 0.18), transparent 55%),
-      radial-gradient(circle at 15% 25%, rgba(255,255,255,0.06), transparent 40%),
-      radial-gradient(circle at 80% 18%, rgba(255,255,255,0.05), transparent 45%);
+    background: radial-gradient(
+        circle at 50% 0%,
+        rgba(120, 210, 255, 0.18),
+        transparent 55%
+      ),
+      radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.06), transparent 40%),
+      radial-gradient(circle at 80% 18%, rgba(255, 255, 255, 0.05), transparent 45%);
     opacity: 1;
   }
   
-  /* “snow dust” — toned down */
   .recruitment-winter__card::after {
     content: "";
     position: absolute;
     inset: -60px;
     pointer-events: none;
-    background-image:
-      radial-gradient(rgba(255,255,255,0.18) 1px, transparent 1px),
-      radial-gradient(rgba(255,255,255,0.10) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1px),
+      radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
     background-size: 44px 44px, 70px 70px;
     background-position: 0 0, 18px 28px;
     opacity: 0.16;
@@ -424,11 +387,14 @@
   }
   
   @keyframes winter-snow-drift {
-    from { transform: translate3d(0, 0, 0); }
-    to   { transform: translate3d(-70px, 90px, 0); }
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-70px, 90px, 0);
+    }
   }
   
-  /* Path */
   .recruitment-winter__path {
     position: relative;
     width: min(100%, 840px);
@@ -437,10 +403,8 @@
     z-index: 1;
   }
   
-  /* prettier line: slightly thicker, glow, draw + flow */
   .recruitment-winter__path-line {
     fill: none;
-  
     stroke: rgba(200, 240, 255, 0.9);
     stroke-width: 2.6px;
     stroke-linecap: round;
@@ -450,28 +414,36 @@
   
     filter: drop-shadow(0 0 10px rgba(120, 210, 255, 0.25));
   
-    animation:
-      winter-draw 1.6s ease-out forwards,
+    animation: winter-draw 1.6s ease-out forwards,
       winter-flow 4.4s linear 1.6s infinite;
   }
   
   @keyframes winter-draw {
-    from { stroke-dashoffset: 240; opacity: 0.15; }
-    to   { stroke-dashoffset: 0; opacity: 1; }
+    from {
+      stroke-dashoffset: 240;
+      opacity: 0.15;
+    }
+    to {
+      stroke-dashoffset: 0;
+      opacity: 1;
+    }
   }
   
   @keyframes winter-flow {
-    from { stroke-dashoffset: 0; }
-    to   { stroke-dashoffset: -90; }
+    from {
+      stroke-dashoffset: 0;
+    }
+    to {
+      stroke-dashoffset: -90;
+    }
   }
   
   .recruitment-winter__icon,
   .recruitment-winter__flag {
     pointer-events: none;
-    filter: drop-shadow(0 12px 22px rgba(0,0,0,0.45));
+    filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.45));
   }
   
-  /* Overlay labels */
   .recruitment-winter__list {
     position: absolute;
     inset: 0;
@@ -485,7 +457,7 @@
     position: absolute;
     max-width: 280px;
   
-    padding: 0.95rem 1.05rem;          /* a bit bigger */
+    padding: 0.95rem 1.05rem;
     border-radius: 1.1rem;
   
     background: rgba(6, 10, 22, 0.55);
@@ -493,35 +465,39 @@
   
     backdrop-filter: blur(12px);
   
-    box-shadow:
-      0 16px 40px rgba(0,0,0,0.35),
-      inset 0 1px 0 rgba(255,255,255,0.06);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
   
     animation: winter-pop 700ms ease both;
   }
   
   @keyframes winter-pop {
-    from { opacity: 0; transform: translateY(8px) scale(0.985); }
-    to   { opacity: 1; transform: translateY(0) scale(1); }
+    from {
+      opacity: 0;
+      transform: translateY(8px) scale(0.985);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
   }
   
-  /* Larger typography */
   .recruitment-winter__label {
     margin: 0 0 0.3rem;
     font-weight: 800;
-    font-size: 1.06rem;              /* bigger */
+    font-size: 1.06rem;
     color: #ffffff;
     letter-spacing: 0.02em;
   }
   
   .recruitment-winter__meta {
     margin: 0;
-    font-size: 0.95rem;              /* bigger */
+    font-size: 0.95rem;
     color: rgba(199, 207, 224, 0.95);
     line-height: 1.25;
   }
   
-  /* Positions (tweakable) */
+  /* Positions */
   .recruitment-winter__item--open {
     left: 2.5%;
     top: 60%;
@@ -538,17 +514,16 @@
     text-align: left;
   }
   
-  /* Note under card */
   .recruitment-winter__note {
     margin: 0;
-    font-size: 1.02rem;               /* bigger */
+    font-size: 1.02rem;
     line-height: 1.5;
     color: rgba(199, 207, 224, 0.92);
     max-width: 58rem;
     text-align: center;
   }
   
-  /* Mobile: stack into a clean list */
+  /* Mobile: stack winter into a clean list */
   @media (max-width: 768px) {
     .recruitment-winter__path {
       display: none;
