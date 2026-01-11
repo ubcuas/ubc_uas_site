@@ -82,6 +82,11 @@
   padding: clamp(0.75rem, 2vw, 1.25rem);
 }
 
+html[data-theme='dark'] .sponsors-section__card {
+  background: #ffffff;
+  border-color: rgba(15, 23, 42, 0.12);
+}
+
 .sponsors-section__card img {
   max-width: clamp(120px, 30vw, 200px);
   max-height: 70px;
