@@ -69,10 +69,22 @@
   gap: 0.75rem;
 }
 
-.team-highlights__media img {
+.team-highlights__media-img {
   width: 100%;
   border-radius: clamp(0.8rem, 1.6vw, 1.2rem);
   object-fit: cover;
+}
+
+.team-highlights__media-img--light {
+  display: none;
+}
+
+html[data-theme='light'] .team-highlights__media-img--dark {
+  display: none;
+}
+
+html[data-theme='light'] .team-highlights__media-img--light {
+  display: block;
 }
 
 .team-highlights__media-note {

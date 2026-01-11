@@ -244,6 +244,9 @@ transition: transform 0.12s ease-out; /* <-- add this */
 
 html[data-theme='light'] .linkedin-btn {
   background-image: url('src/assets/linkedin.svg');
+  width: 1em;
+  height: 1em;
+  top: 0.2em;
 }
 
 /* ---------------------------------- */

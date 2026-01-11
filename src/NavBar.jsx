@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import uasLogo from './assets/uas-logo.png'
+import uasLogoLight from './assets/logo.png'
 import './NavBar.css'
 
 const NavBar = () => {
@@ -123,7 +124,16 @@ const NavBar = () => {
     <nav className="navbar" aria-label="Primary navigation">
       <div className="navbar__brand">
         <Link to="/" className="navbar__logo" aria-label="UBC UAS home">
-          <img src={uasLogo} alt="UBC UAS logo" />
+          <img
+            className="navbar__logo-img navbar__logo-img--dark"
+            src={uasLogo}
+            alt="UBC UAS logo"
+          />
+          <img
+            className="navbar__logo-img navbar__logo-img--light"
+            src={uasLogoLight}
+            alt="UBC UAS logo"
+          />
         </Link>
       </div>
       <button

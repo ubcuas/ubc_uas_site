@@ -37,9 +37,21 @@
   align-items: center;
 }
 
-.navbar__logo img {
+.navbar__logo-img {
   width: var(--navbar-logo-size);
   height: auto;
+  display: block;
+}
+
+.navbar__logo-img--light {
+  display: none;
+}
+
+html[data-theme='light'] .navbar__logo-img--dark {
+  display: none;
+}
+
+html[data-theme='light'] .navbar__logo-img--light {
   display: block;
 }
 
