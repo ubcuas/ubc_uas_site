@@ -4,7 +4,7 @@ html {
     scroll-behavior: smooth;
   }
   
-  .info-page--recruitment {
+.info-page--recruitment {
     --info-page-image-ratio: 0.746;
     --info-page-overlay: linear-gradient(
       135deg,
@@ -16,6 +16,27 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #050814;
+  }
+
+  @media (max-width: 420px) {
+    .info-page--recruitment .info-page__content {
+      max-width: 22rem;
+      gap: 1rem;
+    }
+
+    .info-page--recruitment .info-page__eyebrow {
+      font-size: 0.85rem;
+      letter-spacing: 0.28em;
+    }
+
+    .info-page--recruitment .info-page__title {
+      font-size: clamp(2.2rem, 10vw, 3rem);
+      letter-spacing: 0.06em;
+    }
+
+    .info-page--recruitment .info-page__body {
+      font-size: clamp(0.95rem, 4vw, 1.1rem);
+    }
   }
   
   /* Anchor spacer (scroll target) */
