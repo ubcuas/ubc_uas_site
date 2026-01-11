@@ -363,7 +363,7 @@ const RecruitmentPage = () => {
                 <article className="recruitment-team">
                   <h4 className="recruitment-team__name">Software</h4>
                   <p className="recruitment-team__body">
-                    Handles mission software, including UTM tools, vision/M&amp;L
+                    Handles mission software, including UTM tools, vision/ML
                     pipelines, and ground-station interfaces that keep flights
                     safe and autonomous.
                   </p>

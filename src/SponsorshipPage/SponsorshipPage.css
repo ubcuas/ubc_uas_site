@@ -201,6 +201,11 @@ html[data-theme='light'] .sponsor-tiers {
     transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
 }
 
+html[data-theme='dark'] .sponsor-tiers__link {
+    background-color: #ffffff;
+    border-color: rgba(15, 23, 42, 0.12);
+}
+
 .sponsor-tiers__link:hover,
 .sponsor-tiers__link:focus-visible {
     transform: translateY(-3px);
