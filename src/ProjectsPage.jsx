@@ -32,7 +32,7 @@ const aircraftProjects = [
   },
   
   {
-    id: 3,
+    id: 2,
     title: 'ALBATROSS',
     subtitle: 'VTOL / 3rd at AEAC',
     year: '2023/24',
@@ -40,7 +40,7 @@ const aircraftProjects = [
     description: 'Albatross was the team’s premier aircraft for the 2023-2024 season. Built based on Dragonfly, Albatross is a VTOL aircraft that is designed to be super modular, allowing for quick and easy payload changes as well as easy disassembly. The team is currently working on Albatross to improve its flight performance and capabilities. Albatross competed in the 2024 AEAC and SUAS competitions. It was able to place 3rd overall at AEAC!'
   },
   {
-    id: 4,
+    id: 3,
     title: 'Dragonfly',
     subtitle: 'VTOL',
     year: '2022/23',
@@ -48,7 +48,7 @@ const aircraftProjects = [
     description: 'The team’s second VTOL project to date, Dragonfly was built to be a modular drone that allowed for easy upgrades and payload swapping. The team used the knowledge gained from this aircraft to build Albatross after its development concluded in the summer of 2023.'
   },
   {
-    id: 5,
+    id: 4,
     title: 'Beetle',
     subtitle: 'VTOL',
     year: '2021/22',
@@ -56,7 +56,7 @@ const aircraftProjects = [
     description: 'Beetle was UAS’s first attempt at a vertical take-off and landing (VTOL) drone. It was designed with a large main compartment to drop a small rover from with a winch. We learned a lot from this project and it was a great stepping stone to our next VTOL project, Dragonfly.'
   },
   {
-    id: 2,
+    id: 5,
     title: 'HUMMINGBIRD',
     subtitle: 'QUAD',
     year: '2020/21',
@@ -94,6 +94,14 @@ const payloadProjects = [
 
 // SECTION 2: SOFTWARE PROJECTS
 const softwareProjects = [
+    {
+        id: 12,
+        title: 'Hawkeye',
+        subtitle: 'Image Detection',
+        year: '2024-2025',
+        img: CAMVIS,
+        description: 'Development with Infrared Sensing and Camera Vision has become paramount to competitions for both SUAS and AEAC. Identifiying IR emitters, capturing photos and all other applications are done with our custom built Hawkeye system, integrating tech from computer networking to machine learning.'
+      },
   {
     id: 11,
     title: 'GCOM',
@@ -103,20 +111,12 @@ const softwareProjects = [
     description: 'Over the past years UBC UAS has been working on the next generation ground command software (GCOM). A single suit that acts as a data consolidation platform, it gathers information about the UAS from multiple sources (e.g. Mavlink) and provides the following functionality: - Antenna tracker control - Drone communication and control - Collision avoidance - Reliable Image download - Image object detection - Image geotagging - Analytics on processed images - Autonomously report generation. In addition to the above functionalities, GCOM was designed with reliability and modularity in mind. This allows UBC UAS to achieve higher reliability standards since each module can be independently tested against all possible inputs. Additionally, GCOM operates using a fully reliable communication protocol developed to transmit variable length data between any two devices (UAS Message) that utilize serial, TCP, or UDP communications.'
   },
   {
-    id: 12,
+    id: 13,
     title: 'GCATS',
     subtitle: 'Data Transfer',
-    year: '2023/24',
+    year: '2021/22',
     img: GCATS,
     description: 'The GCATS (Ground Control Antenna Tracking Station) family of projects are custom-developed, long-range data transfer solutions capable of automatically relaying images and videos from drones flying at long ranges back to the ground control station. Their job is to autonomously track our aircraft in flight and point a directional antenna in that exact direction. This allows the team to use higher gain antennas as opposed to less optimal omnidirectional options. Additionally, the ability to modify the height of the antenna tracker counters the Fresnel effect’s impact on our operations.'
-  },
-  {
-    id: 13,
-    title: 'Hawkeye',
-    subtitle: 'Image Detection',
-    year: '2024-2025',
-    img: CAMVIS,
-    description: 'Development with Infrared Sensing and Camera Vision has become paramount to competitions for both SUAS and AEAC. Identifiying IR emitters, capturing photos and all other applications are done with our custom built Hawkeye system, integrating tech from computer networking to machine learning.'
   }
 ];
 
