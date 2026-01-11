@@ -3,6 +3,7 @@ import './styles/info-page.css';
 import { createPortal } from 'react-dom';
 import './ProjectsPage.css';
 import heroBackground from './assets/pages/projects/hero-background.png';
+import Payload from './assets/carousel/DSC06674.JPG'
 import Hydrone from './assets/carousel/Hydrone.png';
 import Ataksak from './assets/carousel/ataksak.webp';
 import Beetle from './assets/carousel/beetle.webp';
@@ -82,27 +83,11 @@ const aircraftProjects = [
 const payloadProjects = [
   {
     id: 8,
-    title: 'ALBATROSS',
-    subtitle: 'VTOL / 3rd at AEAC',
-    year: '2023/24',
-    img: Albatross,
-    description: 'Albatross was the team’s premier aircraft for the 2023-2024 season. Built based on Dragonfly, Albatross is a VTOL aircraft that is designed to be super modular, allowing for quick and easy payload changes as well as easy disassembly. The team is currently working on Albatross to improve its flight performance and capabilities. Albatross competed in the 2024 AEAC and SUAS competitions. It was able to place 3rd overall at AEAC!'
-  },
-  {
-    id: 9,
-    title: 'HUMMINGBIRD',
-    subtitle: 'QUAD',
-    year: '2023/24',
-    img: HummingBird,
-    description: 'The Hummingbird Project was the team\'s response to the need for a more precise and quickly configurable aircraft many years ago. The Wasp series of Unmanned Systems allows us to quickly change the payload and layout of the aircraft and fly different style missions within minutes of one another.'
-  },
-  {
-    id: 10,
-    title: 'HYDRONE',
-    subtitle: 'QUAD / 2nd at AEAC',
-    year: '2024/25',
-    img: Hydrone,
-    description: 'Hydrone was the team’s flagship aircraft for the 2025 season. With modularity in mind, Hydrone was designed to be versatile – allowing for quick and easy payload changes as well as easy disassembly. Hydrone had a great peformance last season during competition, leading to a 2nd place finish in AEAC 2025 and the highest scoring Canadian team for SUAS 2025!'
+    title: 'Payload Team',
+    subtitle: '',
+    year: '',
+    img: Payload,
+    description: 'he UAS Payload subteam is dedicated to developing innovative solutions for complex design challenges. Our history includes successful projects ranging from package retrieval systems to drone firefighting technology that incorporates electromechanical systems and CAD/3D printing design. Collaborating closely with the wider team, our talented students consistently push boundaries, challenge creative limits, and deliver systems that address practical, real-world problems. We focus on applying problem-solving and robust manufacturing processes, culminating in showcasing our design achievements at annual competitions across North America.'
   }
 ];
 
@@ -397,7 +382,7 @@ const Projects = () => {
         <section className="project-section">
           <h2 className="section-timeline">2018 - 2025</h2>
           <ProjectRow title="AIRCRAFT" projects={aircraftProjects} />
-          {/* <ProjectRow title="PAYLOAD" projects={payloadProjects} /> */}
+          <ProjectRow title="PAYLOAD" projects={payloadProjects} />
           <ProjectRow title="SOFTWARE" projects={softwareProjects} />
         </section>
 
