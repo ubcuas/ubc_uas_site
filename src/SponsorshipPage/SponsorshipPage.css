@@ -147,30 +147,6 @@ html[data-theme='light'] .sponsor-tiers {
     display: none;
 }
 
-@media (min-width: 1024px) {
-    .sponsorship-details__drone {
-        display: block;
-        position: absolute;
-        top: clamp(5.5rem, 4vw, 6.5rem);
-        left: 50%;
-        width: clamp(420px, 38vw, 640px);
-        height: clamp(240px, 22vw, 380px);
-        transform: translateX(-50%) rotate(-8deg);
-        background: url('../assets/home/last-screen/drone.png') center/contain no-repeat;
-        opacity: 0.38;
-        filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.55));
-        pointer-events: none;
-        z-index: 2;
-    }
-
-    .sponsorship-details__body,
-    .sponsorship-details__actions,
-    .sponsorship-details__cta {
-        position: relative;
-        z-index: 1;
-    }
-}
-
 .sponsor-tiers__tier-title {
     margin: 0;
     font-size: clamp(1.35rem, 1rem + 1.5vw, 2rem);
