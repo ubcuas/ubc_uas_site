@@ -30,14 +30,7 @@ const aircraftProjects = [
     img: Hydrone,
     description: 'Hydrone was the team’s flagship aircraft for the 2025 season. With modularity in mind, Hydrone was designed to be versatile – allowing for quick and easy payload changes as well as easy disassembly. Hydrone had a great peformance last season during competition, leading to a 2nd place finish in AEAC 2025 and the highest scoring Canadian team for SUAS 2025!'
   },
-  {
-    id: 2,
-    title: 'HUMMINGBIRD',
-    subtitle: 'QUAD',
-    year: '2023/24',
-    img: HummingBird,
-    description: 'The Hummingbird Project was the team\'s response to the need for a more precise and quickly configurable aircraft many years ago. The Wasp series of Unmanned Systems allows us to quickly change the payload and layout of the aircraft and fly different style missions within minutes of one another. As the years have progressed, Hummingbird has retained its strong performance and so it continues to be used as a test drone for software and camera systems.'
-  },
+  
   {
     id: 3,
     title: 'ALBATROSS',
@@ -58,9 +51,17 @@ const aircraftProjects = [
     id: 5,
     title: 'Beetle',
     subtitle: 'VTOL',
-    year: '2024/25',
+    year: '2021/22',
     img: Beetle,
     description: 'Beetle was UAS’s first attempt at a vertical take-off and landing (VTOL) drone. It was designed with a large main compartment to drop a small rover from with a winch. We learned a lot from this project and it was a great stepping stone to our next VTOL project, Dragonfly.'
+  },
+  {
+    id: 2,
+    title: 'HUMMINGBIRD',
+    subtitle: 'QUAD',
+    year: '2020/21',
+    img: HummingBird,
+    description: 'The Hummingbird Project was the team\'s response to the need for a more precise and quickly configurable aircraft many years ago. The Wasp series of Unmanned Systems allows us to quickly change the payload and layout of the aircraft and fly different style missions within minutes of one another. As the years have progressed, Hummingbird has retained its strong performance and so it continues to be used as a test drone for software and camera systems.'
   },
   {
     id: 6,
