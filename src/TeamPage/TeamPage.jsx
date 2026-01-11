@@ -1,51 +1,51 @@
-import { useEffect } from "react";
-import "./TeamPage.css";
-import ImageCarousel from "./ImageCarousel";
-import TeamSection from "./TeamSection";
-import { teamData } from "./TeamData";
+import { useEffect } from 'react'
+import './TeamPage.css'
+import ImageCarousel from './ImageCarousel'
+import TeamSection from './TeamSection'
+import { teamData } from './TeamData'
 
+const imageUrl = (path) => new URL(path, import.meta.url).href
 
 export default function TeamPage() {
   // Separate images specifically for the header carousel
   const carouselImages = [
     {
-      src: "src/assets/carousel/teamCarousel/carousel1.jpg",
+      src: imageUrl('../assets/carousel/teamCarousel/carousel1.jpg'),
     },
-    { src: "src/assets/carousel/teamCarousel/carousel2.jpg", }, 
-    { src: "src/assets/carousel/teamCarousel/carousel3.png", },
-    { src: "src/assets/carousel/teamCarousel/carousel4.jpg", },
-    { src: "src/assets/carousel/teamCarousel/carousel5.jpg", },
-    { src: "src/assets/carousel/teamCarousel/carousel6.jpg", },
-    { src: "src/assets/carousel/teamCarousel/carousel7.jpg", },
+    { src: imageUrl('../assets/carousel/teamCarousel/carousel2.jpg') },
+    { src: imageUrl('../assets/carousel/teamCarousel/carousel3.png') },
+    { src: imageUrl('../assets/carousel/teamCarousel/carousel4.jpg') },
+    { src: imageUrl('../assets/carousel/teamCarousel/carousel5.jpg') },
+    { src: imageUrl('../assets/carousel/teamCarousel/carousel6.jpg') },
+    { src: imageUrl('../assets/carousel/teamCarousel/carousel7.jpg') },
+  ] // scroll-linked animation (parallax)
+  useEffect(() => {
+    let latestY = window.scrollY || window.pageYOffset
+    let ticking = false
 
-  ]; // scroll-linked animation (parallax)
- useEffect(() => {
-  let latestY = window.scrollY || window.pageYOffset;
-  let ticking = false;
-
-  const updateScrollVar = () => {
-    document.documentElement.style.setProperty("--team-scroll", `${latestY}px`);
-    ticking = false;
-  };
-
-  const handleScroll = () => {
-    latestY = window.scrollY || window.pageYOffset;
-
-    if (!ticking) {
-      window.requestAnimationFrame(updateScrollVar);
-      ticking = true;
+    const updateScrollVar = () => {
+      document.documentElement.style.setProperty('--team-scroll', `${latestY}px`)
+      ticking = false
     }
-  };
 
-  // initial value
-  handleScroll();
+    const handleScroll = () => {
+      latestY = window.scrollY || window.pageYOffset
 
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
+      if (!ticking) {
+        window.requestAnimationFrame(updateScrollVar)
+        ticking = true
+      }
+    }
+
+    // initial value
+    handleScroll()
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
-       <section className="team-page" aria-label="UBC UAS Team">
+    <section className="team-page" aria-label="UBC UAS Team">
       <div className="team-page__title-banner" aria-hidden="true" />
       <div className="team-heading-wrap">
         <h1 className="team-heading">Meet Our Team</h1>
@@ -65,5 +65,5 @@ export default function TeamPage() {
         ))}
       </div>
     </section>
-  );
+  )
 }
