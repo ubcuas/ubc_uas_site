@@ -560,6 +560,7 @@ html {
     .recruitment-winter__item {
       position: static;
       max-width: none;
+      text-align: center;
     }
   
     .recruitment-winter__card {
