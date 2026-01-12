@@ -126,7 +126,7 @@ const legacyProjects = [
     id: 14,
     title: 'Advanced Technology Demonstrator: Desert Hawk',
     subtitle: 'VTOL / 3rd at AEAC',
-    year: '2017/18',
+    year: 'LEGACY',
     img: DesertHawk,
     description: 'Demanding real-world applications like Law Enforcement or Search And Rescue require high performance, multi-mission drones. The Advanced Technology Demonstrator was designed to be both a testbed of new drone technologies and the mission aircraft for the 2018 AUVSI SUAS competition. The Desert Hawk incorporated unique technologies and capabilities such as vortex generators and obstacle avoidance; it was also one of the first projects to include Augmented Reality prototyping to visualize subsystem integration. The project inspired growth and innovation for proceeding UBC UAS projects.'
   },
@@ -134,7 +134,7 @@ const legacyProjects = [
     id: 15,
     title: 'Raven',
     subtitle: 'VTOL / 3rd at AEAC',
-    year: '2018/19',
+    year: 'LEGACY',
     img: Raven,
     description: 'Project Raven was born out of a need for a stable, high-endurance multi-rotor platform. It was originally designed for an Australian Medical express competition to serve as an aerial relay station, halfway between the active aircraft and the ground station. Raven was retired in February of 2019 after serving as a versatile aircraft ideal for low altitude mapping of large areas as well as carrying and delivering heavy payloads. The modular payload attachments and option for multiple batteries further expanded its mission envelope.'
   },
@@ -142,7 +142,7 @@ const legacyProjects = [
     id: 16,
     title: 'Thunderbird',
     subtitle: 'Fixed-Wing and Recon',
-    year: '2017/18',
+    year: 'LEGACY',
     img: Thunderbird,
     description: 'Project Thunderbird was UBC UAS’s fixed wing and aerial reconnaissance project. The Thunderbird series of Unmanned Aircraft Systems provided the team with a reliable in air system with a high payload capacity, long endurance missions, and large scale survey capabilities. The fixed-wings were based on the Cyclops C airframe which were generously sponsored by AsiaTech Drones. They were capable of carrying several kilograms worth of payload and gave us the ability to use high resolution DSLR cameras, stereo-vision imaging systems, and pack in more batteries to extend flight times.'
   },
@@ -150,7 +150,7 @@ const legacyProjects = [
     id: 17,
     title: 'Sparrow',
     subtitle: 'VTOL / 3rd at AEAC',
-    year: '2017/18',
+    year: 'LEGACY',
     img: Sparrow,
     description: 'Project Sparrow was created in an effort to react to recent changes in the UAS industry as well as the Unmanned Systems Canada Student Competition of its time. Due to a new influx of quick launch drones, as well as the recent time limit constraints of the competition, the team created the Sparrow Unmanned Aircraft System. With this aircraft we were able to hand launch from a moment’s notice and be in the air within seconds. The aircraft was equipped with the same surveying equipment as the larger Thunderbird aircraft, however is extremely compact and lightweight in comparison. With this aircraft the team was able to take large area surveys at a high altitude and return to base quickly, efficiently, and smoothly.'
   },
@@ -158,7 +158,7 @@ const legacyProjects = [
     id: 18,
     title: 'Flame Wheel',
     subtitle: 'VTOL / 3rd at AEAC',
-    year: '2017/18',
+    year: 'LEGACY',
     img: FlameWheel,
     description: 'As a donation from UBC Studios, the Flame Wheel serves as a filming platform for promotional material as well as a pilot training aircraft. It’s always ready to go and never fails to deliver.'
   }
