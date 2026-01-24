@@ -71,14 +71,7 @@ const aircraftProjects = [
     img: Ataksak,
     description: 'The Ataksak Project was the team’s response to the 2020 AUVSI challenge. Ataksak was built to have a flight range of up to 8 miles and a payload capacity of 3kg. The tall airframe allows payloads to safely sit within the aircraft; making it ideal to carry expensive payloads for missions such as delivering packages and mapping/ searching areas. Ataksak was also used for many years beyond its competition.'
   },
-  {
-    id: 7,
-    title: 'Condor',
-    subtitle: 'QUAD / 2n',
-    year: '2018/19',
-    img: Condor,
-    description: 'As a direct response to the 2019 AUVSI SUAS challenge, Condor was built to complete a long distance payload drop with high accuracy. Speed, high payload capacity, and endurance allowed Condor to successfully complete the given mission with excellent precision. It was continued to be used for many years beyond the competition. Top speed – 120 km/h, MTOW – 12kg, Wing Span – 1500mm, Max elec Power – 7600W'
-  }
+  
 ];
 
 const payloadProjects = [
@@ -95,7 +88,7 @@ const payloadProjects = [
 // SECTION 2: SOFTWARE PROJECTS
 const softwareProjects = [
     {
-        id: 12,
+        id: 10,
         title: 'Hawkeye',
         subtitle: 'Image Detection',
         year: '2024-2025',
@@ -111,7 +104,7 @@ const softwareProjects = [
     description: 'Over the past years UBC UAS has been working on the next generation ground command software (GCOM). A single suit that acts as a data consolidation platform, it gathers information about the UAS from multiple sources (e.g. Mavlink) and provides the following functionality: - Antenna tracker control - Drone communication and control - Collision avoidance - Reliable Image download - Image object detection - Image geotagging - Analytics on processed images - Autonomously report generation. In addition to the above functionalities, GCOM was designed with reliability and modularity in mind. This allows UBC UAS to achieve higher reliability standards since each module can be independently tested against all possible inputs. Additionally, GCOM operates using a fully reliable communication protocol developed to transmit variable length data between any two devices (UAS Message) that utilize serial, TCP, or UDP communications.'
   },
   {
-    id: 13,
+    id: 12,
     title: 'GCATS',
     subtitle: 'Data Transfer',
     year: '2021/22',
@@ -122,8 +115,16 @@ const softwareProjects = [
 
 // SECTION 3: LEGACY PROJECTS
 const legacyProjects = [
+    {
+        id: 14,
+        title: 'Condor',
+        subtitle: 'QUAD / 2n',
+        year: 'LEGACY',
+        img: Condor,
+        description: 'As a direct response to the 2019 AUVSI SUAS challenge, Condor was built to complete a long distance payload drop with high accuracy. Speed, high payload capacity, and endurance allowed Condor to successfully complete the given mission with excellent precision. It was continued to be used for many years beyond the competition. Top speed – 120 km/h, MTOW – 12kg, Wing Span – 1500mm, Max elec Power – 7600W'
+      },
   {
-    id: 14,
+    id: 15,
     title: 'Advanced Technology Demonstrator: Desert Hawk',
     subtitle: 'VTOL / 3rd at AEAC',
     year: 'LEGACY',
@@ -131,7 +132,7 @@ const legacyProjects = [
     description: 'Demanding real-world applications like Law Enforcement or Search And Rescue require high performance, multi-mission drones. The Advanced Technology Demonstrator was designed to be both a testbed of new drone technologies and the mission aircraft for the 2018 AUVSI SUAS competition. The Desert Hawk incorporated unique technologies and capabilities such as vortex generators and obstacle avoidance; it was also one of the first projects to include Augmented Reality prototyping to visualize subsystem integration. The project inspired growth and innovation for proceeding UBC UAS projects.'
   },
   {
-    id: 15,
+    id: 16,
     title: 'Raven',
     subtitle: 'VTOL / 3rd at AEAC',
     year: 'LEGACY',
@@ -139,7 +140,7 @@ const legacyProjects = [
     description: 'Project Raven was born out of a need for a stable, high-endurance multi-rotor platform. It was originally designed for an Australian Medical express competition to serve as an aerial relay station, halfway between the active aircraft and the ground station. Raven was retired in February of 2019 after serving as a versatile aircraft ideal for low altitude mapping of large areas as well as carrying and delivering heavy payloads. The modular payload attachments and option for multiple batteries further expanded its mission envelope.'
   },
   {
-    id: 16,
+    id: 17,
     title: 'Thunderbird',
     subtitle: 'Fixed-Wing and Recon',
     year: 'LEGACY',
@@ -147,7 +148,7 @@ const legacyProjects = [
     description: 'Project Thunderbird was UBC UAS’s fixed wing and aerial reconnaissance project. The Thunderbird series of Unmanned Aircraft Systems provided the team with a reliable in air system with a high payload capacity, long endurance missions, and large scale survey capabilities. The fixed-wings were based on the Cyclops C airframe which were generously sponsored by AsiaTech Drones. They were capable of carrying several kilograms worth of payload and gave us the ability to use high resolution DSLR cameras, stereo-vision imaging systems, and pack in more batteries to extend flight times.'
   },
   {
-    id: 17,
+    id: 18,
     title: 'Sparrow',
     subtitle: 'VTOL / 3rd at AEAC',
     year: 'LEGACY',
