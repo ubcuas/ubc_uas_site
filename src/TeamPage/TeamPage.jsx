@@ -14,17 +14,32 @@ import carousel5 from "../assets/carousel/teamCarousel/carousel5.jpg";
 import carousel6 from "../assets/carousel/teamCarousel/carousel6.jpg";
 import carousel7 from "../assets/carousel/teamCarousel/carousel7.jpg";
 
+const carouselImages = [
+  { src: carousel1 },
+  { src: carousel2 },
+  { src: carousel3 },
+  { src: carousel4 },
+  { src: carousel5 },
+  { src: carousel6 },
+  { src: carousel7 },
+];
+
 export default function TeamPage() {
-  // Separate images specifically for the header carousel
-  const carouselImages = [
-    { src: carousel1 },
-    { src: carousel2 },
-    { src: carousel3 },
-    { src: carousel4 },
-    { src: carousel5 },
-    { src: carousel6 },
-    { src: carousel7 },
-  ];
+  useEffect(() => {
+    const sources = [
+      ...carouselImages.map((slide) => slide.src),
+      ...teamData.flatMap((section) => {
+        const memberImages = (section.members || []).map((member) => member.img);
+        return [section.groupImg, ...memberImages].filter(Boolean);
+      }),
+    ];
+
+    const uniqueSources = [...new Set(sources)];
+    uniqueSources.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, [carouselImages, teamData]);
 
   // scroll-linked animation (parallax)
   useEffect(() => {

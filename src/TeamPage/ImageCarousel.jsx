@@ -95,7 +95,7 @@ export default function ImageCarousel({ slides = [] }) {
           {hasSlides
             ? slides.map((s, i) => (
                 <div className="carousel__slide" key={i} aria-hidden={i !== index}>
-                  <img src={s.src} alt={s.alt ?? `Slide ${i + 1}`} />
+                  <img src={s.src} alt={s.alt ?? `Slide ${i + 1}`} loading="eager" />
                 </div>
               ))
             : null}
