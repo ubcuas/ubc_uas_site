@@ -1,26 +1,26 @@
 // TeamData.js
 // Uses imported URLs so your bundler (Vite/CRA/etc.) copies + hashes images for production.
 
-import captain from "../assets/teamPortraits/captain.png";
-import operationsLead from "../assets/teamPortraits/operationsLead.jpg";
+import captain from "../assets/teamPortraits/captain.webp";
+import operationsLead from "../assets/teamPortraits/operationsLead.webp";
 
-import aircraftSean from "../assets/teamPortraits/aircraftSean.jpg";
-import aircraftVasily from "../assets/teamPortraits/aircraftVasily.png";
+import aircraftSean from "../assets/teamPortraits/aircraftSean.webp";
+import aircraftVasily from "../assets/teamPortraits/aircraftVasily.webp";
 
-import payloadJaden from "../assets/teamPortraits/payloadJaden.jpg";
-import payloadJason from "../assets/teamPortraits/payloadJason.jpg";
+import payloadJaden from "../assets/teamPortraits/payloadJaden.webp";
+import payloadJason from "../assets/teamPortraits/payloadJason.webp";
 
-import electricalWayne from "../assets/teamPortraits/electricalWayne.jpg";
-import electricalCohen from "../assets/teamPortraits/electricalCohen.jpg";
+import electricalWayne from "../assets/teamPortraits/electricalWayne.webp";
+import electricalCohen from "../assets/teamPortraits/electricalCohen.webp";
 
-import softwareMercury from "../assets/teamPortraits/softwareMercury.jpg";
-import softwareRam from "../assets/teamPortraits/softwareRam.jpg";
+import softwareMercury from "../assets/teamPortraits/softwareMercury.webp";
+import softwareRam from "../assets/teamPortraits/softwareRam.webp";
 
-import adminGroup from "../assets/teamPhotos/admin.jpg";
-import aircraftGroup from "../assets/teamPhotos/aircraft.jpg";
-import payloadGroup from "../assets/teamPhotos/payload.jpg";
-import electricalGroup from "../assets/teamPhotos/electrical.jpg";
-import softwareGroup from "../assets/teamPhotos/software.jpg";
+import adminGroup from "../assets/teamPhotos/admin.webp";
+import aircraftGroup from "../assets/teamPhotos/aircraft.webp";
+import payloadGroup from "../assets/teamPhotos/payload.webp";
+import electricalGroup from "../assets/teamPhotos/electrical.webp";
+import softwareGroup from "../assets/teamPhotos/software.webp";
 
 export const teamData = [
   {
