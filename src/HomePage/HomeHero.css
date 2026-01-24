@@ -72,6 +72,7 @@
 
 .home-hero__title {
     margin: 0;
+    font-family: 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif;
     font-size: var(--home-hero-title-size);
     line-height: clamp(0.92, 0.86 + 0.1vw, 1.05);
     text-transform: uppercase;
