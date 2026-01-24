@@ -34,71 +34,60 @@ const sponsorLogos = [
 const SponsorsSection = () => {
   const scrollRef = useRef(null)
 
-  const scroll = direction => {
-    const container = scrollRef.current
-    if (!container) return
-    const card = container.querySelector('.sponsors-section__card')
-    if (!card) return
-
-    const cardWidth = card.getBoundingClientRect().width
-    const styles = window.getComputedStyle(container)
-    const gapCandidates = [
-      parseFloat(styles.columnGap),
-      parseFloat(styles.gap),
-      parseFloat(styles.getPropertyValue('column-gap')),
-      parseFloat(styles.getPropertyValue('gap')),
-    ]
-    const gap = gapCandidates.find(value => Number.isFinite(value)) || 0
-    const scrollAmount = cardWidth + gap
-
-    container.scrollBy({
-      left: direction === 'left' ? -scrollAmount : scrollAmount,
-      behavior: 'smooth',
-    })
-  }
-
   useEffect(() => {
     const container = scrollRef.current
     if (!container) return undefined
 
-    let pointerId = null
-    let startX = 0
-    let startScroll = 0
+    let laneWidth = 0
+    const images = Array.from(container.querySelectorAll('img'))
 
-    const onPointerDown = event => {
-      if (!event.isPrimary) return
-      pointerId = event.pointerId
-      startX = event.clientX
-      startScroll = container.scrollLeft
-      container.classList.add('is-dragging')
-      container.setPointerCapture?.(pointerId)
+    const updateLaneWidth = () => {
+      const lane = container.querySelector('.sponsors-section__lane')
+      if (!lane) return
+      const styles = window.getComputedStyle(container)
+      const gapCandidates = [
+        parseFloat(styles.columnGap),
+        parseFloat(styles.gap),
+        parseFloat(styles.getPropertyValue('column-gap')),
+        parseFloat(styles.getPropertyValue('gap')),
+      ]
+      const gap = gapCandidates.find(value => Number.isFinite(value)) || 0
+      laneWidth = lane.getBoundingClientRect().width + gap
+      if (laneWidth > 0) {
+        container.scrollLeft = laneWidth
+      }
     }
 
-    const onPointerMove = event => {
-      if (pointerId !== event.pointerId) return
-      const deltaX = event.clientX - startX
-      container.scrollLeft = startScroll - deltaX
+    const onScroll = () => {
+      if (!laneWidth) return
+      if (container.scrollLeft <= laneWidth * 0.5) {
+        container.scrollLeft += laneWidth
+      } else if (container.scrollLeft >= laneWidth * 1.5) {
+        container.scrollLeft -= laneWidth
+      }
     }
 
-    const onPointerRelease = event => {
-      if (pointerId !== event.pointerId) return
-      container.classList.remove('is-dragging')
-      container.releasePointerCapture?.(pointerId)
-      pointerId = null
+    const onImageLoad = () => {
+      updateLaneWidth()
     }
 
-    container.addEventListener('pointerdown', onPointerDown)
-    container.addEventListener('pointermove', onPointerMove)
-    container.addEventListener('pointerup', onPointerRelease)
-    container.addEventListener('pointercancel', onPointerRelease)
-    container.addEventListener('pointerleave', onPointerRelease)
+    updateLaneWidth()
+    container.addEventListener('scroll', onScroll, { passive: true })
+    const resizeObserver = new ResizeObserver(updateLaneWidth)
+    resizeObserver.observe(container)
+    images.forEach(img => {
+      if (img.complete) return
+      img.addEventListener('load', onImageLoad)
+      img.addEventListener('error', onImageLoad)
+    })
 
     return () => {
-      container.removeEventListener('pointerdown', onPointerDown)
-      container.removeEventListener('pointermove', onPointerMove)
-      container.removeEventListener('pointerup', onPointerRelease)
-      container.removeEventListener('pointercancel', onPointerRelease)
-      container.removeEventListener('pointerleave', onPointerRelease)
+      container.removeEventListener('scroll', onScroll)
+      resizeObserver.disconnect()
+      images.forEach(img => {
+        img.removeEventListener('load', onImageLoad)
+        img.removeEventListener('error', onImageLoad)
+      })
     }
   }, [])
 
@@ -117,31 +106,31 @@ const SponsorsSection = () => {
         </header>
 
         <div className="sponsors-section__track">
-          <button
-            className="sponsors-section__nav sponsors-section__nav--left"
-            type="button"
-            aria-label="Scroll sponsors left"
-            onClick={() => scroll('left')}
-          >
-            &#10094;
-          </button>
-
           <div className="sponsors-section__carousel" ref={scrollRef}>
-            {sponsorLogos.map(logo => (
-              <article key={logo} className="sponsors-section__card">
-                <img src={logo} alt="UBC UAS sponsor" loading="lazy" />
-              </article>
-            ))}
+            <div className="sponsors-section__marquee">
+              <div className="sponsors-section__lane">
+                {sponsorLogos.map(logo => (
+                  <article key={logo} className="sponsors-section__card">
+                    <img src={logo} alt="UBC UAS sponsor" loading="lazy" />
+                  </article>
+                ))}
+              </div>
+              <div className="sponsors-section__lane" aria-hidden="true">
+                {sponsorLogos.map(logo => (
+                  <article key={`${logo}-clone`} className="sponsors-section__card">
+                    <img src={logo} alt="" loading="lazy" />
+                  </article>
+                ))}
+              </div>
+              <div className="sponsors-section__lane" aria-hidden="true">
+                {sponsorLogos.map(logo => (
+                  <article key={`${logo}-clone-2`} className="sponsors-section__card">
+                    <img src={logo} alt="" loading="lazy" />
+                  </article>
+                ))}
+              </div>
+            </div>
           </div>
-
-          <button
-            className="sponsors-section__nav sponsors-section__nav--right"
-            type="button"
-            aria-label="Scroll sponsors right"
-            onClick={() => scroll('right')}
-          >
-            &#10095;
-          </button>
         </div>
       </div>
     </section>
