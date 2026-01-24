@@ -266,7 +266,7 @@ html[data-theme='light'] .navbar__logo-img--light {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 500px) {
   .navbar {
     --navbar-gap: clamp(0.75rem, 3vw, 2rem);
     --navbar-link-gap: clamp(0.6rem, 1.6vw, 1.4rem);
