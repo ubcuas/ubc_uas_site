@@ -1,10 +1,10 @@
 // RecruitmentPage.jsx
 import "../styles/info-page.css";
 import "./RecruitmentPage.css";
-import heroBackground from "../assets/pages/Recruitment/team.png";
+import heroBackground from "../assets/pages/Recruitment/team.webp";
 
-import TimelinePin from "../assets/icons/pin.png";
-import TimelineFlag from "../assets/icons/flag.png";
+import TimelinePin from "../assets/icons/pin.webp";
+import TimelineFlag from "../assets/icons/flag.webp";
 
 import recruitmentData from "./recruitmentData.json";
 

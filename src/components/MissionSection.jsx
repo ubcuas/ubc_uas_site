@@ -1,4 +1,4 @@
-import missionImage from '../assets/home/mission/background.png'
+import missionImage from '../assets/home/mission/background.webp'
 import './MissionSection.css'
 
 const highlights = [

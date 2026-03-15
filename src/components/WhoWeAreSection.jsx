@@ -1,4 +1,4 @@
-import backgroundImage from '../assets/home/who-we-are/background.png'
+import backgroundImage from '../assets/home/who-we-are/background.webp'
 import './WhoWeAreSection.css'
 
 const focusAreas = [
