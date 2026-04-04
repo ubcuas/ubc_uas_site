@@ -12,7 +12,7 @@ const WhoWeAreSection = () => {
     <section className="who-we-are" id="who-we-are" aria-labelledby="who-we-are-title">
       <div className="who-we-are__inner">
         <div className="who-we-are__content">
-          <p className="who-we-are__eyebrow">Team</p>
+
           <h2 className="who-we-are__title" id="who-we-are-title">
             Who Are We?
           </h2>
@@ -21,12 +21,7 @@ const WhoWeAreSection = () => {
             We operate like a product team: flight systems, autonomy, avionics, business, and ops
             pushing toward the same mission.
           </p>
-          <div className="who-we-are__chips">
-            <span>Design</span>
-            <span>Flight Test</span>
-            <span>Ground Control</span>
-            <span>Business</span>
-          </div>
+
           <div className="who-we-are__cards">
             {focusAreas.map(area => (
               <article key={area.title}>
