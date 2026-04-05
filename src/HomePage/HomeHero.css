@@ -15,8 +15,8 @@
     --home-hero-title-spacing: clamp(0.03em, calc(0.04em + var(--home-hero-fluid-step) * 0.01), 0.08em);
     --home-hero-letter-spacing: clamp(0.14em, calc(0.14em + var(--home-hero-fluid-step) * 0.008), 0.28em);
     --home-hero-content-gap: clamp(1.25rem, calc(1.25rem + var(--home-hero-fluid-step) * 0.25), 2.4rem);
-    --home-hero-cta-padding-y: clamp(0.65rem, calc(0.65rem + var(--home-hero-fluid-step) * 0.08), 1rem);
-    --home-hero-cta-padding-x: clamp(1.5rem, calc(1.75rem + var(--home-hero-fluid-step) * 0.35), 3rem);
+    --home-hero-cta-padding-y: clamp(0.45rem, calc(0.45rem + var(--home-hero-fluid-step) * 0.06), 0.75rem);
+    --home-hero-cta-padding-x: clamp(1.2rem, calc(1.25rem + var(--home-hero-fluid-step) * 0.25), 2.2rem);
     --home-hero-cta-font: clamp(0.9rem, calc(0.95rem + var(--home-hero-fluid-step) * 0.05), 1.12rem);
     --home-hero-image-ratio: 0.65;
 
@@ -30,9 +30,9 @@
     padding: clamp(2.5rem, calc(3rem + var(--home-hero-fluid-step) * 0.4), 5.5rem) clamp(1rem, calc(1.5rem + var(--home-hero-fluid-step) * 0.4), 3rem) clamp(3rem, calc(3.5rem + var(--home-hero-fluid-step) * 0.5), 6rem);
     background-color: var(--color-page-bg);
     background-image: linear-gradient(135deg, rgba(3, 8, 20, 0.25) 0%, rgba(5, 24, 54, 0.15) 55%, rgba(3, 8, 20, 0.25) 100%),
-        url('../assets/home-hero-bg.JPG');
+        url('../assets/home-hero-bg.webp');
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center 40%;
     background-size: cover;
     filter: brightness(0.9) contrast(1.05) saturate(1.05);
 
@@ -82,6 +82,7 @@
 }
 
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+
     .home-hero__title,
     .home-hero__tagline {
         position: relative;

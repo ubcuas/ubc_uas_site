@@ -1,5 +1,5 @@
-import textureRibbon from '../assets/home/last-screen/drone.png'
-import textureRibbonLight from '../assets/home/last-screen/drone-light.png'
+import textureRibbon from '../assets/home/last-screen/drone.webp'
+import textureRibbonLight from '../assets/home/last-screen/drone-light.webp'
 import './TeamHighlightsSection.css'
 
 const whatWeDo = [
@@ -50,7 +50,7 @@ const TeamHighlightsSection = () => (
             loading="lazy"
           />
           <div className="team-highlights__media-note">
-            <span>Flight testing at Boundary Bay</span>
+            <span>A team with real flying experience</span>
             <strong>180+ hours last season</strong>
           </div>
         </article>

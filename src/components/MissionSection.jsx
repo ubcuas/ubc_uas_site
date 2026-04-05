@@ -1,4 +1,4 @@
-import missionImage from '../assets/home/mission/background.png'
+import missionImage from '../assets/home/mission/background.webp'
 import './MissionSection.css'
 
 const highlights = [
@@ -17,7 +17,6 @@ const MissionSection = () => {
     >
       <div className="mission__inner">
         <div className="mission__content">
-          <p className="mission__eyebrow">Mission</p>
           <h2 className="mission__title" id="mission-title">
             Build reliable autonomy for real-world impact.
           </h2>
@@ -43,8 +42,8 @@ const MissionSection = () => {
             ))}
           </div>
           <div className="mission__note">
-            <p>Every subsystem is backed by design reviews, simulation, and iterative flight tests.</p>
-            <strong>Research + build + fly</strong>
+            <p>Built for AEAC + SUAS: autonomous aircraft and the support systems that bring missions home</p>
+            <strong>Build + Test + Compete</strong>
           </div>
         </div>
       </div>

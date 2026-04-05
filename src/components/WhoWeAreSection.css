@@ -18,14 +18,6 @@
   gap: 1.25rem;
 }
 
-.who-we-are__eyebrow {
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 0.4em;
-  font-size: clamp(0.75rem, 1.5vw, 0.95rem);
-  color: var(--color-text-subtle);
-}
-
 .who-we-are__title {
   margin: 0;
   font-size: clamp(2.1rem, 4vw, 3.5rem);
@@ -37,22 +29,6 @@
   font-size: clamp(1rem, 2.2vw, 1.2rem);
   color: var(--color-text-muted);
   line-height: 1.7;
-}
-
-.who-we-are__chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.who-we-are__chips span {
-  padding: 0.45rem 1rem;
-  border-radius: 999px;
-  border: 1px solid var(--color-border);
-  text-transform: uppercase;
-  font-size: 0.78rem;
-  letter-spacing: 0.2em;
-  color: var(--color-text-subtle);
 }
 
 .who-we-are__cards {
@@ -104,11 +80,11 @@
 
 .who-we-are__media-note {
   margin-top: clamp(0.75rem, 2vw, 1rem);
-  padding: 0.9rem 1.25rem;
-  border-radius: 0.8rem;
-  border: 1px solid color-mix(in srgb, var(--color-accent) 40%, transparent);
-  background: color-mix(in srgb, var(--color-surface-alt) 90%, transparent);
-  font-size: 0.9rem;
+  padding: 0.6rem 0.5rem;
+  text-align: center;
+  border: none;
+  background: transparent;
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
   color: var(--color-text-muted);
   line-height: 1.4;
 }
@@ -123,9 +99,5 @@
 @media (max-width: 640px) {
   .who-we-are__cards {
     grid-template-columns: 1fr;
-  }
-
-  .who-we-are__chips {
-    justify-content: center;
   }
 }

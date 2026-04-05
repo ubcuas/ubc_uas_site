@@ -4,7 +4,7 @@ export default function MemberCard({ heading, name, role, img, linkedinUrl }) {
         {heading && <div className="member-heading">{heading}</div>}
   
         <div className="member-card">
-          <img src={img} alt={name} />
+          <img src={img} alt={name} loading="lazy" />
           <div className="name-row">
   <p className="name">{name}</p>
   {linkedinUrl && (

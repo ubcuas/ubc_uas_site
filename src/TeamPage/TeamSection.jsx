@@ -21,7 +21,7 @@ export default function TeamSection({
 
       {groupImg && (
         <figure className="group-photo group-photo--framed">
-          <img src={groupImg} alt={`${title ?? "Team"} group`} />
+          <img src={groupImg} alt={`${title ?? "Team"} group`} loading="lazy" />
           {caption && <figcaption className="group-photo__caption">{caption}</figcaption>}
         </figure>
       )}
