@@ -6,13 +6,13 @@ import TeamSection from "./TeamSection";
 import { teamData } from "./TeamData";
 
 // CHANGED: import carousel images (so build rewrites URLs)
-import carousel1 from "../assets/carousel/teamCarousel/carousel1.jpg";
-import carousel2 from "../assets/carousel/teamCarousel/carousel2.jpg";
-import carousel3 from "../assets/carousel/teamCarousel/carousel3.png";
-import carousel4 from "../assets/carousel/teamCarousel/carousel4.jpg";
-import carousel5 from "../assets/carousel/teamCarousel/carousel5.jpg";
-import carousel6 from "../assets/carousel/teamCarousel/carousel6.jpg";
-import carousel7 from "../assets/carousel/teamCarousel/carousel7.jpg";
+import carousel1 from "../assets/carousel/teamCarousel/carousel1.webp";
+import carousel2 from "../assets/carousel/teamCarousel/carousel2.webp";
+import carousel3 from "../assets/carousel/teamCarousel/carousel3.webp";
+import carousel4 from "../assets/carousel/teamCarousel/carousel4.webp";
+import carousel5 from "../assets/carousel/teamCarousel/carousel5.webp";
+import carousel6 from "../assets/carousel/teamCarousel/carousel6.webp";
+import carousel7 from "../assets/carousel/teamCarousel/carousel7.webp";
 
 export default function TeamPage() {
   // Separate images specifically for the header carousel

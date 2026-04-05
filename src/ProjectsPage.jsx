@@ -2,9 +2,9 @@ import React, { useEffect, useRef } from 'react';
 import './styles/info-page.css';
 import { createPortal } from 'react-dom';
 import './ProjectsPage.css';
-import heroBackground from './assets/pages/projects/hero-background.png';
-import Payload from './assets/carousel/DSC06674.JPG'
-import Hydrone from './assets/carousel/Hydrone.png';
+import heroBackground from './assets/pages/projects/hero-background.webp';
+import Payload from './assets/carousel/DSC06674.webp'
+import Hydrone from './assets/carousel/Hydrone.webp';
 import Ataksak from './assets/carousel/ataksak.webp';
 import Beetle from './assets/carousel/beetle.webp';
 import DesertHawk from './assets/carousel/DesertHawk.webp';
@@ -12,13 +12,13 @@ import Condor from './assets/carousel/condor.webp';
 import DragonFly from './assets/carousel/dragonfly.webp';
 import HummingBird from './assets/carousel/hummingbird.webp';
 import Albatross from './assets/carousel/Albatross.webp';
-import GCATS from './assets/carousel/GCATS.jpg';
+import GCATS from './assets/carousel/GCATS.webp';
 import GCOM from './assets/carousel/GCOM.webp';
 import Raven from './assets/carousel/Raven.webp';
 import Sparrow from './assets/carousel/Sparrow.webp';
 import FlameWheel from './assets/carousel/FlameWheel.webp';
 import Thunderbird from './assets/carousel/Thunderbird.webp';
-import CAMVIS from './assets/carousel/Camvis.png';
+import CAMVIS from './assets/carousel/Camvis.webp';
 
 // SECTION 1: AIRCRAFT PROJECTS
 const aircraftProjects = [
@@ -191,7 +191,7 @@ const ProjectModal = ({ project, onClose }) => {
           &times;
         </button>
         <div className="project-modal-image-wrapper">
-          <img src={project.img} alt={project.title} className="project-modal-image" />
+          <img src={project.img} alt={project.title} className="project-modal-image" loading="lazy" />
         </div>
         <div className="project-modal-content">
           <span className="project-modal-year">{project.year}</span>
@@ -226,7 +226,7 @@ const ProjectCard = ({ project }) => {
     <>
       <div className="project-card">
         <div className="card-image-container">
-          <img src={project.img} alt={project.title} className="card-image" />
+          <img src={project.img} alt={project.title} className="card-image" loading="lazy" />
           <span className="year-badge">{project.year}</span>
         </div>
         <div className="card-content">

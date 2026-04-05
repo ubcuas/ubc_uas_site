@@ -1,5 +1,5 @@
-import textureRibbon from '../assets/home/last-screen/drone.png'
-import textureRibbonLight from '../assets/home/last-screen/drone-light.png'
+import textureRibbon from '../assets/home/last-screen/drone.webp'
+import textureRibbonLight from '../assets/home/last-screen/drone-light.webp'
 import './TeamHighlightsSection.css'
 
 const whatWeDo = [

@@ -3,7 +3,7 @@
 .info-page--sponsorship {
     --info-page-image-ratio: 0.746;
     --info-page-overlay: linear-gradient(135deg, rgba(3, 8, 20, 0.6) 0%, rgba(5, 24, 54, 0.6) 55%, rgba(3, 8, 20, 0.6) 100%);
-    background: url('../assets/pages/sponsorship/hero-background.png') center / cover no-repeat;
+    background: url('../assets/pages/sponsorship/hero-background.webp') center / cover no-repeat;
 }
 
 @media (max-width: 420px) {
@@ -223,6 +223,7 @@ html[data-theme='dark'] .sponsor-tiers__link {
 }
 
 @media (max-width: 720px) {
+
     .sponsorship-details__container,
     .sponsor-tiers__container {
         text-align: center;

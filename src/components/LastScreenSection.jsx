@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import textureRibbon from '../assets/home/last-screen/drone.png'
-import planeImage from '../assets/home/last-screen/sunDrone.png'
+import textureRibbon from '../assets/home/last-screen/drone.webp'
+import planeImage from '../assets/home/last-screen/sunDrone.webp'
 import './LastScreenSection.css'
 
 const systems = [

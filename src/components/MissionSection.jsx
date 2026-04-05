@@ -1,4 +1,4 @@
-import missionImage from '../assets/home/mission/background.png'
+import missionImage from '../assets/home/mission/background.webp'
 import './MissionSection.css'
 
 const highlights = [
@@ -17,7 +17,6 @@ const MissionSection = () => {
     >
       <div className="mission__inner">
         <div className="mission__content">
-          <p className="mission__eyebrow">Mission</p>
           <h2 className="mission__title" id="mission-title">
             Build reliable autonomy for real-world impact.
           </h2>

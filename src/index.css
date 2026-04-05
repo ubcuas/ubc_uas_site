@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
+
 :root {
   --nav-height: 96px;
   --page-viewport-scale: clamp(
@@ -26,7 +28,7 @@
   --color-footer-border: rgba(255, 255, 255, 0.12);
   --color-hero-text: #ffffff;
   --color-hero-overlay: rgba(0, 0, 0, 0.2);
-  font-family: 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', 'Segoe UI', Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color-scheme: dark;
