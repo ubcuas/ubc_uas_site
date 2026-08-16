@@ -4,6 +4,7 @@
 import operationsLead from "../assets/teamPortraits/operationsLead.webp"
 
 import captainJaden from "../assets/teamPortraits/captainJaden.webp"
+import captainManorama from "../assets/teamPortraits/captainManorama.webp"
 import payloadJonathan from "../assets/teamPortraits/payloadJonathan.webp"
 
 import electricalWayne from "../assets/teamPortraits/electricalWayne.webp"
@@ -27,6 +28,12 @@ export const teamData = [
         name: "Jaden Chan",
         img: captainJaden,
         linkedinUrl: "https://www.linkedin.com/in/jaden-chan-748856216/",
+      },
+      {
+        heading: "Our Captain",
+        name: "Manorama Joshi",
+        img: captainManorama,
+        linkedinUrl: "https://www.linkedin.com/in/manoramajoshi/",
       },
       {
         heading: "Operations",
