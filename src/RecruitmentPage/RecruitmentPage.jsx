@@ -140,15 +140,6 @@ const RecruitmentPage = () => {
                       className="recruitment-timeline__icon"
                     />
                     <image
-                      href={TimelinePin}
-                      x={222}
-                      y={282}
-                      width="18"
-                      height="18"
-                      className="recruitment-timeline__icon"
-                    />
-
-                    <image
                       href={TimelineFlag}
                       x={55 - 10}
                       y={325 - 10}
@@ -359,11 +350,9 @@ const RecruitmentPage = () => {
                 </article>
 
                 <article className="recruitment-team">
-                  <h4 className="recruitment-team__name">Electrical</h4>
+                  <h4 className="recruitment-team__name">Admin</h4>
                   <p className="recruitment-team__body">
-                    Works on avionics and power systems, including PCBs for
-                    power distribution, payload interfaces, sensors, and other
-                    electronics.
+                    looking for someone who owns a waffle maker
                   </p>
                 </article>
 
