@@ -1,19 +1,21 @@
 // RecruitmentPage.jsx
-import "../styles/info-page.css";
-import "./RecruitmentPage.css";
-import heroBackground from "../assets/pages/Recruitment/team.webp";
+import "../styles/info-page.css"
+import "./RecruitmentPage.css"
+import heroBackground from "../assets/pages/Recruitment/team.webp"
 
-import TimelinePin from "../assets/icons/pin.webp";
-import TimelineFlag from "../assets/icons/flag.webp";
+import TimelinePin from "../assets/icons/pin.webp"
+import TimelineFlag from "../assets/icons/flag.webp"
 
-import recruitmentData from "./recruitmentData.json";
+import recruitmentData from "./recruitmentData.json"
 
 const RecruitmentPage = () => {
-  const { open, cycle, email, applyUrl, hero, panel, cycles } = recruitmentData;
-  const currentCycle = cycles?.[cycle];
+  const { open, cycle, email, applyUrl, hero, panel, cycles } = recruitmentData
+  const currentCycle = cycles?.[cycle]
 
-  const heroCtaHref = open ? "#recruitment-cycle" : `mailto:${email}`;
-  const heroCtaText = open ? "Applications are open | Learn More" : "Contact Recruitment";
+  const heroCtaHref = open ? "#recruitment-cycle" : `mailto:${email}`
+  const heroCtaText = open
+    ? "Applications are open | Learn More"
+    : "Contact Recruitment"
 
   return (
     <main>
@@ -311,7 +313,9 @@ const RecruitmentPage = () => {
                   </div>
 
                   {currentCycle.note && (
-                    <p className="recruitment-winter__note">{currentCycle.note}</p>
+                    <p className="recruitment-winter__note">
+                      {currentCycle.note}
+                    </p>
                   )}
                 </div>
               </section>
@@ -321,7 +325,10 @@ const RecruitmentPage = () => {
               className="recruitment-section recruitment-teams"
               aria-labelledby="recruitment-teams-title"
             >
-              <h3 id="recruitment-teams-title" className="recruitment-section__heading">
+              <h3
+                id="recruitment-teams-title"
+                className="recruitment-section__heading"
+              >
                 Team Information
               </h3>
 
@@ -363,9 +370,9 @@ const RecruitmentPage = () => {
                 <article className="recruitment-team">
                   <h4 className="recruitment-team__name">Software</h4>
                   <p className="recruitment-team__body">
-                    Handles mission software, including UTM tools, vision/ML
-                    pipelines, and ground-station interfaces that keep flights
-                    safe and autonomous.
+                    Handles mission software, computer-vision/ML pipelines, and
+                    ground-station interfaces that keep flights safe and
+                    autonomous.
                   </p>
                 </article>
               </div>
@@ -374,7 +381,7 @@ const RecruitmentPage = () => {
         </section>
       )}
     </main>
-  );
-};
+  )
+}
 
-export default RecruitmentPage;
+export default RecruitmentPage
