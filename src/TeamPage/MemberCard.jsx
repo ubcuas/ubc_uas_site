@@ -4,7 +4,17 @@ export default function MemberCard({ heading, name, role, img, linkedinUrl }) {
         {heading && <div className="member-heading">{heading}</div>}
   
         <div className="member-card">
-          <img src={img} alt={name} loading="lazy" />
+          {img ? (
+            <img className="member-portrait" src={img} alt={name} loading="lazy" />
+          ) : (
+            <div
+              className="member-portrait member-portrait--placeholder"
+              role="img"
+              aria-label={`Profile photo unavailable for ${name}`}
+            >
+              <span className="member-portrait__silhouette" aria-hidden="true" />
+            </div>
+          )}
           <div className="name-row">
   <p className="name">{name}</p>
   {linkedinUrl && (
