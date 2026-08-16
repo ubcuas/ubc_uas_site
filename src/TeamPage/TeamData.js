@@ -48,21 +48,6 @@ export const teamData = [
   },
 
   {
-    title: "Aircraft Team",
-    subtitle: "Co-Leads",
-    theme: "teal",
-    members: [
-      {
-        name: "Ryan Wang",
-        linkedinUrl: "https://www.linkedin.com/in/ryan-wang-510716345/",
-      },
-    ],
-    groupImg: aircraftGroup,
-    caption:
-      "Aircraft Team: Rylan Stutters, Rowan Campbell, Marnu Kritzinger, Marek Gryszka, Reynard Peetosutan, Zaheed Bhaiji , Vasily Balabin, Ryan Wang",
-  },
-
-  {
     title: "Payload Team",
     subtitle: "Co-Leads",
     theme: "charcoal",
@@ -97,6 +82,21 @@ export const teamData = [
     groupImg: electricalGroup,
     caption:
       "Electrical Team: Ethan Frketich, Issac Liu, Max Ovdiyenko, Ian Lee, Kelly He, Aidan McKay, Annie Sun, Wayne Sudanartha, Cohen Weston",
+  },
+
+  {
+    title: "Aircraft Team",
+    subtitle: "Co-Leads",
+    theme: "teal",
+    members: [
+      {
+        name: "Ryan Wang",
+        linkedinUrl: "https://www.linkedin.com/in/ryan-wang-510716345/",
+      },
+    ],
+    groupImg: aircraftGroup,
+    caption:
+      "Aircraft Team: Rylan Stutters, Rowan Campbell, Marnu Kritzinger, Marek Gryszka, Reynard Peetosutan, Zaheed Bhaiji , Vasily Balabin, Ryan Wang",
   },
 
   {
