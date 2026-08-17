@@ -22,7 +22,6 @@ export const teamData = [
   {
     title: "Admin Team",
     theme: "charcoal",
-    type: "grouped",
     groups: [
       {
         heading: "Our Captains",
@@ -39,20 +38,18 @@ export const teamData = [
           },
         ],
       },
+    ],
+    members: [
       {
+        name: "Ethan Frketich",
         heading: "Operations",
-        members: [
-          {
-            name: "Ethan Frketich",
-            img: operationsLead,
-            linkedinUrl: "https://www.linkedin.com/in/ethanfrk/",
-          },
-          {
-            name: "Ethan Frketich",
-            img: operationsLead,
-            linkedinUrl: "https://www.linkedin.com/in/ethanfrk/",
-          },
-        ],
+        img: operationsLead,
+        linkedinUrl: "https://www.linkedin.com/in/ethanfrk/",
+      },
+      {
+        name: "Ryan Wang",
+        heading: "Admin Lead",
+        linkedinUrl: "https://www.linkedin.com/in/ryan-wang-510716345/",
       },
     ],
     groupImg: adminGroup,

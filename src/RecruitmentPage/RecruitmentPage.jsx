@@ -352,7 +352,10 @@ const RecruitmentPage = () => {
                 <article className="recruitment-team">
                   <h4 className="recruitment-team__name">Admin</h4>
                   <p className="recruitment-team__body">
-                    looking for someone who owns a waffle maker
+                    Supports the team through finance, sponsorships, marketing,
+                    and operations. Manages budgets, builds sponsor
+                    relationships, promotes team progress, and coordinates
+                    events and logistics.
                   </p>
                 </article>
 
