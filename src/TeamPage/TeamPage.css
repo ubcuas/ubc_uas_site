@@ -158,11 +158,23 @@
     margin-bottom: clamp(1.25rem, 2vw, 1.75rem);
 }
 
+/* a "grouped" section renders one row per group, same grid/sizing as a plain
+   member row, with a single heading shared by that group's members */
+.team-group__heading {
+    color: var(--text);
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.2vw, 2rem);
+    margin: 0 0 0.6rem;
+    text-align: center;
+}
+
 /* column wrapper so each portrait can have its own mini-heading */
 .member-col {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    max-width: var(--member-card-max);
 }
 
 .member-heading {
@@ -181,7 +193,7 @@
     position: relative;
 }
 
-.member-card img {
+.member-portrait {
     display: block;
     width: 100%;
     max-width: var(--member-card-max);
@@ -191,6 +203,43 @@
     border: 2px solid var(--frame);
     box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
     margin: 0 auto;
+}
+
+.member-portrait--placeholder {
+    display: grid;
+    place-items: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: color-mix(in srgb, var(--brand) 18%, var(--bg-1));
+}
+
+.member-portrait__silhouette {
+    position: relative;
+    width: 42%;
+    aspect-ratio: 1;
+}
+
+.member-portrait__silhouette::before,
+.member-portrait__silhouette::after {
+    position: absolute;
+    left: 50%;
+    content: "";
+    transform: translateX(-50%);
+    background: color-mix(in srgb, var(--brand) 70%, var(--text));
+}
+
+.member-portrait__silhouette::before {
+    top: 3%;
+    width: 40%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+.member-portrait__silhouette::after {
+    bottom: -18%;
+    width: 100%;
+    height: 60%;
+    border-radius: 50% 50% 0 0;
 }
 
 /* name + LinkedIn icon row */
@@ -462,7 +511,7 @@ html[data-theme="light"] .linkedin-btn {
 }
 
 @media (max-width: 600px) {
-    .member-card img {
+    .member-portrait {
         aspect-ratio: 3 / 4;
     }
 
