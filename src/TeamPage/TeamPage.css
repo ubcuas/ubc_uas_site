@@ -251,6 +251,7 @@
     margin: 0.55rem auto 0;
     width: 100%;
     max-width: var(--member-card-max);
+    min-width: 0;
 }
 
 .member-card .name {
@@ -275,6 +276,7 @@
 .linkedin-btn {
     width: 40px;
     height: 40px;
+    flex: 0 0 40px;
     display: inline-block;
     /* CHANGED: removed src/... path */
     background: url("../assets/icons/linkedIn.webp") center/100% 100% no-repeat;
@@ -297,6 +299,7 @@ html[data-theme="light"] .linkedin-btn {
     /* CHANGED: removed src/... path */
     width: 60px;
     height: 35px;
+    flex: 0 0 60px;
     display: inline-block;
     /* CHANGED: removed src/... path */
     background: url("../assets/blue_linkedIn.webp") center/100% 100% no-repeat;
