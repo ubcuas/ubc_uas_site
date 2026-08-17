@@ -261,9 +261,22 @@ const ProjectCard = ({ project }) => {
     setIsModalOpen(false)
   }
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      openModal(e)
+    }
+  }
+
   return (
     <>
-      <div className="project-card">
+      <div
+        className="project-card"
+        onClick={openModal}
+        onKeyDown={handleKeyDown}
+        role="button"
+        tabIndex={0}
+        aria-label={`View details for ${project.title}`}
+      >
         <div className="card-image-container">
           <img
             src={project.img}
@@ -332,6 +345,10 @@ const ProjectRow = ({ title, projects }) => {
     let pointerId = null
     let startX = 0
     let startScroll = 0
+    let dragging = false
+    let captured = false
+
+    const DRAG_THRESHOLD = 5
 
     const onPointerDown = (event) => {
       if (!event.isPrimary) return
@@ -342,21 +359,36 @@ const ProjectRow = ({ title, projects }) => {
       pointerId = event.pointerId
       startX = event.clientX
       startScroll = container.scrollLeft
-      container.classList.add("is-dragging")
-      container.setPointerCapture?.(pointerId)
+      dragging = false
+      captured = false
     }
 
     const onPointerMove = (event) => {
       if (pointerId !== event.pointerId) return
       const deltaX = event.clientX - startX
+
+      // Only start "dragging" (and capture the pointer) once the movement
+      // clears a small threshold. Capturing on every pointerdown would
+      // retarget the eventual click to the container, which stops it from
+      // ever reaching a card's onClick handler - breaking plain clicks.
+      if (!dragging) {
+        if (Math.abs(deltaX) <= DRAG_THRESHOLD) return
+        dragging = true
+        captured = true
+        container.classList.add("is-dragging")
+        container.setPointerCapture?.(pointerId)
+      }
+
       container.scrollLeft = startScroll - deltaX
     }
 
     const onPointerRelease = (event) => {
       if (pointerId !== event.pointerId) return
       container.classList.remove("is-dragging")
-      container.releasePointerCapture?.(pointerId)
+      if (captured) container.releasePointerCapture?.(pointerId)
       pointerId = null
+      dragging = false
+      captured = false
     }
 
     container.addEventListener("pointerdown", onPointerDown)
