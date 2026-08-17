@@ -106,7 +106,7 @@ const softwareProjects = [
     id: 12,
     title: "Hawkeye",
     subtitle: "Onboard System",
-    year: "2024-2025",
+    year: "2024-2026",
     img: CAMVIS,
     description:
       "The central orchestrator for our onboard systems. Hawkeye runs on ROS2 and dispatches object detection, image processing, live video streaming and telemetry to the ground station. It is designed to be modular and easily extensible, allowing for new payloads and sensors to be integrated with minimal effort.",
@@ -114,17 +114,25 @@ const softwareProjects = [
   {
     id: 11,
     title: "GCOM",
-    subtitle: "Ground Command",
-    year: "2023/24",
+    subtitle: "Ground Controls",
+    year: "2023-2026",
     img: GCOM,
     description:
-      "Over the past years UBC UAS has been working on the next generation ground command software (GCOM). A single suit that acts as a data consolidation platform, it gathers information about the UAS from multiple sources (e.g. Mavlink) and provides the following functionality: - Antenna tracker control - Drone communication and control - Collision avoidance - Reliable Image download - Image object detection - Image geotagging - Analytics on processed images - Autonomously report generation. In addition to the above functionalities, GCOM was designed with reliability and modularity in mind. This allows UBC UAS to achieve higher reliability standards since each module can be independently tested against all possible inputs. Additionally, GCOM operates using a fully reliable communication protocol developed to transmit variable length data between any two devices (UAS Message) that utilize serial, TCP, or UDP communications.",
+      "Our ground communication software (GCOM) is the main entrypoint for monitoring live data from the aircraft. It aggregates information from telemetry, video streams, and object detection to display a live view of the aircraft’s status. It also allows for mission planning and execution through waypoints, geofencing and dispatching autonomous mission execution.",
+  },
+  {
+    id: 11,
+    title: "Autonomy",
+    subtitle: "...",
+    year: "2025-2026",
+    img: GCOM,
+    description: "...",
   },
   {
     id: 13,
     title: "GCATS",
     subtitle: "Data Transfer",
-    year: "2021/22",
+    year: "2021-2022",
     img: GCATS,
     description:
       "The GCATS (Ground Control Antenna Tracking Station) family of projects are custom-developed, long-range data transfer solutions capable of automatically relaying images and videos from drones flying at long ranges back to the ground control station. Their job is to autonomously track our aircraft in flight and point a directional antenna in that exact direction. This allows the team to use higher gain antennas as opposed to less optimal omnidirectional options. Additionally, the ability to modify the height of the antenna tracker counters the Fresnel effect’s impact on our operations.",
