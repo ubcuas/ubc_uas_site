@@ -14,6 +14,7 @@ import HummingBird from "./assets/carousel/hummingbird.webp"
 import Albatross from "./assets/carousel/Albatross.webp"
 import GCATS from "./assets/carousel/GCATS.webp"
 import GCOM from "./assets/carousel/GCOM.webp"
+import AutonomyProject from "./assets/carousel/autonomyProject.webp"
 import Raven from "./assets/carousel/Raven.webp"
 import Sparrow from "./assets/carousel/Sparrow.webp"
 import FlameWheel from "./assets/carousel/FlameWheel.webp"
@@ -109,7 +110,16 @@ const softwareProjects = [
     year: "2024-2026",
     img: CAMVIS,
     description:
-      "The central orchestrator for our onboard systems. Hawkeye runs on ROS2 and dispatches object detection, image processing, live video streaming and telemetry to the ground station. It is designed to be modular and easily extensible, allowing for new payloads and sensors to be integrated with minimal effort.",
+      "Hawkeye is the central orchestrator for our onboard systems. Hawkeye runs on ROS2 and dispatches object detection, image processing, live video streaming and telemetry to the ground station. It also hosts our computer vision pipeline, which uses small vision models running on the onboard Nvidia Jetson Nano to process visual data in real-time for tasks such as object detection and tracking. Hawkeye is designed to be modular and easily extensible, allowing for new payloads and sensors to be integrated with minimal effort.",
+  },
+  {
+    id: 11,
+    title: "Autonomy",
+    subtitle: "Autonomous Navigation",
+    year: "2025-2026",
+    img: AutonomyProject,
+    description:
+      "Our autonomy project uses computer vison and Visual SLAM technologies to enable our aircraft to navigate without user input. It works by building a map of the environment live, and localizing the aircraft within it. This is effective for tasks such as autonomous target spraying and navigation within buildings where GPS signal is unreliable.",
   },
   {
     id: 11,
@@ -119,14 +129,6 @@ const softwareProjects = [
     img: GCOM,
     description:
       "Our ground communication software (GCOM) is the main entrypoint for monitoring live data from the aircraft. It aggregates information from telemetry, video streams, and object detection to display a live view of the aircraft’s status. It also allows for mission planning and execution through waypoints, geofencing and dispatching autonomous mission execution.",
-  },
-  {
-    id: 11,
-    title: "Autonomy",
-    subtitle: "...",
-    year: "2025-2026",
-    img: GCOM,
-    description: "...",
   },
   {
     id: 13,
