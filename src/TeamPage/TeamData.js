@@ -47,9 +47,9 @@ export const teamData = [
         linkedinUrl: "https://www.linkedin.com/in/ethanfrk/",
       },
       {
-        name: "Ryan Wang",
+        name: "Ryan Vanlerberg-Gargus",
         heading: "Admin Lead",
-        linkedinUrl: "https://www.linkedin.com/in/ryan-wang-510716345/",
+        linkedinUrl: "https://www.linkedin.com/in/ryan-vg/",
       },
     ],
     groupImg: adminGroup,
@@ -59,7 +59,7 @@ export const teamData = [
 
   {
     title: "Payload Team",
-    subtitle: "Co-Leads",
+    subtitle: "Lead",
     theme: "charcoal",
     members: [
       {
@@ -96,7 +96,7 @@ export const teamData = [
 
   {
     title: "Aircraft Team",
-    subtitle: "Co-Leads",
+    subtitle: "Lead",
     theme: "teal",
     members: [
       {
