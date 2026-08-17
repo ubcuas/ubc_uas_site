@@ -158,6 +158,16 @@
     margin-bottom: clamp(1.25rem, 2vw, 1.75rem);
 }
 
+/* a "grouped" section renders one row per group, same grid/sizing as a plain
+   member row, with a single heading shared by that group's members */
+.team-group__heading {
+    color: var(--text);
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.2vw, 2rem);
+    margin: 0 0 0.6rem;
+    text-align: center;
+}
+
 /* column wrapper so each portrait can have its own mini-heading */
 .member-col {
     display: flex;

@@ -22,24 +22,37 @@ export const teamData = [
   {
     title: "Admin Team",
     theme: "charcoal",
-    members: [
+    type: "grouped",
+    groups: [
       {
-        heading: "Our Captain",
-        name: "Jaden Chan",
-        img: captainJaden,
-        linkedinUrl: "https://www.linkedin.com/in/jaden-chan-748856216/",
-      },
-      {
-        heading: "Our Captain",
-        name: "Manorama Joshi",
-        img: captainManorama,
-        linkedinUrl: "https://www.linkedin.com/in/manoramajoshi/",
+        heading: "Our Captains",
+        members: [
+          {
+            name: "Jaden Chan",
+            img: captainJaden,
+            linkedinUrl: "https://www.linkedin.com/in/jaden-chan-748856216/",
+          },
+          {
+            name: "Manorama Joshi",
+            img: captainManorama,
+            linkedinUrl: "https://www.linkedin.com/in/manoramajoshi/",
+          },
+        ],
       },
       {
         heading: "Operations",
-        name: "Ethan Frketich",
-        img: operationsLead,
-        linkedinUrl: "https://www.linkedin.com/in/ethanfrk/",
+        members: [
+          {
+            name: "Ethan Frketich",
+            img: operationsLead,
+            linkedinUrl: "https://www.linkedin.com/in/ethanfrk/",
+          },
+          {
+            name: "Ethan Frketich",
+            img: operationsLead,
+            linkedinUrl: "https://www.linkedin.com/in/ethanfrk/",
+          },
+        ],
       },
     ],
     groupImg: adminGroup,

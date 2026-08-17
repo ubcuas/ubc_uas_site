@@ -4,7 +4,9 @@ export default function TeamSection({
   title,
   subtitle,
   theme,
+  type,
   members = [],
+  groups,
   groupImg,
   caption,
 }) {
@@ -13,11 +15,24 @@ export default function TeamSection({
       {title && <h2 className="team-section__title">{title}</h2>}
       {subtitle && <p className="team-section__subtitle">{subtitle}</p>}
 
-      <div className="team-members">
-        {members.map((m, i) => (
-          <MemberCard key={i} {...m} />
-        ))}
-      </div>
+      {type === "grouped" ? (
+        groups.map((g, gi) => (
+          <div className="team-group" key={gi}>
+            {g.heading && <h3 className="team-group__heading">{g.heading}</h3>}
+            <div className="team-members">
+              {g.members.map((m, i) => (
+                <MemberCard key={i} {...m} />
+              ))}
+            </div>
+          </div>
+        ))
+      ) : (
+        <div className="team-members">
+          {members.map((m, i) => (
+            <MemberCard key={i} {...m} />
+          ))}
+        </div>
+      )}
 
       {groupImg && (
         <figure className="group-photo group-photo--framed">
