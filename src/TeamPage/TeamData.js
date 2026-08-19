@@ -11,6 +11,7 @@ import electricalWayne from "../assets/teamPortraits/electricalWayne.webp"
 import electricalCohen from "../assets/teamPortraits/electricalCohen.webp"
 
 import softwareMichael from "../assets/teamPortraits/softwareMichael.webp"
+import softwareDavid from "../assets/teamPortraits/softwareDavid.webp"
 
 import adminGroup from "../assets/teamPhotos/admin.webp"
 import aircraftGroup from "../assets/teamPhotos/aircraft.webp"
@@ -115,7 +116,8 @@ export const teamData = [
     theme: "charcoal",
     members: [
       {
-        name: "David Cui",
+        img: softwareDavid,
+        name: "Jingyang Cui",
         linkedinUrl: "https://www.linkedin.com/in/jingyang-cui-b92040250/",
       },
       {
@@ -126,6 +128,6 @@ export const teamData = [
     ],
     groupImg: softwareGroup,
     caption:
-      "Software Team: Vittal Ayer, Yash Vasdev, Wilfred Chow, Anthony Lu, Anant Khanna, Athalia Setiawan, Sankalp Prashanth, Jason Staker, Sayyam Singla, David Cui, Michael Dickinson",
+      "Software Team: Vittal Ayer, Yash Vasdev, Wilfred Chow, Anthony Lu, Anant Khanna, Athalia Setiawan, Sankalp Prashanth, Jason Staker, Sayyam Singla, Jingyang Cui, Michael Dickinson",
   },
 ]

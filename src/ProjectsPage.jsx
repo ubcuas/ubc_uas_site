@@ -19,7 +19,7 @@ import Raven from "./assets/carousel/Raven.webp"
 import Sparrow from "./assets/carousel/Sparrow.webp"
 import FlameWheel from "./assets/carousel/FlameWheel.webp"
 import Thunderbird from "./assets/carousel/Thunderbird.webp"
-import CAMVIS from "./assets/carousel/Camvis.webp"
+import hawkeye from "./assets/carousel/hawkeye.webp"
 
 // SECTION 1: AIRCRAFT PROJECTS
 const aircraftProjects = [
@@ -108,7 +108,7 @@ const softwareProjects = [
     title: "Hawkeye",
     subtitle: "Onboard System",
     year: "2024-2026",
-    img: CAMVIS,
+    img: hawkeye,
     description:
       "Hawkeye is the central orchestrator for our onboard systems. Hawkeye runs on ROS2 and dispatches object detection, image processing, live video streaming and telemetry to the ground station. It also hosts our computer vision pipeline, which uses small vision models running on the onboard Nvidia Jetson Nano to process visual data in real-time for tasks such as object detection and tracking. Hawkeye is designed to be modular and easily extensible, allowing for new payloads and sensors to be integrated with minimal effort.",
   },
