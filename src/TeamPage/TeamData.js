@@ -58,7 +58,7 @@ export const teamData = [
     ],
     groupImg: adminGroup,
     caption:
-      "Admin Team: Aden Chan, Amy Li, Clare, Cohen Weston, Diego Islas, Ethan Frketich, Jaden Chan, Jason Yuan, Jonathan Chin, Leon Jiang, Logan Neufield, Manorama Joshi, Matthew Pirayesh, Mercury McIndoe, Nicholas Yap, Olivia Lew, Ram Jayakumar, Ryan Wang, Rylan Stutters, Sean Lee, Vasily Balabin, Vittal Ayer, Wayne Sudanartha, Yash Mali",
+      "Admin Team: Cohen Weston, Ethan Frketich, Jaden Chan, Jingyang Cui, Jonathan Chin, Manorama Joshi, Michael Dickinson, Ryan Vanlerberg-Gargus, Ryan Wang, Wayne Sudanartha",
   },
 
   {
