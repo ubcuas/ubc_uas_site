@@ -9,6 +9,8 @@ import payloadJonathan from "../assets/teamPortraits/payloadJonathan.webp"
 
 import electricalWayne from "../assets/teamPortraits/electricalWayne.webp"
 import electricalCohen from "../assets/teamPortraits/electricalCohen.webp"
+import adminRyan from "../assets/teamPortraits/adminRyan.webp"
+import aircraftRyanWang from "../assets/teamPortraits/aircraftRyanWang.webp"
 
 import softwareMichael from "../assets/teamPortraits/softwareMichael.webp"
 import softwareDavid from "../assets/teamPortraits/softwareDavid.webp"
@@ -50,6 +52,7 @@ export const teamData = [
       {
         name: "Ryan Vanlerberg-Gargus",
         heading: "Admin Lead",
+        img: adminRyan,
         linkedinUrl: "https://www.linkedin.com/in/ryan-vg/",
       },
     ],
@@ -102,6 +105,7 @@ export const teamData = [
     members: [
       {
         name: "Ryan Wang",
+        img: aircraftRyanWang,
         linkedinUrl: "https://www.linkedin.com/in/ryan-wang-510716345/",
       },
     ],
