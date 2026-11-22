@@ -1,12 +1,12 @@
 {
   "email": "recruitment@ubcuas.com",
   "applyUrl": "https://docs.google.com/forms/d/e/1FAIpQLScn9fHR1kOsewKViBPyK3J3aFdyU-oTFWPIGSILDKatndy8fg/viewform?usp=dialog",
-  "open": true,
+  "open": false,
   "cycle": "fall",
   "hero": {
     "eyebrow": "Join The Mission",
-    "title": "We are recruiting!",
-    "body": "We welcome engineers, makers, and storytellers who want to build the next generation of UAS. Applications open each September and January."
+    "title": "Recruitment",
+    "body": "We welcome engineers, makers, and storytellers who want to build the next generation of UAS. Currently, our applications are closed. Applications open each September and January."
   },
   "panel": {
     "title": "RECRUITMENT",
