@@ -1,4 +1,4 @@
-import sponsorshipPackage from '../assets/documents/UAS-Sponsorship-Package-2025-2026.pdf'
+import sponsorshipPackage from '../assets/documents/UAS-Sponsorship-Package-2026-2027.pdf'
 import apscLogo from '../assets/pages/sponsorship/apsc-logo.webp'
 import onshapeLogo from '../assets/pages/sponsorship/onshape-colour.svg'
 import altiumLogo from '../assets/pages/sponsorship/altium-black.svg'
