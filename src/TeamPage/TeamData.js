@@ -9,6 +9,8 @@ import payloadJonathan from "../assets/teamPortraits/payloadJonathan.webp"
 
 import electricalWayne from "../assets/teamPortraits/electricalWayne.webp"
 import electricalCohen from "../assets/teamPortraits/electricalCohen.webp"
+import adminRyan from "../assets/teamPortraits/adminRyan.webp"
+import aircraftRyanWang from "../assets/teamPortraits/aircraftRyanWang.webp"
 
 import softwareMichael from "../assets/teamPortraits/softwareMichael.webp"
 import softwareDavid from "../assets/teamPortraits/softwareDavid.webp"
@@ -50,12 +52,13 @@ export const teamData = [
       {
         name: "Ryan Vanlerberg-Gargus",
         heading: "Admin Lead",
+        img: adminRyan,
         linkedinUrl: "https://www.linkedin.com/in/ryan-vg/",
       },
     ],
     groupImg: adminGroup,
     caption:
-      "Admin Team: Vittal Ayer, Vasily Balabin, Aden Chan, Jaden Chan, Jonathan Chin, Ethan Frketich, Diego Islas, Ram Jayakumar, Leon Jiang, Manorama Joshi, Sean Lee, Olivia Lew, Amy Li, Yash Mali, Mercury McIndoe, Logan Neufield, Matthew Pirayesh, Rylan Stutters, Wayne Sudanartha, Ryan Wang, Cohen Weston, Nicholas Yap, Jason Yuan",
+      "Admin Team: Cohen Weston, Ethan Frketich, Jaden Chan, Jingyang Cui, Jonathan Chin, Manorama Joshi, Michael Dickinson, Ryan Vanlerberg-Gargus, Ryan Wang, Wayne Sudanartha",
   },
 
   {
@@ -71,7 +74,7 @@ export const teamData = [
     ],
     groupImg: payloadGroup,
     caption:
-      "Payload Team: Gina Choi, Dwight Dela Torre, Ryan Fan, Haruki Sakamaki, Inaya Merchant, Daniel Sunghyun Jin, Logan Neufield, Caroline Soffer, Jonathan Chin",
+      "Payload Team: Andrew Dick, Artina Rashidzadeh, Caroline Soffer, Daniel Sunghyun Jin, Dwight Dela Torre, Gina Choi, Haruki Sakamaki, Inaya Merchant, Jonathan Chin, Logan Neufield, Olivia Lopez, Ryan Fan, Ryan Ji",
   },
 
   {
@@ -80,19 +83,19 @@ export const teamData = [
     theme: "teal",
     members: [
       {
-        name: "Wayne Sudanartha",
-        img: electricalWayne,
-        linkedinUrl: "https://www.linkedin.com/in/waynesdn/",
-      },
-      {
         name: "Cohen Weston",
         img: electricalCohen,
         linkedinUrl: "https://www.linkedin.com/in/cohen-weston/",
       },
+      {
+        name: "Wayne Sudanartha",
+        img: electricalWayne,
+        linkedinUrl: "https://www.linkedin.com/in/waynesdn/",
+      },
     ],
     groupImg: electricalGroup,
     caption:
-      "Electrical Team: Ethan Frketich, Issac Liu, Max Ovdiyenko, Ian Lee, Kelly He, Aidan McKay, Annie Sun, Wayne Sudanartha, Cohen Weston",
+      "Electrical Team: Aidan McKay, Annie Sun, Cohen Weston, Ethan Frketich, Ian Lee, Issac Liu, Kelly He, Max Ovdiyenko, Wayne Sudanartha",
   },
 
   {
@@ -102,12 +105,13 @@ export const teamData = [
     members: [
       {
         name: "Ryan Wang",
+        img: aircraftRyanWang,
         linkedinUrl: "https://www.linkedin.com/in/ryan-wang-510716345/",
       },
     ],
     groupImg: aircraftGroup,
     caption:
-      "Aircraft Team: Rylan Stutters, Rowan Campbell, Marnu Kritzinger, Marek Gryszka, Reynard Peetosutan, Zaheed Bhaiji , Vasily Balabin, Ryan Wang",
+      "Aircraft Team: Alisha Jamal, Hugo Knitter, Lauren Luksay, Marek Gryszka, Marnu Kritzinger, Reynard Peetosutan, Rowan Campbell, Ryan Wang, Rylan Stutters, Vasily Balabin, Zaheed Bhaiji",
   },
 
   {
@@ -128,6 +132,6 @@ export const teamData = [
     ],
     groupImg: softwareGroup,
     caption:
-      "Software Team: Vittal Ayer, Yash Vasdev, Wilfred Chow, Anthony Lu, Anant Khanna, Athalia Setiawan, Sankalp Prashanth, Jason Staker, Sayyam Singla, Jingyang Cui, Michael Dickinson",
+      "Software Team: Anant Khanna, Anthony Lu, Apoorva Devarakonda, Athalia Setiawan, Brian Tian, Eric Chen, Gurnek Sandhu, Jason Staker, Jingyang Cui, Lana Nakai, Louis Dod, Michael Dickinson, Nicholas Huang, Nitish Joson Terance Joe Heston, Ryan Park, Sankalp Prashanth, Sayyam Singla, Vikram Dutt, Vittal Ayer, Wilfred Chow, Yash Vasdev",
   },
 ]

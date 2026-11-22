@@ -6,6 +6,10 @@ import TeamSection from "./TeamSection";
 import { teamData } from "./TeamData";
 
 // CHANGED: import carousel images (so build rewrites URLs)
+import fullTeam2026 from "../assets/carousel/teamCarousel/fullTeam2026.webp";
+import competitionTeam from "../assets/carousel/teamCarousel/competitionTeam.webp";
+import competitionPresentation from "../assets/carousel/teamCarousel/competitionPresentation.webp";
+import droneTesting from "../assets/carousel/teamCarousel/droneTesting.webp";
 import carousel1 from "../assets/carousel/teamCarousel/carousel1.webp";
 import carousel2 from "../assets/carousel/teamCarousel/carousel2.webp";
 import carousel3 from "../assets/carousel/teamCarousel/carousel3.webp";
@@ -17,12 +21,16 @@ import carousel7 from "../assets/carousel/teamCarousel/carousel7.webp";
 export default function TeamPage() {
   // Separate images specifically for the header carousel
   const carouselImages = [
+    { src: fullTeam2026, alt: "UBC UAS full team" },
+    { src: competitionTeam, alt: "UBC UAS competition team with aircraft" },
     { src: carousel1 },
     { src: carousel2 },
     { src: carousel3 },
+    { src: competitionPresentation, alt: "UBC UAS competition presentation" },
     { src: carousel4 },
     { src: carousel5 },
     { src: carousel6 },
+    { src: droneTesting, alt: "UBC UAS drone testing" },
     { src: carousel7 },
   ];
 
