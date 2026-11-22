@@ -63,7 +63,7 @@ const SponsorshipPage = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              View Sponsorship Package (2025-2026)
+              View Sponsorship Package (2026-2027)
             </a>
             <a
               className="sponsorship-details__cta sponsorship-details__cta--secondary"
